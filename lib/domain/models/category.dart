@@ -1,1 +1,0 @@
-enum Category { milk }

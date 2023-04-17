@@ -1,37 +1,33 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/data/repository/temp_repository.dart';
 
-class Advertisment extends StatelessWidget {
+class Advertisment extends StatefulWidget {
   const Advertisment({super.key});
 
   @override
+  State<Advertisment> createState() => _AdvertismentState();
+}
+
+class _AdvertismentState extends State<Advertisment> {
+  int currentIndex = 0;
+
+  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: 28.w, // 20
-      ),
-      child: SizedBox(
-        height: 208.h,
-        width: 335.w,
-        child: ListView.builder(
-          physics: const ClampingScrollPhysics(),
-          shrinkWrap: true,
-          scrollDirection: Axis.horizontal,
-          itemCount: TempRepository.mainAdvertisments.length,
-          itemBuilder: (BuildContext context, int index) => Row(
-            children: [
-              Transform.scale(
-                scale: 1.05,
-                child: Image.asset(
-                  TempRepository.mainAdvertisments[index],
-                ),
-              ),
-              SizedBox(
-                width: 8.w,
-              ),
-            ],
+    return SizedBox(
+      child: CarouselSlider.builder(
+        options: CarouselOptions(
+          height: 208.h,
+          viewportFraction: 0.77.w,
+          onPageChanged: (index, reason) => setState(
+            () => currentIndex = index,
           ),
+        ),
+        itemCount: TempRepository.mainAdvertisments.length,
+        itemBuilder: (context, index, realIndex) => Image.asset(
+          TempRepository.mainAdvertisments[index],
+          fit: BoxFit.cover,
         ),
       ),
     );

@@ -24,4 +24,20 @@ abstract class AppIcons {
   static const bluePercent = "assets/icons/bluePercent.svg";
   static const redLike = "assets/icons/redLike.svg";
   static const greenCart = "assets/icons/greenCart.svg";
+
+  /// Categories
+  static const figMilk = 'assets/icons/Vector.svg';
+  static const figMeat = 'assets/icons/Vector-1.svg';
+  static const figVeg = 'assets/icons/Vector-2.svg';
+  static const figBread = 'assets/icons/Vector-3.svg';
+  static const figCon = 'assets/icons/Polygon 2.svg';
+  static const figChild = 'assets/icons/Rectangle 23.svg';
+  static const figHome = 'assets/icons/Vector-4.svg';
+  static const figGroc = 'assets/icons/Ellipse 5.svg';
+  static const figBev = 'assets/icons/Ellipse 4.svg';
+  static const figFreezed = 'assets/icons/Polygon 1.svg';
+  static const figFish = 'assets/icons/Vector 1.svg';
+  static const figAlco = 'assets/icons/Ellipse 3.svg';
+  static const figBio = 'assets/icons/Rectangle 24.svg';
+  static const figSuper = 'assets/icons/Vector-5.svg';
 }
