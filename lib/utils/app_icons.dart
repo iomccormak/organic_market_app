@@ -40,4 +40,8 @@ abstract class AppIcons {
   static const figAlco = 'assets/icons/Ellipse 3.svg';
   static const figBio = 'assets/icons/Rectangle 24.svg';
   static const figSuper = 'assets/icons/Vector-5.svg';
+
+  /// Profile
+  static const question = 'assets/icons/question.svg';
+  static const quit = 'assets/icons/quit.svg';
 }

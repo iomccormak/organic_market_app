@@ -60,4 +60,12 @@ abstract class AppStrings {
 
   static const nameInput = 'Как к вам обращаться?';
   static const continueOrder = 'Продолжить оформление';
+
+  /// Profile
+  static const personalInfo = 'Личные данные';
+  static const myOrders = 'Мои заказы';
+  static const myAddreses = 'Мои адреса';
+  static const paymentWays = 'Способы оплаты';
+  static const writeUs = 'Связаться с нами';
+  static const quit = 'Выйти';
 }

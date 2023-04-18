@@ -1,9 +1,9 @@
-import 'package:organic_market_app/domain/models/product_category.dart';
+import 'package:organic_market_app/domain/models/main_category.dart';
 
 class Product {
   final String title;
   final String description;
-  final ProductCategory category;
+  final MainCategory category;
   final List<String> image;
   final int price;
   final List<String> weight;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:organic_market_app/data/repository/temp_repository.dart';
-import 'package:organic_market_app/domain/models/product_category.dart';
+import 'package:organic_market_app/domain/models/main_category.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
@@ -10,7 +10,7 @@ import 'package:organic_market_app/utils/app_text_styles.dart';
 class CategoryBigWidget extends StatelessWidget {
   const CategoryBigWidget({super.key, required this.category});
 
-  final ProductCategory category;
+  final MainCategory category;
 
   @override
   Widget build(BuildContext context) {
@@ -44,23 +44,41 @@ class CategoryBigWidget extends StatelessWidget {
               ),
             ),
             Image.asset(category.icon),
-            Padding(
-              padding: EdgeInsets.only(
-                top: 70.h,
-                left: 12.w,
-                right: 12.w,
-              ),
-              child: Text(
-                category.title,
-                textAlign: TextAlign.start,
-                style: AppTextStyles.bottomBarTextStyle.copyWith(
-                  color: AppColors.black,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12.sp,
-                  height: 1,
-                ),
-              ),
-            )
+            category.title.length > 20
+                ? Padding(
+                    padding: EdgeInsets.only(
+                      top: 70.h,
+                      left: 12.w,
+                      right: 12.w,
+                    ),
+                    child: Text(
+                      category.title,
+                      textAlign: TextAlign.start,
+                      style: AppTextStyles.bottomBarTextStyle.copyWith(
+                        color: AppColors.black,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12.sp,
+                        height: 1,
+                      ),
+                    ),
+                  )
+                : Padding(
+                    padding: EdgeInsets.only(
+                      top: 80.h,
+                      left: 12.w,
+                      right: 12.w,
+                    ),
+                    child: Text(
+                      category.title,
+                      textAlign: TextAlign.start,
+                      style: AppTextStyles.bottomBarTextStyle.copyWith(
+                        color: AppColors.black,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12.sp,
+                        height: 1,
+                      ),
+                    ),
+                  ),
           ],
         ),
       ),
