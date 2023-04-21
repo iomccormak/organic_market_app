@@ -14,6 +14,9 @@ class CategoryBigWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int topPadding;
+    category.title.length > 20 ? topPadding = 70 : topPadding = 80;
+
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: 10.w,
@@ -44,41 +47,23 @@ class CategoryBigWidget extends StatelessWidget {
               ),
             ),
             Image.asset(category.icon),
-            category.title.length > 20
-                ? Padding(
-                    padding: EdgeInsets.only(
-                      top: 70.h,
-                      left: 12.w,
-                      right: 12.w,
-                    ),
-                    child: Text(
-                      category.title,
-                      textAlign: TextAlign.start,
-                      style: AppTextStyles.bottomBarTextStyle.copyWith(
-                        color: AppColors.black,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12.sp,
-                        height: 1,
-                      ),
-                    ),
-                  )
-                : Padding(
-                    padding: EdgeInsets.only(
-                      top: 80.h,
-                      left: 12.w,
-                      right: 12.w,
-                    ),
-                    child: Text(
-                      category.title,
-                      textAlign: TextAlign.start,
-                      style: AppTextStyles.bottomBarTextStyle.copyWith(
-                        color: AppColors.black,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12.sp,
-                        height: 1,
-                      ),
-                    ),
-                  ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: topPadding.h,
+                left: 12.w,
+                right: 12.w,
+              ),
+              child: Text(
+                category.title,
+                textAlign: TextAlign.start,
+                style: AppTextStyles.bottomBarTextStyle.copyWith(
+                  color: AppColors.black,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12.sp,
+                  height: 1,
+                ),
+              ),
+            )
           ],
         ),
       ),

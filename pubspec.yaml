@@ -44,6 +44,7 @@ dependencies:
   auto_route: ^5.0.1
   salomon_bottom_bar: ^3.3.2
   toggle_switch: ^2.0.1
+  intl: ^0.18.1
 
   
 dev_dependencies:

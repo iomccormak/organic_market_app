@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/data/repository/temp_repository.dart';
-import 'package:organic_market_app/presentation/common_widgets/bottom_bar/temp_bottom_bar_widget.dart';
+import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/temp_bottom_bar_widget.dart';
 import 'package:organic_market_app/presentation/common_widgets/title_text.dart';
 import 'package:organic_market_app/presentation/pages/catalog/widgets/catalog_button.dart';
 import 'package:organic_market_app/presentation/pages/catalog/widgets/category_big_widget.dart';
@@ -24,10 +24,7 @@ class CatalogPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 58.h,
-            ),
-            SizedBox(
-              height: 17.h,
+              height: 80.h,
             ),
             Row(
               children: [

@@ -8,92 +8,69 @@ import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class CategorySmallWidget extends StatelessWidget {
-  const CategorySmallWidget({super.key});
+  const CategorySmallWidget({super.key, required this.category});
+
+  final MainCategory category;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: 10.w,
-      ),
-      child: SizedBox(
-        height: 120.h,
-        child: ListView.builder(
-          physics: BouncingScrollPhysics(),
-          shrinkWrap: true,
-          scrollDirection: Axis.horizontal,
-          itemCount: TempRepository.categories.length,
-          itemBuilder: (context, index) => Row(
+    int topPadding;
+
+    category.title.length > 13
+        ? category.title.length > 26
+            ? topPadding = 62
+            : topPadding = 74
+        : topPadding = 86;
+    ;
+
+    return Row(
+      children: [
+        Container(
+          width: 104.w,
+          height: 104.h,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.shadowColor,
+                blurRadius: 8,
+                spreadRadius: 1,
+              ),
+            ],
+            color: AppColors.white,
+          ),
+          child: Stack(
             children: [
-              Container(
-                width: 104.w,
-                height: 104.h,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.shadowColor,
-                      blurRadius: 8,
-                      spreadRadius: 1,
-                    ),
-                  ],
-                  color: AppColors.white,
+              Padding(
+                padding: EdgeInsets.only(
+                  left: category.leftPadding.w,
+                  top: category.topPadding.h,
                 ),
-                child: Stack(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                        left: TempRepository.categories[index].leftPadding.w,
-                        top: TempRepository.categories[index].topPadding.h,
-                      ),
-                      child: SvgPicture.asset(
-                        TempRepository.categories[index].background,
-                      ),
-                    ),
-                    Image.asset(TempRepository.categories[index].icon),
-                    TempRepository.categories[index].title.length > 13
-                        ? Padding(
-                            padding: EdgeInsets.only(
-                              top: 70.h,
-                              left: 12.w,
-                              right: 12.w,
-                            ),
-                            child: Text(
-                              TempRepository.categories[index].title,
-                              textAlign: TextAlign.start,
-                              style: AppTextStyles.bottomBarTextStyle.copyWith(
-                                color: AppColors.black,
-                                fontSize: 12.sp,
-                                height: 1,
-                              ),
-                            ),
-                          )
-                        : Padding(
-                            padding: EdgeInsets.only(
-                              top: 80.h,
-                              left: 12.w,
-                              right: 12.w,
-                            ),
-                            child: Text(
-                              TempRepository.categories[index].title,
-                              textAlign: TextAlign.start,
-                              style: AppTextStyles.bottomBarTextStyle.copyWith(
-                                color: AppColors.black,
-                                fontSize: 12.sp,
-                                height: 1,
-                              ),
-                            ),
-                          ),
-                  ],
+                child: SvgPicture.asset(
+                  category.background,
                 ),
               ),
-              SizedBox(
-                width: 8.w,
+              Image.asset(category.icon),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: topPadding.h,
+                  left: 12.w,
+                  right: 12.w,
+                ),
+                child: Text(
+                  category.title,
+                  textAlign: TextAlign.start,
+                  style: AppTextStyles.bottomBarTextStyle.copyWith(
+                    color: AppColors.black,
+                    fontSize: 12.sp,
+                    height: 1,
+                  ),
+                ),
               )
             ],
           ),
         ),
-      ),
+      ],
     );
     /**/
   }

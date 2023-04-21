@@ -74,8 +74,9 @@ class ItemPage extends StatelessWidget {
                     children: [
                       Text(
                         AppStrings.description,
-                        style: AppTextStyles.priceTextStyle.copyWith(
-                          fontSize: 16.sp,
+                        style: AppTextStyles.titleTextStyle.copyWith(
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                       SizedBox(
@@ -83,8 +84,9 @@ class ItemPage extends StatelessWidget {
                       ),
                       Text(
                         AppStrings.features,
-                        style: AppTextStyles.priceTextStyle.copyWith(
-                          fontSize: 16.sp,
+                        style: AppTextStyles.titleTextStyle.copyWith(
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
                           color: AppColors.mainGrey,
                         ),
                       ),
@@ -93,8 +95,9 @@ class ItemPage extends StatelessWidget {
                       ),
                       Text(
                         AppStrings.reviews,
-                        style: AppTextStyles.priceTextStyle.copyWith(
-                          fontSize: 16.sp,
+                        style: AppTextStyles.titleTextStyle.copyWith(
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
                           color: AppColors.mainGrey,
                         ),
                       ),

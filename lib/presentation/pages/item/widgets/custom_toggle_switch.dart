@@ -16,7 +16,7 @@ class _CustomToggleSwitchState extends State<CustomToggleSwitch> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: AppColors.shadowColor,

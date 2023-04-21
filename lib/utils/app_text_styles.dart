@@ -62,6 +62,8 @@ abstract class AppTextStyles {
     color: AppColors.black,
   );
 
+  /// for Bottom sheets
+
   static final bottomSheetTitleTextStyle = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.w700,
@@ -85,5 +87,13 @@ abstract class AppTextStyles {
     fontSize: 18.sp,
     fontWeight: FontWeight.w500,
     color: AppColors.mainGrey,
+  );
+
+  /// Input
+
+  static final inputTextStyle = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.black,
   );
 }

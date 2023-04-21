@@ -25,7 +25,7 @@ class ProfilePointsInfo extends StatelessWidget {
         color: AppColors.white,
       ),
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Stack(
           children: [
             Align(

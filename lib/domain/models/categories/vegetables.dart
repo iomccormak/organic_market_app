@@ -3,7 +3,7 @@ import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_images.dart';
 
 class Vegetables extends MainCategory {
-  final String title = 'Овощи, фрукты, зелень';
+  final String title = 'Овощи, фрукты';
   final String icon = AppImages.catVeg;
   final String background = AppIcons.figVeg;
   final int leftPadding = 22;

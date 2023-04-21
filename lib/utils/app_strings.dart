@@ -1,6 +1,7 @@
 abstract class AppStrings {
   /// Symbols
   static const ruble = "₽";
+  static const plusSeven = "+7";
 
   /// Home
   static const adress = "ул. Пушкина 15, д. 20, кв. 113";
@@ -68,4 +69,11 @@ abstract class AppStrings {
   static const paymentWays = 'Способы оплаты';
   static const writeUs = 'Связаться с нами';
   static const quit = 'Выйти';
+
+  /// Personal Info
+  static const name = 'Имя';
+  static const surname = 'Фамилия';
+  static const dateOfBirth = 'Дата рождения';
+  static const phone = 'Телефон';
+  static const email = 'E-mail';
 }

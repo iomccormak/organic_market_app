@@ -44,4 +44,7 @@ abstract class AppIcons {
   /// Profile
   static const question = 'assets/icons/question.svg';
   static const quit = 'assets/icons/quit.svg';
+
+  /// personal info
+  static const calendar = 'assets/icons/calendar.svg';
 }

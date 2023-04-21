@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:organic_market_app/data/repository/temp_repository.dart';
 import 'package:organic_market_app/domain/models/categories/alcohol/alcohol.dart';
 import 'package:organic_market_app/domain/models/categories/beverages.dart';
-import 'package:organic_market_app/presentation/common_widgets/bottom_bar/temp_bottom_bar_widget.dart';
+import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/temp_bottom_bar_widget.dart';
 import 'package:organic_market_app/presentation/common_widgets/title_text.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/advertisment.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/category_small_widget.dart';
@@ -44,7 +45,32 @@ class HomePage extends StatelessWidget {
           SizedBox(
             height: 8.h,
           ),
-          CategorySmallWidget(),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 5.w,
+            ),
+            child: SizedBox(
+              height: 133.h,
+              child: ListView.builder(
+                physics: BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                itemCount: TempRepository.categories.length,
+                itemBuilder: (context, index) {
+                  return Row(
+                    children: [
+                      SizedBox(
+                        width: 8.w,
+                      ),
+                      CategorySmallWidget(
+                        category: TempRepository.categories[index],
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+          ),
 
           /// CATEGORIES
           SizedBox(
