@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/presentation/pages/cart/modal_bottom_sheets/phone_input.dart';
+import 'package:organic_market_app/presentation/pages/cart/modal_bottom_sheets/phone_input_page.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
@@ -47,7 +47,7 @@ class EmptyScreen extends StatelessWidget {
                   padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom,
                   ),
-                  child: PhoneInput(),
+                  child: PhoneInputPage(),
                   //child: PhoneConfirmation(),
                   //child: NameInput(),
                 );

@@ -4,8 +4,8 @@ import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
-class NameInput extends StatelessWidget {
-  const NameInput({super.key});
+class NameInputPage extends StatelessWidget {
+  const NameInputPage({super.key});
 
   @override
   Widget build(BuildContext context) {

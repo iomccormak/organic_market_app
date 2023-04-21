@@ -15,7 +15,7 @@ class BoughtBefore extends StatelessWidget {
       child: SizedBox(
         height: 250.h,
         child: ListView.builder(
-          physics: const ClampingScrollPhysics(),
+          physics: BouncingScrollPhysics(),
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemCount: TempRepository.products.length,

@@ -19,7 +19,7 @@ class CategorySmallWidget extends StatelessWidget {
       child: SizedBox(
         height: 120.h,
         child: ListView.builder(
-          physics: const ClampingScrollPhysics(),
+          physics: BouncingScrollPhysics(),
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemCount: TempRepository.categories.length,
