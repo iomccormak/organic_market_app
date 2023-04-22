@@ -17,7 +17,7 @@ class CategoryBigWidget extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: 10.w,
+        horizontal: 5.w,
       ),
       child: Container(
         width: 163.w,

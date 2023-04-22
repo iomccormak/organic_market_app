@@ -24,6 +24,7 @@ abstract class AppStrings {
   static const profile = "Профиль";
 
   /// Item
+  static const item = "Продукт";
   static const recommend = "Рекомендуем";
   static const inCart = "В корзину";
   static const description = "Описание";

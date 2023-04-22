@@ -20,61 +20,63 @@ class PersonalInfoPage extends StatelessWidget {
     final TextEditingController emailController = TextEditingController();
     final TextEditingController dateController = TextEditingController();
 
-    return SingleChildScrollView(
-      child: Form(
-        key: _formKey,
-        child: Stack(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 100.h,
-                  ),
-                  PersonalInfoInput(
-                    fieldName: AppStrings.name,
-                    controller: nameController,
-                    validator: Validation.nameValidation,
-                  ),
-                  SizedBox(
-                    height: 12.h,
-                  ),
-                  PersonalInfoInput(
-                    fieldName: AppStrings.surname,
-                    controller: surnameController,
-                    validator: Validation.surnameValidation,
-                  ),
-                  SizedBox(
-                    height: 12.h,
-                  ),
-                  PhoneInput(
-                    fieldName: AppStrings.phone,
-                    controller: phoneController,
-                    validator: Validation.phoneValidation,
-                  ),
-                  SizedBox(
-                    height: 12.h,
-                  ),
-                  DateInput(
-                    fieldName: AppStrings.dateOfBirth,
-                    controller: dateController,
-                  ),
-                  SizedBox(
-                    height: 12.h,
-                  ),
-                  PersonalInfoInput(
-                    fieldName: AppStrings.email,
-                    controller: emailController,
-                    validator: Validation.emailValidation,
-                  ),
-                ],
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Stack(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 100.h,
+                    ),
+                    PersonalInfoInput(
+                      fieldName: AppStrings.name,
+                      controller: nameController,
+                      validator: Validation.nameValidation,
+                    ),
+                    SizedBox(
+                      height: 12.h,
+                    ),
+                    PersonalInfoInput(
+                      fieldName: AppStrings.surname,
+                      controller: surnameController,
+                      validator: Validation.surnameValidation,
+                    ),
+                    SizedBox(
+                      height: 12.h,
+                    ),
+                    PhoneInput(
+                      fieldName: AppStrings.phone,
+                      controller: phoneController,
+                      validator: Validation.phoneValidation,
+                    ),
+                    SizedBox(
+                      height: 12.h,
+                    ),
+                    DateInput(
+                      fieldName: AppStrings.dateOfBirth,
+                      controller: dateController,
+                    ),
+                    SizedBox(
+                      height: 12.h,
+                    ),
+                    PersonalInfoInput(
+                      fieldName: AppStrings.email,
+                      controller: emailController,
+                      validator: Validation.emailValidation,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SaveButton(
-              formKey: _formKey,
-            ),
-          ],
+              SaveButton(
+                formKey: _formKey,
+              ),
+            ],
+          ),
         ),
       ),
     );

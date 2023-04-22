@@ -8,6 +8,7 @@ import 'package:organic_market_app/presentation/pages/home/widgets/best_offers.d
 import 'package:organic_market_app/presentation/pages/home/widgets/bought_before.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/brands.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/green_buttons.dart';
+import 'package:organic_market_app/presentation/pages/home/widgets/home_app_bar.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/low_text.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 

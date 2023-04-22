@@ -4,6 +4,7 @@ import 'package:organic_market_app/data/repository/temp_repository.dart';
 import 'package:organic_market_app/presentation/common_widgets/title_text.dart';
 import 'package:organic_market_app/presentation/pages/catalog/widgets/catalog_button.dart';
 import 'package:organic_market_app/presentation/pages/catalog/widgets/category_big_widget.dart';
+import 'package:organic_market_app/presentation/pages/home/widgets/home_app_bar.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 

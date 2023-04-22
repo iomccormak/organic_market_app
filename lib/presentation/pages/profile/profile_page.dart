@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:organic_market_app/navigation/auto_router.gr.dart';
 import 'package:organic_market_app/presentation/pages/profile/widgets/profile_main_info.dart';
 import 'package:organic_market_app/presentation/pages/profile/widgets/profile_points_info.dart';
 import 'package:organic_market_app/presentation/pages/profile/widgets/profile_text_button.dart';
@@ -38,14 +40,20 @@ class ProfilePage extends StatelessWidget {
                 SizedBox(
                   height: 31.h,
                 ),
-                const ProfileTextButton(
-                  text: AppStrings.personalInfo,
+                GestureDetector(
+                  onTap: () => context.router.navigate(PersonalInfoRoute()),
+                  child: const ProfileTextButton(
+                    text: AppStrings.personalInfo,
+                  ),
                 ),
                 SizedBox(
                   height: 31.h,
                 ),
-                const ProfileTextButton(
-                  text: AppStrings.myOrders,
+                GestureDetector(
+                  onTap: () => context.router.navigate(const MyOrdersRoute()),
+                  child: const ProfileTextButton(
+                    text: AppStrings.myOrders,
+                  ),
                 ),
                 SizedBox(
                   height: 31.h,
