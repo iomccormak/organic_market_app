@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/domain/models/product.dart';
-import 'package:organic_market_app/presentation/pages/item/widgets/item_app_bar.dart';
-import 'package:organic_market_app/presentation/pages/item/widgets/bottom_bar_with_price.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/express_delivery.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/product_images.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/product_brand.dart';
@@ -22,7 +20,7 @@ class ItemPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,

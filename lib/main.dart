@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/data/repository/temp_repository.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
-import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/temp_bottom_bar_widget.dart';
-import 'package:organic_market_app/presentation/pages/cart/cart_page.dart';
-import 'package:organic_market_app/presentation/pages/catalog/catalog_page.dart';
-import 'package:organic_market_app/presentation/pages/home/home_page.dart';
-import 'package:organic_market_app/presentation/pages/home/widgets/home_app_bar.dart';
-import 'package:organic_market_app/presentation/pages/item/item_page.dart';
 
 void main() {
   runApp(MyApp());

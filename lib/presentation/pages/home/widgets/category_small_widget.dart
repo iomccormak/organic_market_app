@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:organic_market_app/data/repository/temp_repository.dart';
 import 'package:organic_market_app/domain/models/main_category.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
-import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class CategorySmallWidget extends StatelessWidget {
@@ -21,7 +19,6 @@ class CategorySmallWidget extends StatelessWidget {
             ? topPadding = 62
             : topPadding = 74
         : topPadding = 86;
-    ;
 
     return Row(
       children: [

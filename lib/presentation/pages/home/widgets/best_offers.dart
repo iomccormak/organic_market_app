@@ -15,7 +15,7 @@ class BestOffers extends StatelessWidget {
       child: SizedBox(
         height: 250.h,
         child: ListView.builder(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemCount: TempRepository.products.length,

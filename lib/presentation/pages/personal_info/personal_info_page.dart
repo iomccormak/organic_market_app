@@ -4,9 +4,7 @@ import 'package:organic_market_app/presentation/pages/personal_info/widgets/date
 import 'package:organic_market_app/presentation/pages/personal_info/widgets/personal_info_input.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/widgets/phone_input.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/widgets/save_button.dart';
-import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
-import 'package:organic_market_app/utils/app_text_styles.dart';
 import 'package:organic_market_app/utils/validation.dart';
 
 class PersonalInfoPage extends StatelessWidget {

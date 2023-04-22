@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:organic_market_app/domain/models/product.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
-import 'package:organic_market_app/presentation/pages/item/item_page.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_strings.dart';

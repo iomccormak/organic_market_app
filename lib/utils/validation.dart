@@ -21,7 +21,7 @@ abstract class Validation {
 
   static String? phoneValidation(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Введите номер телеона';
+      return 'Введите номер телефона';
     }
     if (!RegExp(r'(^(?:[+0]9)?[0-9]{10,12}$)').hasMatch(value)) {
       return "Некорректный номер телефона";

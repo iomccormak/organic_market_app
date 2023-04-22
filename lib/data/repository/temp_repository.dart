@@ -12,10 +12,43 @@ import 'package:organic_market_app/domain/models/categories/meat.dart';
 import 'package:organic_market_app/domain/models/categories/milk_products.dart';
 import 'package:organic_market_app/domain/models/categories/superfood.dart';
 import 'package:organic_market_app/domain/models/categories/vegetables.dart';
+import 'package:organic_market_app/domain/models/order.dart';
+import 'package:organic_market_app/domain/models/order_status.dart';
 import 'package:organic_market_app/domain/models/product.dart';
 import 'package:organic_market_app/utils/app_images.dart';
 
 abstract class TempRepository {
+  static final orders = [
+    Order(
+      products: [
+        TempRepository.products[0],
+        TempRepository.products[0],
+        TempRepository.products[1],
+        TempRepository.products[0],
+        TempRepository.products[1],
+        TempRepository.products[0],
+        TempRepository.products[1],
+      ],
+      date: DateTime(2023, 4, 31),
+      status: OrderStatus.delievered,
+    ),
+    Order(
+      products: [
+        TempRepository.products[0],
+      ],
+      date: DateTime(2023, 5, 12),
+      status: OrderStatus.onTheWay,
+    ),
+    Order(
+      products: [
+        TempRepository.products[0],
+        TempRepository.products[1],
+      ],
+      date: DateTime(2023, 4, 12),
+      status: OrderStatus.delievered,
+    ),
+  ];
+
   static final categories = [
     Alcohol(),
     Beverages(),
@@ -32,6 +65,7 @@ abstract class TempRepository {
     Superfood(),
     Vegetables(),
   ];
+
   static const mainAdvertisments = [
     "assets/images/mainAdv1.png",
     "assets/images/mainAdv2.png",

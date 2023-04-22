@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:organic_market_app/data/repository/temp_repository.dart';
-import 'package:organic_market_app/domain/models/categories/alcohol/alcohol.dart';
-import 'package:organic_market_app/domain/models/categories/beverages.dart';
-import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/temp_bottom_bar_widget.dart';
 import 'package:organic_market_app/presentation/common_widgets/title_text.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/advertisment.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/category_small_widget.dart';
-import 'package:organic_market_app/presentation/pages/home/widgets/home_app_bar.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/best_offers.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/bought_before.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/brands.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/green_buttons.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/low_text.dart';
-import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 
 class HomePage extends StatelessWidget {
@@ -23,7 +17,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -52,7 +46,7 @@ class HomePage extends StatelessWidget {
             child: SizedBox(
               height: 133.h,
               child: ListView.builder(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 itemCount: TempRepository.categories.length,

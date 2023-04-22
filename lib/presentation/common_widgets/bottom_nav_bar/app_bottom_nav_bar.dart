@@ -45,7 +45,7 @@ class AppBottomNavBar extends StatelessWidget {
             icon: SvgPicture.asset(AppIcons.mainSmall),
             activeIcon: SvgPicture.asset(
               AppIcons.mainSmall,
-              colorFilter: ColorFilter.mode(
+              colorFilter: const ColorFilter.mode(
                 Color.fromARGB(255, 209, 254, 83),
                 BlendMode.modulate,
               ),
@@ -56,7 +56,7 @@ class AppBottomNavBar extends StatelessWidget {
             icon: SvgPicture.asset(AppIcons.catalogue),
             activeIcon: SvgPicture.asset(
               AppIcons.catalogue,
-              colorFilter: ColorFilter.mode(
+              colorFilter: const ColorFilter.mode(
                 AppColors.mainGreen,
                 BlendMode.srcIn,
               ),
@@ -67,7 +67,7 @@ class AppBottomNavBar extends StatelessWidget {
             icon: SvgPicture.asset(AppIcons.search),
             activeIcon: SvgPicture.asset(
               AppIcons.search,
-              colorFilter: ColorFilter.mode(
+              colorFilter: const ColorFilter.mode(
                 AppColors.mainGreen,
                 BlendMode.srcIn,
               ),
@@ -78,7 +78,7 @@ class AppBottomNavBar extends StatelessWidget {
             icon: SvgPicture.asset(AppIcons.customCart),
             activeIcon: SvgPicture.asset(
               AppIcons.customCart,
-              colorFilter: ColorFilter.mode(
+              colorFilter: const ColorFilter.mode(
                 AppColors.mainGreen,
                 BlendMode.srcIn,
               ),
@@ -89,7 +89,7 @@ class AppBottomNavBar extends StatelessWidget {
             icon: SvgPicture.asset(AppIcons.profile),
             activeIcon: SvgPicture.asset(
               AppIcons.profile,
-              colorFilter: ColorFilter.mode(
+              colorFilter: const ColorFilter.mode(
                 AppColors.mainGreen,
                 BlendMode.srcIn,
               ),
@@ -99,6 +99,5 @@ class AppBottomNavBar extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }

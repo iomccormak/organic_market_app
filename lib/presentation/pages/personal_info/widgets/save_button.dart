@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
+import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class SaveButton extends StatelessWidget {
@@ -50,7 +51,7 @@ class SaveButton extends StatelessWidget {
             ),
             alignment: Alignment.center,
             child: Text(
-              'Сохранить',
+              AppStrings.save,
               style: AppTextStyles.greenButtonTextStyle,
             ),
           ),

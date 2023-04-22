@@ -47,4 +47,8 @@ abstract class AppIcons {
 
   /// personal info
   static const calendar = 'assets/icons/calendar.svg';
+
+  /// Orders
+  static const orderTruck = 'assets/icons/greenCheck.svg';
+  static const orderCheck = 'assets/icons/blueTruck.svg';
 }

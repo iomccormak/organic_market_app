@@ -4,7 +4,7 @@ abstract class AppStrings {
   static const plusSeven = "+7";
 
   /// Home
-  static const adress = "ул. Пушкина 15, д. 20, кв. 113";
+  static const adress = "ул. Пушкина 15, д. Колотушкина, кв. 113";
   static const popCategories = "Популярные категории";
   static const bestOffers = "Лучшие предложения";
   static const boughtBefore = "Уже покупали";
@@ -76,4 +76,9 @@ abstract class AppStrings {
   static const dateOfBirth = 'Дата рождения';
   static const phone = 'Телефон';
   static const email = 'E-mail';
+  static const save = 'Сохранить';
+
+  /// Orders
+  static const onTheWay = 'В пути';
+  static const delievered = 'Доставлено';
 }

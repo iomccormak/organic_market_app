@@ -47,7 +47,7 @@ class EmptyScreen extends StatelessWidget {
                   padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom,
                   ),
-                  child: PhoneInputPage(),
+                  child: const PhoneInputPage(),
                   //child: PhoneConfirmation(),
                   //child: NameInput(),
                 );
