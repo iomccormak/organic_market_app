@@ -1,15 +1,21 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market_app/presentation/common_widgets/modal_bottom_sheet.dart';
+import 'package:organic_market_app/presentation/pages/cart/modal_bottom_sheets/name_input_page.dart';
+import 'package:organic_market_app/presentation/pages/cart/modal_bottom_sheets/phone_confirmation_page.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/validation.dart';
 
 class PhoneInputPage extends StatelessWidget {
   const PhoneInputPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final _formKey = GlobalKey<FormState>();
+
     return SizedBox(
       height: 375.h,
       child: Padding(
@@ -41,20 +47,30 @@ class PhoneInputPage extends StatelessWidget {
               width: 343.w,
               height: 51.h,
               color: AppColors.toggleBackground,
-              child: TextFormField(
-                style: AppTextStyles.bottomSheetTitleTextStyle.copyWith(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w500,
-                ),
-                initialValue: '+7',
-                keyboardType: TextInputType.number,
-                cursorWidth: 1,
-                cursorColor: AppColors.black,
-                maxLength: 12,
-                textAlign: TextAlign.center,
-                decoration: const InputDecoration(
-                  border: InputBorder.none,
-                  counterText: '',
+              alignment: Alignment.center,
+              child: Form(
+                key: _formKey,
+                child: TextFormField(
+                  style: AppTextStyles.bottomSheetTitleTextStyle.copyWith(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  initialValue: AppStrings.plusSeven,
+                  keyboardType: TextInputType.number,
+                  cursorWidth: 1,
+                  cursorColor: AppColors.black,
+                  maxLength: 12,
+                  textAlign: TextAlign.center,
+                  decoration: const InputDecoration(
+                    isDense: true,
+                    border: InputBorder.none,
+                    counterText: '',
+                    errorStyle: TextStyle(
+                      fontSize: 12,
+                      height: 1.02,
+                    ),
+                  ),
+                  validator: Validation.phoneValidation,
                 ),
               ),
             ),
@@ -94,8 +110,11 @@ class PhoneInputPage extends StatelessWidget {
               height: 24.h,
             ),
             GestureDetector(
-              onTap: () {
-                context.router.pop();
+              onTap: () async {
+                if (_formKey.currentState!.validate()) {
+                  await context.router.pop();
+                  modalBottomSheet(context, PhoneConfirmationPage());
+                }
               },
               child: Container(
                 width: 343.w,

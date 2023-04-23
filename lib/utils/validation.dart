@@ -23,7 +23,7 @@ abstract class Validation {
     if (value == null || value.isEmpty) {
       return 'Введите номер телефона';
     }
-    if (!RegExp(r'(^(?:[+0]9)?[0-9]{10,12}$)').hasMatch(value)) {
+    if (!RegExp(r'(^(?:[+0]7)?[0-9]{10,12}$)').hasMatch(value)) {
       return "Некорректный номер телефона";
     }
     return null;
@@ -36,6 +36,13 @@ abstract class Validation {
     if (!RegExp(r'^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$')
         .hasMatch(value)) {
       return "Некорректный адрес e-mail почты";
+    }
+    return null;
+  }
+
+  static String? codeValidation(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Введите код';
     }
     return null;
   }

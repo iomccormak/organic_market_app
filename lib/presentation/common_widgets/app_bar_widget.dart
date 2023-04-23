@@ -118,7 +118,7 @@ class AppBarWidget extends StatelessWidget {
                       child: SvgPicture.asset(AppIcons.back),
                     ),
                   )
-                : const Spacer(),
+                : const SizedBox.shrink(),
             likeAndShareButtons
                 ? Center(
                     child: Row(
@@ -132,7 +132,7 @@ class AppBarWidget extends StatelessWidget {
                       ],
                     ),
                   )
-                : const Spacer(),
+                : const SizedBox.shrink(),
             deleteButton
                 ? GestureDetector(
                     child: Align(
@@ -140,7 +140,7 @@ class AppBarWidget extends StatelessWidget {
                       child: SvgPicture.asset(AppIcons.litter),
                     ),
                   )
-                : const Spacer(),
+                : const SizedBox.shrink(),
           ],
         ),
       ),

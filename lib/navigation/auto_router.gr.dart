@@ -13,10 +13,11 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i12;
 import 'package:auto_route/empty_router_widgets.dart' as _i2;
+import 'package:flutter/cupertino.dart' as _i14;
 import 'package:flutter/material.dart' as _i13;
 
-import '../domain/models/order.dart' as _i15;
-import '../domain/models/product.dart' as _i14;
+import '../domain/models/order.dart' as _i16;
+import '../domain/models/product.dart' as _i15;
 import '../presentation/pages/cart/cart_page.dart' as _i5;
 import '../presentation/pages/catalog/catalog_page.dart' as _i3;
 import '../presentation/pages/home/home_page.dart' as _i6;
@@ -279,8 +280,8 @@ class HomeRoute extends _i12.PageRouteInfo<void> {
 /// [_i7.ItemPage]
 class ItemRoute extends _i12.PageRouteInfo<ItemRouteArgs> {
   ItemRoute({
-    _i13.Key? key,
-    required _i14.Product product,
+    _i14.Key? key,
+    required _i15.Product product,
   }) : super(
           ItemRoute.name,
           path: ':product',
@@ -299,9 +300,9 @@ class ItemRouteArgs {
     required this.product,
   });
 
-  final _i13.Key? key;
+  final _i14.Key? key;
 
-  final _i14.Product product;
+  final _i15.Product product;
 
   @override
   String toString() {
@@ -324,7 +325,7 @@ class ProfileRoute extends _i12.PageRouteInfo<void> {
 /// generated route for
 /// [_i9.PersonalInfoPage]
 class PersonalInfoRoute extends _i12.PageRouteInfo<PersonalInfoRouteArgs> {
-  PersonalInfoRoute({_i13.Key? key})
+  PersonalInfoRoute({_i14.Key? key})
       : super(
           PersonalInfoRoute.name,
           path: ':personalInfo',
@@ -337,7 +338,7 @@ class PersonalInfoRoute extends _i12.PageRouteInfo<PersonalInfoRouteArgs> {
 class PersonalInfoRouteArgs {
   const PersonalInfoRouteArgs({this.key});
 
-  final _i13.Key? key;
+  final _i14.Key? key;
 
   @override
   String toString() {
@@ -361,8 +362,8 @@ class MyOrdersRoute extends _i12.PageRouteInfo<void> {
 /// [_i11.OrderPage]
 class OrderRoute extends _i12.PageRouteInfo<OrderRouteArgs> {
   OrderRoute({
-    _i13.Key? key,
-    required _i15.Order order,
+    _i14.Key? key,
+    required _i16.Order order,
   }) : super(
           OrderRoute.name,
           path: ':order',
@@ -381,9 +382,9 @@ class OrderRouteArgs {
     required this.order,
   });
 
-  final _i13.Key? key;
+  final _i14.Key? key;
 
-  final _i15.Order order;
+  final _i16.Order order;
 
   @override
   String toString() {

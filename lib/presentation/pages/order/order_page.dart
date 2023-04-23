@@ -11,11 +11,13 @@ import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/date_formatter.dart';
+import 'package:organic_market_app/utils/text_formatter.dart';
 
 class OrderPage extends StatelessWidget {
   const OrderPage({
     super.key,
-    @PathParam() required this.order,
+    required this.order,
   });
 
   final Order order;
@@ -53,7 +55,7 @@ class OrderPage extends StatelessWidget {
                   height: 100.h,
                 ),
                 Text(
-                  DateFormat('dd.MM.yyyy').format(order.date),
+                  order.date.toRusFormat(),
                   style: AppTextStyles.orderTextStyle.copyWith(
                     color: AppColors.mainGrey,
                   ),
@@ -62,7 +64,7 @@ class OrderPage extends StatelessWidget {
                   height: 4.h,
                 ),
                 Text(
-                  '${order.products.length} товар(ов) на сумму ${order.getPrice()} ${AppStrings.ruble}',
+                  '${order.products.length.toString().changeCase()} на сумму ${order.getPrice()} ${AppStrings.ruble}',
                   style: AppTextStyles.orderTextStyle,
                 ),
                 SizedBox(

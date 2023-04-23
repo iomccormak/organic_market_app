@@ -1,14 +1,22 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market_app/presentation/common_widgets/modal_bottom_sheet.dart';
+import 'package:organic_market_app/presentation/pages/cart/modal_bottom_sheets/name_input_page.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/validation.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
 class PhoneConfirmationPage extends StatelessWidget {
   const PhoneConfirmationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final _formKey = GlobalKey<FormState>();
+    String currentValue = '';
+
     return SizedBox(
       height: 339.h,
       child: Padding(
@@ -39,20 +47,29 @@ class PhoneConfirmationPage extends StatelessWidget {
             Container(
               width: 343.w,
               height: 51.h,
-              color: AppColors.toggleBackground,
-              child: TextFormField(
-                style: AppTextStyles.bottomSheetTitleTextStyle.copyWith(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w500,
-                ),
-                keyboardType: TextInputType.number,
-                cursorWidth: 1,
-                cursorColor: AppColors.black,
-                maxLength: 4,
-                textAlign: TextAlign.center,
-                decoration: const InputDecoration(
-                  border: InputBorder.none,
-                  counterText: '',
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
+              alignment: Alignment.center,
+              child: Form(
+                key: _formKey,
+                child: PinCodeTextField(
+                  appContext: context,
+                  length: 4,
+                  onChanged: (value) => null,
+                  keyboardType: TextInputType.number,
+                  pinTheme: PinTheme(
+                    shape: PinCodeFieldShape.box,
+                    borderRadius: BorderRadius.all(Radius.circular(12.r)),
+                    borderWidth: 0,
+                    activeColor: Colors.transparent,
+                    inactiveColor: AppColors.secondGrey,
+                    errorBorderColor: Colors.transparent,
+                    selectedFillColor: AppColors.secondGrey,
+                    inactiveFillColor: AppColors.secondGrey,
+                    selectedColor: Colors.transparent,
+                    disabledColor: AppColors.secondGrey,
+                    activeFillColor: AppColors.secondGrey,
+                  ),
+                  validator: Validation.codeValidation,
                 ),
               ),
             ),
@@ -68,19 +85,27 @@ class PhoneConfirmationPage extends StatelessWidget {
             SizedBox(
               height: 24.h,
             ),
-            Container(
-              width: 343.w,
-              height: 58.h,
-              alignment: Alignment.center,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(43),
+            GestureDetector(
+              onTap: () async {
+                if (_formKey.currentState!.validate()) {
+                  await context.router.pop();
+                  modalBottomSheet(context, NameInputPage());
+                }
+              },
+              child: Container(
+                width: 343.w,
+                height: 58.h,
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(43),
+                  ),
+                  color: AppColors.mainGreen,
                 ),
-                color: AppColors.mainGreen,
-              ),
-              child: Text(
-                AppStrings.confirm,
-                style: AppTextStyles.greenButtonTextStyle,
+                child: Text(
+                  AppStrings.confirm,
+                  style: AppTextStyles.greenButtonTextStyle,
+                ),
               ),
             )
           ],

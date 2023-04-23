@@ -16,7 +16,7 @@ import 'package:organic_market_app/utils/app_text_styles.dart';
 class ItemPage extends StatelessWidget {
   const ItemPage({
     super.key,
-    @PathParam() required this.product,
+    required this.product,
   });
 
   final Product product;
@@ -144,7 +144,7 @@ class ItemPage extends StatelessWidget {
                 ),
                 const Recommendations(),
                 SizedBox(
-                  height: 24.h,
+                  height: 110.h,
                 ),
               ],
             ),

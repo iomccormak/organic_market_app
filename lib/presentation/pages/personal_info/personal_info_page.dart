@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market_app/presentation/common_widgets/button_under_nav_bar.dart';
+import 'package:organic_market_app/presentation/common_widgets/main_green_button.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/widgets/date_input.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/widgets/personal_info_input.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/widgets/phone_input.dart';
-import 'package:organic_market_app/presentation/pages/personal_info/widgets/save_button.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/validation.dart';
 
@@ -72,8 +73,19 @@ class PersonalInfoPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SaveButton(
-                formKey: _formKey,
+              ButtonUnderNavBar(
+                button: GestureDetector(
+                  onTap: () {
+                    if (_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Processing Data')),
+                      );
+                    }
+                  },
+                  child: const MainGreenButton(
+                    label: AppStrings.save,
+                  ),
+                ),
               ),
             ],
           ),

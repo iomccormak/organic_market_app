@@ -41,6 +41,7 @@ class GreenButtons extends StatelessWidget {
 
   Future<dynamic> _showModalBottomSheet(BuildContext context, Widget widget) {
     return showModalBottomSheet(
+      useRootNavigator: true,
       isScrollControlled: true,
       context: context,
       shape: const RoundedRectangleBorder(

@@ -35,26 +35,9 @@ class EmptyScreen extends StatelessWidget {
           SizedBox(
             height: 36.h,
           ),
-          /*GestureDetector(
-            onTap: () => showModalBottomSheet(
-              context: context,
-              isScrollControlled: true,
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.vertical(
-                  top: Radius.circular(10),
-                ),
-              ),
-              builder: (context) {
-                return Padding(
-                  padding: EdgeInsets.only(
-                    bottom: MediaQuery.of(context).viewInsets.bottom,
-                  ),
-                  child: const PhoneInputPage(),
-                  //child: PhoneConfirmation(),
-                  //child: NameInput(),
-                );
-              },
-            ),*/
+          GestureDetector(
+            onTap: () => modalBottomSheet(context),
+          ),
           GestureDetector(
             onTap: () => context.router.navigate(CatalogRouter()),
             child: Container(
@@ -96,6 +79,28 @@ class EmptyScreen extends StatelessWidget {
           ),*/
         ],
       ),
+    );
+  }
+
+  Future<dynamic> modalBottomSheet(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(10),
+        ),
+      ),
+      builder: (context) {
+        return Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+          ),
+          child: const PhoneInputPage(),
+          //child: PhoneConfirmation(),
+          //child: NameInput(),
+        );
+      },
     );
   }
 }

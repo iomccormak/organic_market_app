@@ -10,6 +10,8 @@ import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/date_formatter.dart';
+import 'package:organic_market_app/utils/text_formatter.dart';
 
 class OrderSmallWidget extends StatelessWidget {
   const OrderSmallWidget({super.key, required this.order});
@@ -38,7 +40,8 @@ class OrderSmallWidget extends StatelessWidget {
       },
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: SizedBox(
+        child: Container(
+          color: Colors.transparent,
           height: 43.h,
           child: Row(
             children: [
@@ -64,13 +67,13 @@ class OrderSmallWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          DateFormat('dd.MM.yyyy').format(order.date),
+                          order.date.toRusFormat(),
                           style: AppTextStyles.orderTextStyle.copyWith(
                             color: AppColors.mainGrey,
                           ),
                         ),
                         Text(
-                          '${order.products.length} товар(ов) на сумму ${order.getPrice()} ${AppStrings.ruble}',
+                          '${order.products.length.toString().changeCase()} на сумму ${order.getPrice()} ${AppStrings.ruble}',
                           style: AppTextStyles.orderTextStyle,
                         ),
                       ],

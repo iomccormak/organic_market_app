@@ -14,9 +14,9 @@ class NavBarShadow extends StatelessWidget {
           color: AppColors.shadowColor,
           boxShadow: [
             BoxShadow(
-              color: Colors.black,
-              blurRadius: 7,
-              spreadRadius: 1,
+              color: AppColors.shadowColor,
+              blurRadius: 15,
+              spreadRadius: 7,
             ),
           ],
         ),
