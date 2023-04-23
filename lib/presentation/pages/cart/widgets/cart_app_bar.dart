@@ -28,27 +28,28 @@ class CartAppBar extends StatelessWidget {
         ],
       ),
       child: Padding(
-          padding: EdgeInsets.only(
-            top: 30.h,
-          ),
-          child: Stack(
-            children: [
-              Center(
-                child: Text(
-                  AppStrings.cart,
-                  style: AppTextStyles.appBarTextStyle,
-                ),
+        padding: EdgeInsets.only(
+          top: 30.h,
+        ),
+        child: Stack(
+          children: [
+            Center(
+              child: Text(
+                AppStrings.cart,
+                style: AppTextStyles.appBarTextStyle,
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: 335.w,
-                  top: 6.h,
-                  bottom: 9.h,
-                ),
-                child: SvgPicture.asset(AppIcons.litter),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 335.w,
+                top: 6.h,
+                bottom: 9.h,
               ),
-            ],
-          )),
+              child: SvgPicture.asset(AppIcons.litter),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
