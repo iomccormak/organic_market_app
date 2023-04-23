@@ -82,4 +82,5 @@ abstract class AppStrings {
   /// Orders
   static const onTheWay = 'В пути';
   static const delievered = 'Доставлено';
+  static const deal = 'Оформить';
 }

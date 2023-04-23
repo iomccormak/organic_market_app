@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
@@ -92,19 +93,24 @@ class PhoneInputPage extends StatelessWidget {
             SizedBox(
               height: 24.h,
             ),
-            Container(
-              width: 343.w,
-              height: 58.h,
-              alignment: Alignment.center,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(43),
+            GestureDetector(
+              onTap: () {
+                context.router.pop();
+              },
+              child: Container(
+                width: 343.w,
+                height: 58.h,
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(43),
+                  ),
+                  color: AppColors.mainGreen,
                 ),
-                color: AppColors.mainGreen,
-              ),
-              child: Text(
-                AppStrings.getCode,
-                style: AppTextStyles.greenButtonTextStyle,
+                child: Text(
+                  AppStrings.getCode,
+                  style: AppTextStyles.greenButtonTextStyle,
+                ),
               ),
             ),
           ],

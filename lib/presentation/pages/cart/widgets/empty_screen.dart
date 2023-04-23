@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market_app/navigation/auto_router.gr.dart';
 import 'package:organic_market_app/presentation/pages/cart/modal_bottom_sheets/phone_input_page.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
@@ -33,7 +35,7 @@ class EmptyScreen extends StatelessWidget {
           SizedBox(
             height: 36.h,
           ),
-          GestureDetector(
+          /*GestureDetector(
             onTap: () => showModalBottomSheet(
               context: context,
               isScrollControlled: true,
@@ -52,7 +54,9 @@ class EmptyScreen extends StatelessWidget {
                   //child: NameInput(),
                 );
               },
-            ),
+            ),*/
+          GestureDetector(
+            onTap: () => context.router.navigate(CatalogRouter()),
             child: Container(
               width: 247.w,
               height: 47.h,
@@ -71,6 +75,7 @@ class EmptyScreen extends StatelessWidget {
               ),
             ),
           ),
+
           // ORIGINAL WITH NO BUTTON
           /*Container(
             width: 247.w,

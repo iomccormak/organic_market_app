@@ -51,4 +51,6 @@ abstract class AppIcons {
   /// Orders
   static const orderTruck = 'assets/icons/greenCheck.svg';
   static const orderCheck = 'assets/icons/blueTruck.svg';
+  static const plus = 'assets/icons/plus.svg';
+  static const minus = 'assets/icons/minus.svg';
 }

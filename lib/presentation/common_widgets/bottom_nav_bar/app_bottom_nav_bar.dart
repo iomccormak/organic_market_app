@@ -19,13 +19,13 @@ class AppBottomNavBar extends StatelessWidget {
           topLeft: Radius.circular(12),
           topRight: Radius.circular(12),
         ),
-        boxShadow: [
+        /*boxShadow: [
           BoxShadow(
             color: AppColors.shadowColor,
             blurRadius: 15,
             spreadRadius: 7,
           ),
-        ],
+        ],*/
         color: AppColors.white,
       ),
       child: BottomNavigationBar(

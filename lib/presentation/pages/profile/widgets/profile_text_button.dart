@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
@@ -11,17 +12,21 @@ class ProfileTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          text,
-          style: AppTextStyles.bottomSheetTextStyle.copyWith(
-            color: AppColors.black,
+    return Container(
+      color: Colors.transparent,
+      height: 40.h,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            text,
+            style: AppTextStyles.bottomSheetTextStyle.copyWith(
+              color: AppColors.black,
+            ),
           ),
-        ),
-        SvgPicture.asset(AppIcons.backToRight),
-      ],
+          SvgPicture.asset(AppIcons.backToRight),
+        ],
+      ),
     );
   }
 }

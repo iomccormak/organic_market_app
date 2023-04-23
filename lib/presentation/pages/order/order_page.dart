@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:organic_market_app/domain/models/order.dart';
 import 'package:organic_market_app/domain/models/order_status.dart';
+import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/pages/order/widgets/order_product_widget.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
@@ -42,80 +43,85 @@ class OrderPage extends StatelessWidget {
     }
 
     return Scaffold(
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 100.h,
-            ),
-            Text(
-              DateFormat('dd.MM.yyyy').format(order.date),
-              style: AppTextStyles.orderTextStyle.copyWith(
-                color: AppColors.mainGrey,
-              ),
-            ),
-            SizedBox(
-              height: 4.h,
-            ),
-            Text(
-              '${order.products.length} товар(ов) на сумму ${order.getPrice()} ${AppStrings.ruble}',
-              style: AppTextStyles.orderTextStyle,
-            ),
-            SizedBox(
-              height: 24.h,
-            ),
-            Container(
-              width: 115.w,
-              height: 40.h,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(93),
+      body: Stack(
+        children: [
+          Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 100.h,
                 ),
-                color: iconBackground,
-              ),
-              alignment: Alignment.center,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(icon),
-                  SizedBox(
-                    width: 7.w,
+                Text(
+                  DateFormat('dd.MM.yyyy').format(order.date),
+                  style: AppTextStyles.orderTextStyle.copyWith(
+                    color: AppColors.mainGrey,
                   ),
-                  Text(
-                    iconLabel,
-                    style: AppTextStyles.orderTextStyle.copyWith(
-                      color: iconLabelColor,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 35.h,
-            ),
-            SizedBox(
-              height: 505.h,
-              child: ListView.builder(
-                padding: EdgeInsets.only(top: 1.h),
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                itemCount: order.products.length,
-                itemBuilder: (context, index) => Column(
-                  children: [
-                    OrderProductWidget(
-                      product: order.products[index],
-                    ),
-                    SizedBox(
-                      height: 26.h,
-                    ),
-                  ],
                 ),
-              ),
-            )
-          ],
-        ),
+                SizedBox(
+                  height: 4.h,
+                ),
+                Text(
+                  '${order.products.length} товар(ов) на сумму ${order.getPrice()} ${AppStrings.ruble}',
+                  style: AppTextStyles.orderTextStyle,
+                ),
+                SizedBox(
+                  height: 24.h,
+                ),
+                Container(
+                  width: 115.w,
+                  height: 40.h,
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(93),
+                    ),
+                    color: iconBackground,
+                  ),
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(icon),
+                      SizedBox(
+                        width: 7.w,
+                      ),
+                      Text(
+                        iconLabel,
+                        style: AppTextStyles.orderTextStyle.copyWith(
+                          color: iconLabelColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 35.h,
+                ),
+                SizedBox(
+                  height: 505.h,
+                  child: ListView.builder(
+                    padding: EdgeInsets.only(top: 1.h),
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemCount: order.products.length,
+                    itemBuilder: (context, index) => Column(
+                      children: [
+                        OrderProductWidget(
+                          product: order.products[index],
+                        ),
+                        SizedBox(
+                          height: 26.h,
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          const NavBarShadow(),
+        ],
       ),
     );
   }
