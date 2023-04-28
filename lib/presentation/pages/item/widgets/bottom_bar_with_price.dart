@@ -50,7 +50,7 @@ class BottomBarWithPrice extends StatelessWidget {
                     width: 4.w,
                   ),
                   Text(
-                    '/ ${product.weight.first.split(' ').last}',
+                    '/ 1 шт.',
                     style: AppTextStyles.bottomBarTextStyle.copyWith(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w500,

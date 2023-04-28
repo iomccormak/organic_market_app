@@ -12,8 +12,8 @@ class Order {
     required this.status,
   });
 
-  int getPrice() {
-    int price = 0;
+  double getPrice() {
+    double price = 0;
     for (Product p in products) {
       price += p.price;
     }

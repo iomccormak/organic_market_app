@@ -12,35 +12,53 @@ class EmptyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            AppStrings.cartIsEmpty,
-            style: AppTextStyles.titleTextStyle.copyWith(
-              fontWeight: FontWeight.w500,
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              AppStrings.cartIsEmpty,
+              style: AppTextStyles.titleTextStyle.copyWith(
+                fontWeight: FontWeight.w500,
+              ),
             ),
-          ),
-          SizedBox(
-            height: 9.h,
-          ),
-          Text(
-            AppStrings.addedProd,
-            style: AppTextStyles.bottomBarTextStyle.copyWith(
-              fontWeight: FontWeight.w400,
+            SizedBox(
+              height: 9.h,
             ),
-          ),
-          SizedBox(
-            height: 36.h,
-          ),
-          GestureDetector(
-            onTap: () => modalBottomSheet(context),
-          ),
-          GestureDetector(
-            onTap: () => context.router.navigate(CatalogRouter()),
-            child: Container(
+            Text(
+              AppStrings.addedProd,
+              style: AppTextStyles.bottomBarTextStyle.copyWith(
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            SizedBox(
+              height: 36.h,
+            ),
+            GestureDetector(
+              onTap: () => context.router.navigate(CatalogRouter()),
+              child: Container(
+                width: 247.w,
+                height: 47.h,
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(43),
+                  ),
+                  color: AppColors.mainGreen,
+                ),
+                child: Text(
+                  AppStrings.goShopping,
+                  style: AppTextStyles.greenButtonTextStyle.copyWith(
+                    fontSize: 16.sp,
+                  ),
+                ),
+              ),
+            ),
+
+            // ORIGINAL WITH NO BUTTON
+            /*Container(
               width: 247.w,
               height: 47.h,
               alignment: Alignment.center,
@@ -56,33 +74,14 @@ class EmptyScreen extends StatelessWidget {
                   fontSize: 16.sp,
                 ),
               ),
-            ),
-          ),
-
-          // ORIGINAL WITH NO BUTTON
-          /*Container(
-            width: 247.w,
-            height: 47.h,
-            alignment: Alignment.center,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(43),
-              ),
-              color: AppColors.mainGreen,
-            ),
-            child: Text(
-              AppStrings.goShopping,
-              style: AppTextStyles.greenButtonTextStyle.copyWith(
-                fontSize: 16.sp,
-              ),
-            ),
-          ),*/
-        ],
+            ),*/
+          ],
+        ),
       ),
     );
   }
 
-  Future<dynamic> modalBottomSheet(BuildContext context) {
+  /*Future<dynamic> modalBottomSheet(BuildContext context) {
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -102,5 +101,5 @@ class EmptyScreen extends StatelessWidget {
         );
       },
     );
-  }
+  }*/
 }

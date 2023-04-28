@@ -26,7 +26,7 @@ class ProductBrand extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Бренд «Углече Поле»',
+              'Данный бренд',
               style: AppTextStyles.lowWidgetTextStyle.copyWith(
                 fontSize: 13.sp,
               ),

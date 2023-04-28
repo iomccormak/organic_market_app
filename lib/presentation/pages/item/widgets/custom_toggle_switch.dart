@@ -39,9 +39,9 @@ class _CustomToggleSwitchState extends State<CustomToggleSwitch> {
         initialLabelIndex: 1,
         totalSwitches: 3,
         labels: [
-          '${widget.product.weight[0]} -${widget.product.discount[0]}%',
-          '${widget.product.weight[1]} -${widget.product.discount[1]}%',
-          '${widget.product.weight[2]} -${widget.product.discount[2]}%',
+          '1 шт.',
+          '2 шт. -25%',
+          '3 шт. -50%',
         ],
         radiusStyle: true,
       ),

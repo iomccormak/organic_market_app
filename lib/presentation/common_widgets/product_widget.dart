@@ -43,8 +43,9 @@ class ProductWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(
-                    product.image[0],
+                  image: NetworkImage(
+                    product.image,
+                    scale: 0.5,
                   ),
                 ),
                 borderRadius: const BorderRadius.vertical(
@@ -60,6 +61,8 @@ class ProductWidget extends StatelessWidget {
               ),
               child: Text(
                 product.title,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
                 style: AppTextStyles.productWidgetTextStyle,
               ),
             ),
@@ -70,7 +73,7 @@ class ProductWidget extends StatelessWidget {
                 top: 177.h,
               ),
               child: Text(
-                'за ${product.weight[1]}',
+                'за 1 шт.',
                 style: AppTextStyles.productWidgetTextStyle.copyWith(
                   color: AppColors.mainGrey,
                 ),

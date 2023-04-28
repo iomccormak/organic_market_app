@@ -1,25 +1,47 @@
 import 'package:organic_market_app/domain/models/main_category.dart';
 
 class Product {
-  final String title;
-  final String description;
-  final MainCategory category;
-  final List<String> image;
-  final int price;
-  final List<String> weight;
-  final List<int> discount;
+  int id;
+  String title;
+  String description;
+  //MainCategory category;
+  String image;
+  double price;
+  List<String> weight;
+  List<int> discount;
   bool? organic;
   bool? expressDelivery;
 
   Product({
+    required this.id,
     required this.title,
     required this.description,
-    required this.category,
     required this.image,
     required this.price,
-    required this.weight,
-    required this.discount,
+    this.weight = const [],
+    this.discount = const [],
     this.organic = false,
     this.expressDelivery = false,
   });
+
+  factory Product.fromJson(Map<String, dynamic> data) {
+    return Product(
+      id: data['id'],
+      title: data['title'],
+      price: double.parse(data['price'].toString()),
+      description: data['description'],
+      image: data['image'],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'price': price,
+      'description': description,
+      'image': image,
+      'price': price,
+    };
+  }
 }

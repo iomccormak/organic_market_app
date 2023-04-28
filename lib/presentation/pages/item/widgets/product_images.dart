@@ -32,9 +32,9 @@ class _ProductImagesState extends State<ProductImages> {
                 () => currentIndex = index,
               ),
             ),
-            itemCount: widget.product.image.length,
-            itemBuilder: (context, index, realIndex) => Image.asset(
-              widget.product.image[index],
+            itemCount: 3,
+            itemBuilder: (context, index, realIndex) => Image.network(
+              widget.product.image,
               fit: BoxFit.cover,
             ),
           ),
@@ -56,7 +56,7 @@ class _ProductImagesState extends State<ProductImages> {
               alignment: Alignment.center,
               child: AnimatedSmoothIndicator(
                 activeIndex: currentIndex,
-                count: widget.product.image.length,
+                count: 3,
                 effect: ExpandingDotsEffect(
                   activeDotColor: AppColors.white,
                   dotColor: AppColors.white,

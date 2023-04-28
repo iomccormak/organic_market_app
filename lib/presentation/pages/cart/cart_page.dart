@@ -22,7 +22,8 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return EmptyScreen();
+    /*return Stack(
       children: [
         SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
@@ -87,6 +88,6 @@ class CartPage extends StatelessWidget {
           ),
         ),
       ],
-    );
+    );*/
   }
 }

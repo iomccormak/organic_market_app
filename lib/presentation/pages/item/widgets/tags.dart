@@ -23,7 +23,7 @@ class Tags extends StatelessWidget {
           ),
           alignment: Alignment.center,
           child: Text(
-            '-${product.discount[1]}%',
+            '-25%',
             style: AppTextStyles.lowWidgetTextStyle.copyWith(
               fontWeight: FontWeight.w700,
               color: AppColors.white,
@@ -33,56 +33,52 @@ class Tags extends StatelessWidget {
         SizedBox(
           width: 8.w,
         ),
-        product.organic!
-            ? Container(
-                width: 98.w,
-                height: 24.h,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(4)),
-                  color: AppColors.mainGreen,
+        Container(
+          width: 98.w,
+          height: 24.h,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(4)),
+            color: AppColors.mainGreen,
+          ),
+          alignment: Alignment.center,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.asset(AppImages.organic),
+              Text(
+                'Органик',
+                style: AppTextStyles.lowWidgetTextStyle.copyWith(
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.white,
                 ),
-                alignment: Alignment.center,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset(AppImages.organic),
-                    Text(
-                      'Органик',
-                      style: AppTextStyles.lowWidgetTextStyle.copyWith(
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            : const SizedBox.shrink(),
+              ),
+            ],
+          ),
+        ),
         SizedBox(
           width: 8.w,
         ),
-        product.expressDelivery!
-            ? Container(
-                width: 155.w,
-                height: 24.h,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(4)),
-                  color: AppColors.yellow,
+        Container(
+          width: 155.w,
+          height: 24.h,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(4)),
+            color: AppColors.yellow,
+          ),
+          alignment: Alignment.center,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.asset(AppImages.truck),
+              Text(
+                'Экспресс-доставка',
+                style: AppTextStyles.lowWidgetTextStyle.copyWith(
+                  fontWeight: FontWeight.w700,
                 ),
-                alignment: Alignment.center,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset(AppImages.truck),
-                    Text(
-                      'Экспресс-доставка',
-                      style: AppTextStyles.lowWidgetTextStyle.copyWith(
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            : const SizedBox.shrink(),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
