@@ -4,6 +4,7 @@ import 'package:organic_market_app/domain/models/categories/bio.dart';
 import 'package:organic_market_app/domain/models/categories/bread.dart';
 import 'package:organic_market_app/domain/models/categories/children_products.dart';
 import 'package:organic_market_app/domain/models/categories/confectionery.dart';
+import 'package:organic_market_app/domain/models/categories/fake_store.dart';
 import 'package:organic_market_app/domain/models/categories/fish.dart';
 import 'package:organic_market_app/domain/models/categories/freezed_products.dart';
 import 'package:organic_market_app/domain/models/categories/grocery.dart';
@@ -50,6 +51,7 @@ abstract class TempRepository {
   ];
 
   static final categories = [
+    FakeStore(),
     Alcohol(),
     Beverages(),
     Bio(),

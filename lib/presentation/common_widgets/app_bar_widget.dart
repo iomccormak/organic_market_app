@@ -74,6 +74,18 @@ class AppBarWidget extends StatelessWidget {
         likeAndShareButtons = false;
         deleteButton = false;
         break;
+      case ('/catalog/category'):
+        text = 'Категория';
+        backButton = true;
+        likeAndShareButtons = false;
+        deleteButton = false;
+        break;
+      case ('/catalog/:product'):
+        text = AppStrings.item;
+        backButton = true;
+        likeAndShareButtons = true;
+        deleteButton = false;
+        break;
       default:
         break;
     }

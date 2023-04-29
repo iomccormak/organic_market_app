@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:organic_market_app/data/repository/temp_repository.dart';
 import 'package:organic_market_app/domain/api.dart';
 import 'package:organic_market_app/domain/models/product.dart';
@@ -8,6 +9,7 @@ import 'package:organic_market_app/presentation/common_widgets/all_products.dart
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/common_widgets/product_widget.dart';
 import 'package:organic_market_app/presentation/common_widgets/title_text.dart';
+import 'package:organic_market_app/presentation/pages/cart/widgets/empty_screen.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/advertisment.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/category_small_widget.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/best_offers.dart';
@@ -30,7 +32,12 @@ class HomePage extends StatelessWidget {
       future: service.getAllProducts(),
       builder: (_, snapshot) {
         if (!snapshot.hasData) {
-          return const CircularProgressIndicator();
+          return Center(
+            child: LoadingAnimationWidget.prograssiveDots(
+              color: AppColors.black,
+              size: 30.sp,
+            ),
+          );
         }
         final products = snapshot.data!;
         return Stack(

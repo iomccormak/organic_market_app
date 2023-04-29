@@ -4,6 +4,7 @@ import 'package:organic_market_app/navigation/route_builder.dart';
 import 'package:organic_market_app/presentation/pages/cart/cart_page.dart';
 import 'package:organic_market_app/presentation/pages/cart/modal_bottom_sheets/phone_input_page.dart';
 import 'package:organic_market_app/presentation/pages/catalog/catalog_page.dart';
+import 'package:organic_market_app/presentation/pages/category/category_page.dart';
 import 'package:organic_market_app/presentation/pages/home/home_page.dart';
 import 'package:organic_market_app/presentation/pages/item/item_page.dart';
 import 'package:organic_market_app/presentation/pages/main/main_page.dart';
@@ -38,7 +39,21 @@ import 'package:organic_market_app/presentation/pages/search/search_page.dart';
         AutoRoute(
           path: 'catalog',
           name: 'CatalogRouter',
-          page: CatalogPage,
+          page: EmptyRouterPage,
+          children: [
+            AutoRoute(
+              path: '',
+              page: CatalogPage,
+            ),
+            AutoRoute(
+              path: 'category',
+              page: CategoryPage,
+            ),
+            AutoRoute(
+              path: ':product',
+              page: ItemPage,
+            ),
+          ],
         ),
         AutoRoute(
           path: 'search',
