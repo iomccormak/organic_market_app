@@ -7,10 +7,6 @@ class Product {
   //MainCategory category;
   String image;
   double price;
-  List<String> weight;
-  List<int> discount;
-  bool? organic;
-  bool? expressDelivery;
 
   Product({
     required this.id,
@@ -18,11 +14,24 @@ class Product {
     required this.description,
     required this.image,
     required this.price,
-    this.weight = const [],
-    this.discount = const [],
-    this.organic = false,
-    this.expressDelivery = false,
   });
+
+  Product copyWith({
+    int? id,
+    String? title,
+    String? description,
+    //MainCategory category;
+    String? image,
+    double? price,
+  }) {
+    return Product(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      description: description ?? this.description,
+      image: image ?? this.image,
+      price: price ?? this.price,
+    );
+  }
 
   factory Product.fromJson(Map<String, dynamic> data) {
     return Product(

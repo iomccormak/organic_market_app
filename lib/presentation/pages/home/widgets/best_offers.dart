@@ -12,7 +12,7 @@ class BestOffers extends StatelessWidget {
       padding: EdgeInsets.symmetric(
         horizontal: 10.w,
       ),
-      child: SizedBox(
+      /*child: SizedBox(
         height: 250.h,
         child: ListView.builder(
           physics: const BouncingScrollPhysics(),
@@ -30,7 +30,7 @@ class BestOffers extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      ),*/
     );
   }
 }

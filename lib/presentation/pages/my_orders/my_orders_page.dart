@@ -21,7 +21,7 @@ class MyOrdersPage extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 600.h,
-                  child: ListView.builder(
+                  /*child: ListView.builder(
                     physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.vertical,
                     shrinkWrap: true,
@@ -36,7 +36,7 @@ class MyOrdersPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ),
+                  ),*/
                 ),
               ],
             ),

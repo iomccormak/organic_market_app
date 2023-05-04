@@ -1,3 +1,5 @@
+import 'package:get_it/get_it.dart';
+import 'package:organic_market_app/domain/api.dart';
 import 'package:organic_market_app/domain/models/categories/alcohol.dart';
 import 'package:organic_market_app/domain/models/categories/beverages.dart';
 import 'package:organic_market_app/domain/models/categories/bio.dart';
@@ -19,17 +21,11 @@ import 'package:organic_market_app/domain/models/product.dart';
 import 'package:organic_market_app/utils/app_images.dart';
 
 abstract class TempRepository {
-  static final orders = [
+  ApiService get service => GetIt.I<ApiService>();
+
+  /*static final orders = [
     Order(
-      products: [
-        TempRepository.products[0],
-        TempRepository.products[0],
-        TempRepository.products[1],
-        TempRepository.products[0],
-        TempRepository.products[1],
-        TempRepository.products[0],
-        TempRepository.products[1],
-      ],
+      products: [],
       date: DateTime(2023, 4, 31),
       status: OrderStatus.delievered,
     ),
@@ -48,7 +44,7 @@ abstract class TempRepository {
       date: DateTime(2023, 4, 12),
       status: OrderStatus.delievered,
     ),
-  ];
+  ];*/
 
   static final categories = [
     FakeStore(),
@@ -74,7 +70,7 @@ abstract class TempRepository {
     "assets/images/mainAdv3.png",
   ];
 
-  static final products = [
+  /*static final products = [
     Product(
       id: 0,
       title: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
@@ -132,5 +128,5 @@ abstract class TempRepository {
       weight: ['0,35 кг', '0,35 кг', '0,35 кг'],
       discount: [0, 25, 50],
     ),
-  ];
+  ]*/
 }
