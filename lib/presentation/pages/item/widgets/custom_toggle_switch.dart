@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:organic_market_app/domain/models/product.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:toggle_switch/toggle_switch.dart';
@@ -26,6 +27,7 @@ class _CustomToggleSwitchState extends State<CustomToggleSwitch> {
         ],
       ),
       child: ToggleSwitch(
+        onToggle: (index) {},
         minWidth: 343,
         cornerRadius: 20.0,
         activeBgColors: const [
@@ -38,7 +40,7 @@ class _CustomToggleSwitchState extends State<CustomToggleSwitch> {
         inactiveFgColor: AppColors.black,
         initialLabelIndex: 1,
         totalSwitches: 3,
-        labels: [
+        labels: const [
           '1 шт.',
           '2 шт. -25%',
           '3 шт. -50%',

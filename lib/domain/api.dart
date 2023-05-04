@@ -26,6 +26,19 @@ class ApiService {
     }).catchError((err) => print(err));
   }
 
+  Future<Product?> getProduct(int id) async {
+    return http
+        .get(Uri.parse('$baseUrl/products/$id'), headers: headers)
+        .then((data) {
+      final products = <Product>[];
+      if (data.statusCode == 200) {
+        final jsonData = json.decode(data.body);
+        return Product.fromJson(jsonData);
+      }
+      return null;
+    }).catchError((err) => print(err));
+  }
+
   Future<List<Product>> descSortProducts() async {
     return http
         .get(Uri.parse('$baseUrl/products?sort=desc'), headers: headers)

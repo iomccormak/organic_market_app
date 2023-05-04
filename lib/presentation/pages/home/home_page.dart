@@ -7,6 +7,7 @@ import 'package:organic_market_app/domain/api.dart';
 import 'package:organic_market_app/domain/models/product.dart';
 import 'package:organic_market_app/presentation/common_widgets/all_products.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
+import 'package:organic_market_app/presentation/common_widgets/loading_animation.dart';
 import 'package:organic_market_app/presentation/common_widgets/product_widget.dart';
 import 'package:organic_market_app/presentation/common_widgets/title_text.dart';
 import 'package:organic_market_app/presentation/pages/cart/widgets/empty_screen.dart';
@@ -32,12 +33,7 @@ class HomePage extends StatelessWidget {
       future: service.getAllProducts(),
       builder: (_, snapshot) {
         if (!snapshot.hasData) {
-          return Center(
-            child: LoadingAnimationWidget.prograssiveDots(
-              color: AppColors.black,
-              size: 30.sp,
-            ),
-          );
+          return LoadingAnimation();
         }
         final products = snapshot.data!;
         return Stack(
