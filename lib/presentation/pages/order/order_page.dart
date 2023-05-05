@@ -24,6 +24,11 @@ class OrderPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Center();
+  }
+
+  /*@override
+  Widget build(BuildContext context) {
     final Color iconBackground;
     final String icon;
     final String iconLabel;
@@ -126,5 +131,5 @@ class OrderPage extends StatelessWidget {
         ],
       ),
     );
-  }
+  }*/
 }

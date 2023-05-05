@@ -5,7 +5,6 @@ import 'package:organic_market_app/domain/api.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
 
 void main() {
-  GetIt.I.registerLazySingleton(() => ApiService());
   runApp(MyApp());
 }
 

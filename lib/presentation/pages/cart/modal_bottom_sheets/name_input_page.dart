@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/presentation/common_widgets/modal_bottom_sheet.dart';
+import 'package:organic_market_app/presentation/pages/cart/bloc/cart_bloc.dart';
 import 'package:organic_market_app/presentation/pages/cart/modal_bottom_sheets/phone_confirmation_page.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_strings.dart';

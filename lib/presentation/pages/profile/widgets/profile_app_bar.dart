@@ -6,8 +6,8 @@ import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
-class CartAppBar extends StatelessWidget {
-  const CartAppBar({super.key});
+class ProfileAppBar extends StatelessWidget {
+  const ProfileAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class CartAppBar extends StatelessWidget {
           children: [
             Center(
               child: Text(
-                AppStrings.cart,
+                AppStrings.profile,
                 style: AppTextStyles.appBarTextStyle,
               ),
             ),

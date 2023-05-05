@@ -23,11 +23,11 @@ class OrderProductWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(product.image[0]),
+                  image: AssetImage(product.image!),
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
               ),
-              child: Image.asset(product.image[0]),
+              child: Image.asset(product.image!),
             ),
             SizedBox(
               width: 16.w,
@@ -39,7 +39,7 @@ class OrderProductWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    product.title,
+                    product.title!,
                     overflow: TextOverflow.ellipsis,
                     style: AppTextStyles.productWidgetTextStyle.copyWith(
                       fontSize: 14.sp,

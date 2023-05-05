@@ -44,7 +44,7 @@ class ProductWidget extends StatelessWidget {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(
-                    product.image,
+                    product.image!,
                     scale: 0.5,
                   ),
                 ),
@@ -60,7 +60,7 @@ class ProductWidget extends StatelessWidget {
                 top: 141.h,
               ),
               child: Text(
-                product.title,
+                product.title!,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
                 style: AppTextStyles.productWidgetTextStyle,

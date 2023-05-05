@@ -1,73 +1,63 @@
-import 'dart:async';
-import 'dart:convert';
+import 'dart:developer';
 
-import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:organic_market_app/domain/models/product.dart';
+import 'package:dio/dio.dart';
+import 'package:organic_market_app/domain/models/base_model.dart';
+import 'package:organic_market_app/domain/models/request_types.dart';
+import 'package:organic_market_app/utils/api_constants.dart';
 
-class ApiService {
-  static const baseUrl = 'https://fakestoreapi.com';
-
-  static const headers = {'Content-type': 'application/json'};
-
-  Future<List<Product>> getAllProducts() async {
-    return http
-        .get(Uri.parse('$baseUrl/products'), headers: headers)
-        .then((data) {
-      final products = <Product>[];
-      if (data.statusCode == 200) {
-        final jsonData = json.decode(data.body);
-
-        for (var product in jsonData) {
-          products.add(Product.fromJson(product));
-        }
-      }
-      return products;
-    }).catchError((err) => print(err));
+class NetworkManager {
+  static NetworkManager? instance = NetworkManager.init();
+  NetworkManager() {
+    NetworkManager.init();
   }
+  late final Dio dio;
 
-  Future<Product?> getProduct(int id) async {
-    return http
-        .get(Uri.parse('$baseUrl/products/$id'), headers: headers)
-        .then((data) {
-      final products = <Product>[];
-      if (data.statusCode == 200) {
-        final jsonData = json.decode(data.body);
-        return Product.fromJson(jsonData);
+  NetworkManager.init() {
+    dio = Dio(BaseOptions(
+      baseUrl: ApiConstants.baseUrl,
+      // contentType: ApiConstants.json,
+    ));
+  }
+  Future request<T extends BaseModel>({
+    required ReqTypes method,
+    required String path,
+    dynamic data,
+    required T model,
+    Map<String, dynamic>? queryParameters,
+    bool isBaseResponse = true,
+    isFile = false,
+  }) async {
+    data ??= {};
+    try {
+      var body = data is Map || data is FormData ? data : data.toJson();
+
+      var response = await dio.request(path,
+          data: body,
+          queryParameters: queryParameters,
+          options: Options(
+            contentType: 'application/x-www-form-urlencoded',
+            method: method.name,
+          ));
+
+      if (response.statusCode == 200) {
+        if (response.data is List) {
+          var list = <T>[];
+          for (var element in (response.data as List)) {
+            list.add(model.fromJson(element));
+          }
+          return list.isNotEmpty ? list : model;
+        }
+        return model.fromJson(response.data);
+      } else {
+        log('$path ${method.name} FAILED | Status Code: ${response.statusCode} | Status Message: ${response.statusMessage}');
+        return null;
       }
+    } on DioError catch (dioError) {
+      log('$path ${method.name} DIO ERROR | Error : $dioError');
       return null;
-    }).catchError((err) => print(err));
-  }
-
-  Future<List<Product>> descSortProducts() async {
-    return http
-        .get(Uri.parse('$baseUrl/products?sort=desc'), headers: headers)
-        .then((data) {
-      final products = <Product>[];
-      if (data.statusCode == 200) {
-        final jsonData = json.decode(data.body);
-
-        for (var product in jsonData) {
-          products.add(Product.fromJson(product));
-        }
-      }
-      return products;
-    }).catchError((err) => print(err));
-  }
-
-  Future<List<Product>> ascSortProducts() async {
-    return http
-        .get(Uri.parse('$baseUrl/products?sort=asc'), headers: headers)
-        .then((data) {
-      final products = <Product>[];
-      if (data.statusCode == 200) {
-        final jsonData = json.decode(data.body);
-
-        for (var product in jsonData) {
-          products.add(Product.fromJson(product));
-        }
-      }
-      return products;
-    }).catchError((err) => print(err));
+    } catch (error) {
+      log('$path ${method.name} ERROR | Error : $error');
+      return null;
+    }
   }
 }

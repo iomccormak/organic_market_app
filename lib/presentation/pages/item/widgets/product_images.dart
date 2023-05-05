@@ -34,7 +34,7 @@ class _ProductImagesState extends State<ProductImages> {
             ),
             itemCount: 3,
             itemBuilder: (context, index, realIndex) => Image.network(
-              widget.product.image,
+              widget.product.image!,
               fit: BoxFit.cover,
             ),
           ),

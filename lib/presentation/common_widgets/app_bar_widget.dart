@@ -124,7 +124,10 @@ class AppBarWidget extends StatelessWidget {
             ),
             backButton
                 ? GestureDetector(
-                    onTap: () => context.popRoute(),
+                    onTap: () {
+                      context.router.navigateNamed('search');
+                      print('check');
+                    },
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: SvgPicture.asset(AppIcons.back),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:organic_market_app/domain/models/product.dart';
+import 'package:organic_market_app/presentation/common_widgets/loading_animation.dart';
+import 'package:organic_market_app/presentation/pages/cart/bloc/cart_bloc.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
@@ -23,14 +26,15 @@ class ProductCartWidget extends StatelessWidget {
             Container(
               width: 70.w,
               height: 70.h,
-              decoration: BoxDecoration(
+              /*decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(product.image[0]),
+                  image: AssetImage(product.image!),
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
               ),
-              child: Image.asset(product.image[0]),
+              child: Image.asset(product.image!),*/
+              child: LoadingAnimation(),
             ),
             SizedBox(
               width: 16.w,
@@ -44,7 +48,7 @@ class ProductCartWidget extends StatelessWidget {
                     Align(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        product.title,
+                        product.title!,
                         overflow: TextOverflow.ellipsis,
                         style: AppTextStyles.productWidgetTextStyle.copyWith(
                           fontSize: 14.sp,
@@ -71,21 +75,31 @@ class ProductCartWidget extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Container(
-                              width: 10.w,
-                              height: 10.h,
-                              alignment: Alignment.center,
-                              child: SvgPicture.asset(AppIcons.minus),
+                            GestureDetector(
+                              onTap: () => context
+                                  .read<CartBloc>()
+                                  .add(CartProductDecremented(product)),
+                              child: Container(
+                                width: 10.w,
+                                height: 10.h,
+                                alignment: Alignment.center,
+                                child: SvgPicture.asset(AppIcons.minus),
+                              ),
                             ),
                             Text(
-                              '1 шт.',
+                              '${product.count} шт.',
                               style: AppTextStyles.productWidgetTextStyle,
                             ),
-                            Container(
-                              width: 10.w,
-                              height: 10.h,
-                              alignment: Alignment.center,
-                              child: SvgPicture.asset(AppIcons.plus),
+                            GestureDetector(
+                              onTap: () => context
+                                  .read<CartBloc>()
+                                  .add(CartProductIncremented(product)),
+                              child: Container(
+                                width: 10.w,
+                                height: 10.h,
+                                alignment: Alignment.center,
+                                child: SvgPicture.asset(AppIcons.plus),
+                              ),
                             ),
                           ],
                         ),

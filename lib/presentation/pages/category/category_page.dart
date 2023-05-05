@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -6,24 +7,18 @@ import 'package:organic_market_app/domain/api.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/common_widgets/loading_animation.dart';
 import 'package:organic_market_app/presentation/common_widgets/product_widget.dart';
+import 'package:organic_market_app/presentation/pages/catalog/cubit/shop_cubit.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class CategoryPage extends StatelessWidget {
   const CategoryPage({super.key});
 
-  ApiService get service => GetIt.I<ApiService>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder(
-        future: service.getAllProducts(),
-        builder: (_, snapshot) {
-          if (!snapshot.hasData) {
-            return LoadingAnimation();
-          }
-          final products = snapshot.data!;
+      body: BlocBuilder<ShopCubit, ShopState>(
+        builder: (context, state) {
           return Stack(
             children: [
               SingleChildScrollView(
@@ -39,7 +34,7 @@ class CategoryPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            '${products.length} товаров',
+                            '${state.products!.length} товаров',
                             style: AppTextStyles.bottomBarTextStyle.copyWith(
                               fontSize: 14.sp,
                             ),
@@ -71,10 +66,10 @@ class CategoryPage extends StatelessWidget {
                             mainAxisSpacing: 20.h,
                             crossAxisSpacing: 10.w,
                           ),
-                          itemCount: products.length,
+                          itemCount: state.products!.length,
                           itemBuilder: (context, index) {
                             return ProductWidget(
-                              product: products[index],
+                              product: state.products![index],
                             );
                           },
                         ),

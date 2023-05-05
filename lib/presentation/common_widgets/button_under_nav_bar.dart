@@ -19,7 +19,7 @@ class ButtonUnderNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 666.h),
+      padding: EdgeInsets.only(top: 610.h),
       child: Container(
         height: 93.h,
         decoration: const BoxDecoration(

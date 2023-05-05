@@ -21,8 +21,6 @@ import 'package:organic_market_app/domain/models/product.dart';
 import 'package:organic_market_app/utils/app_images.dart';
 
 abstract class TempRepository {
-  ApiService get service => GetIt.I<ApiService>();
-
   /*static final orders = [
     Order(
       products: [],

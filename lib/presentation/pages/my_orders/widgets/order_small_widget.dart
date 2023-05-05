@@ -23,7 +23,9 @@ class OrderSmallWidget extends StatelessWidget {
     final Color iconBackground;
     final String icon;
 
-    switch (order.status) {
+    return Center();
+
+    /*switch (order.status) {
       case OrderStatus.delievered:
         iconBackground = AppColors.greenBackground;
         icon = AppIcons.orderCheck;
@@ -86,6 +88,6 @@ class OrderSmallWidget extends StatelessWidget {
           ),
         ),
       ),
-    );
+    );*/
   }
 }

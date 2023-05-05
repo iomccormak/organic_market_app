@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/domain/models/product.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/bottom_bar_with_price.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/express_delivery.dart';
+import 'package:organic_market_app/presentation/pages/item/widgets/item_app_bar.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/product_images.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/product_brand.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/recommendations.dart';
@@ -25,6 +26,12 @@ class ItemPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(44.h),
+        child: ItemBar(
+          product: product,
+        ),
+      ),
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -33,9 +40,6 @@ class ItemPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                SizedBox(
-                  height: 70.h,
-                ),
                 ProductImages(
                   product: product,
                 ),
@@ -56,7 +60,7 @@ class ItemPage extends StatelessWidget {
                         height: 16.h,
                       ),
                       Text(
-                        product.title,
+                        product.title!,
                         style: AppTextStyles.titleTextStyle.copyWith(
                           fontSize: 20.sp,
                         ),
@@ -113,7 +117,7 @@ class ItemPage extends StatelessWidget {
                         height: 16.h,
                       ),
                       Text(
-                        product.description,
+                        product.description!,
                         style: AppTextStyles.productWidgetTextStyle.copyWith(
                           fontSize: 16.sp,
                           color: AppColors.mainGrey,

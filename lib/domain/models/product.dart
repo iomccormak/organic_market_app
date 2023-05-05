@@ -1,56 +1,51 @@
-import 'package:organic_market_app/domain/models/main_category.dart';
+import 'package:json_annotation/json_annotation.dart';
+import 'package:organic_market_app/domain/models/base_model.dart';
 
-class Product {
-  int id;
-  String title;
-  String description;
-  //MainCategory category;
-  String image;
-  double price;
+part 'product.g.dart';
+
+@JsonSerializable(createToJson: false)
+class Product extends BaseModel {
+  final int? id;
+  final String? title;
+  final double? price;
+  final String? description;
+  final String? category;
+  final String? image;
+  final Rating? rating;
+  bool isFavorite;
+  int count;
 
   Product({
-    required this.id,
-    required this.title,
-    required this.description,
-    required this.image,
-    required this.price,
+    this.isFavorite = false,
+    this.id,
+    this.title,
+    this.price,
+    this.description,
+    this.category,
+    this.image,
+    this.rating,
+    this.count = 1,
   });
 
-  Product copyWith({
-    int? id,
-    String? title,
-    String? description,
-    //MainCategory category;
-    String? image,
-    double? price,
-  }) {
-    return Product(
-      id: id ?? this.id,
-      title: title ?? this.title,
-      description: description ?? this.description,
-      image: image ?? this.image,
-      price: price ?? this.price,
-    );
+  @override
+  fromJson(Map<String, dynamic> json) {
+    return _$ProductFromJson(json);
   }
 
-  factory Product.fromJson(Map<String, dynamic> data) {
-    return Product(
-      id: data['id'],
-      title: data['title'],
-      price: double.parse(data['price'].toString()),
-      description: data['description'],
-      image: data['image'],
-    );
-  }
-
+  @override
   Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'title': title,
-      'price': price,
-      'description': description,
-      'image': image,
-      'price': price,
-    };
+    throw UnimplementedError();
+  }
+}
+
+@JsonSerializable(createToJson: false)
+class Rating {
+  double? rate;
+  int? count;
+
+  Rating({this.rate, this.count});
+
+  factory Rating.fromJson(Map<String, dynamic> json) {
+    return _$RatingFromJson(json);
   }
 }
