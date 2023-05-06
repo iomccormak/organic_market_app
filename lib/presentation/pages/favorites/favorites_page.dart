@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market_app/presentation/common_widgets/app_bar_widget.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/common_widgets/product_widget.dart';
+import 'package:organic_market_app/presentation/pages/cart/widgets/empty_screen.dart';
 import 'package:organic_market_app/presentation/pages/favorites/bloc/favorites_bloc.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
+import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class FavoritesPage extends StatelessWidget {
@@ -13,6 +16,13 @@ class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(
+        child: AppBarWidget(
+          label: 'Избранное',
+          back: true,
+        ),
+        preferredSize: Size.fromHeight(44.h),
+      ),
       body: BlocBuilder<FavoritesBloc, FavoritesState>(
         builder: (context, state) {
           if (state is FavoritesInitial) {
@@ -28,7 +38,7 @@ class FavoritesPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(
-                                height: 100.h,
+                                height: 30.h,
                               ),
                               Row(
                                 mainAxisAlignment:
@@ -77,11 +87,8 @@ class FavoritesPage extends StatelessWidget {
                       NavBarShadow(),
                     ],
                   )
-                : Center(
-                    child: Text(
-                      'no',
-                      style: AppTextStyles.bottomBarTextStyle,
-                    ),
+                : EmptyScreen(
+                    label: 'В избранном пока пусто',
                   );
           }
           return const Text('Error!');

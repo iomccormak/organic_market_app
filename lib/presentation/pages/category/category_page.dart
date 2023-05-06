@@ -4,11 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:organic_market_app/domain/api.dart';
+import 'package:organic_market_app/presentation/common_widgets/app_bar_widget.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/common_widgets/loading_animation.dart';
 import 'package:organic_market_app/presentation/common_widgets/product_widget.dart';
 import 'package:organic_market_app/presentation/pages/catalog/cubit/shop_cubit.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
+import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class CategoryPage extends StatelessWidget {
@@ -17,6 +19,13 @@ class CategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(
+        child: AppBarWidget(
+          label: AppStrings.categories,
+          back: true,
+        ),
+        preferredSize: Size.fromHeight(44.h),
+      ),
       body: BlocBuilder<ShopCubit, ShopState>(
         builder: (context, state) {
           return Stack(
@@ -28,7 +37,7 @@ class CategoryPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 100.h,
+                        height: 20.h,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,14 +48,6 @@ class CategoryPage extends StatelessWidget {
                               fontSize: 14.sp,
                             ),
                           ),
-                          GestureDetector(
-                            child: Text(
-                              'Сортировать по возрастанию',
-                              style: AppTextStyles.bottomBarTextStyle.copyWith(
-                                color: AppColors.black,
-                              ),
-                            ),
-                          )
                         ],
                       ),
                       SizedBox(

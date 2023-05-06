@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class ProfileMainInfo extends StatelessWidget {
-  const ProfileMainInfo({super.key});
+  const ProfileMainInfo({super.key, required this.name, required this.phone});
+
+  final String name;
+  final String phone;
 
   @override
   Widget build(BuildContext context) {
@@ -10,13 +13,13 @@ class ProfileMainInfo extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Сергей',
+          name.isNotEmpty ? name : 'Заполните личные данные',
           style: AppTextStyles.titleTextStyle.copyWith(
             fontWeight: FontWeight.w500,
           ),
         ),
         Text(
-          '+7 123 456 78 90',
+          phone.isNotEmpty ? '+7' + phone : '',
           style: AppTextStyles.phoneTextStyle,
         ),
       ],

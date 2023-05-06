@@ -8,7 +8,7 @@ class NavBarShadow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 760.h),
+      padding: EdgeInsets.only(top: 700.h),
       child: Container(
         decoration: const BoxDecoration(
           color: AppColors.shadowColor,

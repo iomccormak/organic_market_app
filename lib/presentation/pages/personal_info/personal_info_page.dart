@@ -1,7 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market_app/presentation/common_widgets/app_bar_widget.dart';
 import 'package:organic_market_app/presentation/common_widgets/button_under_nav_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/main_green_button.dart';
+import 'package:organic_market_app/presentation/pages/personal_info/bloc/personal_info_bloc.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/widgets/date_input.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/widgets/personal_info_input.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/widgets/phone_input.dart';
@@ -22,7 +26,15 @@ class PersonalInfoPage extends StatelessWidget {
     final TextEditingController dateController = TextEditingController();
 
     return Scaffold(
+      appBar: PreferredSize(
+        child: AppBarWidget(
+          label: AppStrings.personalInfo,
+          back: true,
+        ),
+        preferredSize: Size.fromHeight(44.h),
+      ),
       body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
         child: Form(
           key: _formKey,
           child: Stack(
@@ -32,7 +44,7 @@ class PersonalInfoPage extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 100.h,
+                      height: 30.h,
                     ),
                     PersonalInfoInput(
                       fieldName: AppStrings.name,
@@ -77,9 +89,16 @@ class PersonalInfoPage extends StatelessWidget {
                 button: GestureDetector(
                   onTap: () {
                     if (_formKey.currentState!.validate()) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Processing Data')),
-                      );
+                      context.read<PersonalInfoBloc>().add(
+                            PersonalInfoSaved(
+                              nameController.text,
+                              surnameController.text,
+                              phoneController.text,
+                              dateController.text,
+                              emailController.text,
+                            ),
+                          );
+                      context.router.pop();
                     }
                   },
                   child: const MainGreenButton(

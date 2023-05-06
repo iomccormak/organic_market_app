@@ -8,88 +8,21 @@ import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class AppBarWidget extends StatelessWidget {
-  const AppBarWidget({super.key, required this.tabsRouter});
+  const AppBarWidget({
+    super.key,
+    required this.label,
+    this.back = false,
+    this.likeAndShare = false,
+    this.delete = false,
+  });
 
-  final TabsRouter tabsRouter;
+  final String label;
+  final bool back;
+  final bool likeAndShare;
+  final bool delete;
 
   @override
   Widget build(BuildContext context) {
-    String text = '';
-    bool backButton = false;
-    bool likeAndShareButtons = false;
-    bool deleteButton = false;
-
-    switch (tabsRouter.currentPath) {
-      case ('/home'):
-        text = AppStrings.adress;
-        backButton = false;
-        likeAndShareButtons = false;
-        deleteButton = false;
-        break;
-      case ('/catalog'):
-        text = AppStrings.catalog;
-        backButton = false;
-        likeAndShareButtons = false;
-        deleteButton = false;
-        break;
-      case ('/search'):
-        text = AppStrings.search;
-        backButton = false;
-        likeAndShareButtons = false;
-        deleteButton = false;
-        break;
-      case ('/cart'):
-        text = AppStrings.cart;
-        backButton = false;
-        likeAndShareButtons = false;
-        deleteButton = false;
-        break;
-      case ('/profile'):
-        text = AppStrings.profile;
-        backButton = false;
-        likeAndShareButtons = false;
-        deleteButton = false;
-        break;
-      case ('/home/:product'):
-        text = AppStrings.item;
-        backButton = true;
-        likeAndShareButtons = true;
-        deleteButton = false;
-        break;
-      case ('/profile/:personalInfo'):
-        text = AppStrings.personalInfo;
-        backButton = true;
-        likeAndShareButtons = false;
-        deleteButton = false;
-        break;
-      case ('/profile/:myOrders'):
-        text = AppStrings.myOrders;
-        backButton = true;
-        likeAndShareButtons = false;
-        deleteButton = false;
-        break;
-      case ('/profile/:order'):
-        text = AppStrings.myOrders;
-        backButton = true;
-        likeAndShareButtons = false;
-        deleteButton = false;
-        break;
-      case ('/catalog/category'):
-        text = 'Категория';
-        backButton = true;
-        likeAndShareButtons = false;
-        deleteButton = false;
-        break;
-      case ('/catalog/:product'):
-        text = AppStrings.item;
-        backButton = true;
-        likeAndShareButtons = true;
-        deleteButton = false;
-        break;
-      default:
-        break;
-    }
-
     return Container(
       height: 100.h,
       decoration: BoxDecoration(
@@ -116,17 +49,16 @@ class AppBarWidget extends StatelessWidget {
           children: [
             Center(
               child: Text(
-                text,
+                label,
                 style: AppTextStyles.appBarTextStyle.copyWith(
                   fontSize: 16.sp,
                 ),
               ),
             ),
-            backButton
+            back
                 ? GestureDetector(
                     onTap: () {
-                      context.router.navigateNamed('search');
-                      print('check');
+                      context.router.pop();
                     },
                     child: Align(
                       alignment: Alignment.centerLeft,
@@ -134,7 +66,7 @@ class AppBarWidget extends StatelessWidget {
                     ),
                   )
                 : const SizedBox.shrink(),
-            likeAndShareButtons
+            likeAndShare
                 ? Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -148,7 +80,7 @@ class AppBarWidget extends StatelessWidget {
                     ),
                   )
                 : const SizedBox.shrink(),
-            deleteButton
+            delete
                 ? GestureDetector(
                     child: Align(
                       alignment: Alignment.centerRight,

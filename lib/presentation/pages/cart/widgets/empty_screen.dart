@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
+import 'package:organic_market_app/presentation/common_widgets/app_bar_widget.dart';
 import 'package:organic_market_app/presentation/pages/cart/modal_bottom_sheets/phone_input_page.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
@@ -9,7 +10,9 @@ import 'package:organic_market_app/utils/app_text_styles.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 
 class EmptyScreen extends StatelessWidget {
-  const EmptyScreen({super.key});
+  const EmptyScreen({super.key, required this.label});
+
+  final String label;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class EmptyScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  AppStrings.cartIsEmpty,
+                  label,
                   style: AppTextStyles.titleTextStyle.copyWith(
                     fontWeight: FontWeight.w500,
                   ),

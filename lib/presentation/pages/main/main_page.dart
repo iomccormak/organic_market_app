@@ -13,6 +13,7 @@ import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/ap
 import 'package:organic_market_app/presentation/pages/cart/bloc/cart_bloc.dart';
 import 'package:organic_market_app/presentation/pages/catalog/cubit/shop_cubit.dart';
 import 'package:organic_market_app/presentation/pages/favorites/bloc/favorites_bloc.dart';
+import 'package:organic_market_app/presentation/pages/personal_info/bloc/personal_info_bloc.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -30,6 +31,9 @@ class MainPage extends StatelessWidget {
         BlocProvider(
           create: (context) => ShopCubit(ShopService()),
         ),
+        BlocProvider(
+            create: (context) =>
+                PersonalInfoBloc()..add(PersonalInfoInitialized())),
       ],
       child: AutoTabsScaffold(
         extendBodyBehindAppBar: true,
