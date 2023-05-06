@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/data/repository/temp_repository.dart';
+import 'package:organic_market_app/data/repository/mock_repository.dart';
 import 'package:organic_market_app/presentation/common_widgets/product_widget.dart';
 
 class Recomendations extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/data/repository/temp_repository.dart';
+import 'package:organic_market_app/data/repository/mock_repository.dart';
 
 class Advertisment extends StatefulWidget {
   const Advertisment({super.key});
@@ -24,9 +24,9 @@ class _AdvertismentState extends State<Advertisment> {
             () => currentIndex = index,
           ),
         ),
-        itemCount: TempRepository.mainAdvertisments.length,
+        itemCount: MockRepository.mainAdvertisments.length,
         itemBuilder: (context, index, realIndex) => Image.asset(
-          TempRepository.mainAdvertisments[index],
+          MockRepository.mainAdvertisments[index],
           fit: BoxFit.cover,
         ),
       ),

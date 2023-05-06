@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/data/repository/temp_repository.dart';
+import 'package:organic_market_app/data/repository/mock_repository.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/pages/my_orders/widgets/order_small_widget.dart';
 

@@ -2,8 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/data/repository/temp_repository.dart';
+import 'package:organic_market_app/data/repository/mock_repository.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
+import 'package:organic_market_app/presentation/common_widgets/app_bar_widget.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/common_widgets/button_under_nav_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/main_green_button.dart';
@@ -27,7 +28,9 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        child: CartAppBar(),
+        child: AppBarWidget(
+          label: AppStrings.cart,
+        ),
         preferredSize: Size.fromHeight(44.h),
       ),
       body: BlocBuilder<CartBloc, CartState>(
@@ -103,7 +106,9 @@ class CartPage extends StatelessWidget {
                       ),
                     ],
                   )
-                : EmptyScreen();
+                : EmptyScreen(
+                    label: AppStrings.cartIsEmpty,
+                  );
           }
           return const Text('Error!');
         },

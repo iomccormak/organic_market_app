@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/presentation/common_widgets/product_widget.dart';
-import 'package:organic_market_app/data/repository/temp_repository.dart';
+import 'package:organic_market_app/data/repository/mock_repository.dart';
 import 'package:organic_market_app/presentation/pages/catalog/cubit/shop_cubit.dart';
 
 class BestOffers extends StatelessWidget {

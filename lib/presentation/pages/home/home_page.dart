@@ -3,10 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:organic_market_app/data/repository/temp_repository.dart';
+import 'package:organic_market_app/data/repository/mock_repository.dart';
 import 'package:organic_market_app/domain/api.dart';
 import 'package:organic_market_app/domain/models/product.dart';
 import 'package:organic_market_app/presentation/common_widgets/all_products.dart';
+import 'package:organic_market_app/presentation/common_widgets/app_bar_widget.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/common_widgets/loading_animation.dart';
 import 'package:organic_market_app/presentation/common_widgets/product_widget.dart';
@@ -34,7 +35,9 @@ class HomePage extends StatelessWidget {
         return Scaffold(
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(44.h),
-            child: HomeAppBar(),
+            child: AppBarWidget(
+              label: AppStrings.adress,
+            ),
           ),
           body: Stack(
             children: [
@@ -68,7 +71,7 @@ class HomePage extends StatelessWidget {
                           physics: const BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
-                          itemCount: TempRepository.categories.length,
+                          itemCount: MockRepository.categories.length,
                           itemBuilder: (context, index) {
                             return Row(
                               children: [
@@ -76,7 +79,7 @@ class HomePage extends StatelessWidget {
                                   width: 8.w,
                                 ),
                                 CategorySmallWidget(
-                                  category: TempRepository.categories[index],
+                                  category: MockRepository.categories[index],
                                 ),
                               ],
                             );

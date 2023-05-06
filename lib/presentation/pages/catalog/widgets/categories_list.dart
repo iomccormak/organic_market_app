@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/data/repository/temp_repository.dart';
+import 'package:organic_market_app/data/repository/mock_repository.dart';
 import 'package:organic_market_app/presentation/pages/catalog/widgets/category_big_widget.dart';
 
 class CategoriesList extends StatelessWidget {
@@ -19,10 +19,10 @@ class CategoriesList extends StatelessWidget {
           mainAxisExtent: 100.h,
           mainAxisSpacing: 20,
         ),
-        itemCount: TempRepository.categories.length,
+        itemCount: MockRepository.categories.length,
         itemBuilder: (context, index) {
           return CategoryBigWidget(
-            category: TempRepository.categories[index],
+            category: MockRepository.categories[index],
           );
         },
       ),

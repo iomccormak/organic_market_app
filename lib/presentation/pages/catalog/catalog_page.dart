@@ -1,8 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/data/repository/temp_repository.dart';
+import 'package:organic_market_app/data/repository/mock_repository.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
+import 'package:organic_market_app/presentation/common_widgets/app_bar_widget.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/common_widgets/title_text.dart';
 import 'package:organic_market_app/presentation/pages/catalog/widgets/catalog_app_bar.dart';
@@ -19,7 +20,9 @@ class CatalogPage extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(44.h),
-        child: CatalogAppBar(),
+        child: AppBarWidget(
+          label: AppStrings.catalog,
+        ),
       ),
       body: Stack(
         children: [
@@ -84,10 +87,10 @@ class CatalogPage extends StatelessWidget {
                         mainAxisExtent: 100.h,
                         mainAxisSpacing: 20,
                       ),
-                      itemCount: TempRepository.categories.length,
+                      itemCount: MockRepository.categories.length,
                       itemBuilder: (context, index) {
                         return CategoryBigWidget(
-                          category: TempRepository.categories[index],
+                          category: MockRepository.categories[index],
                         );
                       },
                     ),

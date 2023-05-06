@@ -7,7 +7,7 @@ import 'package:organic_market_app/domain/models/shop_service.dart';
 import 'package:organic_market_app/presentation/common_widgets/all_products.dart';
 import 'package:organic_market_app/presentation/common_widgets/loading_animation.dart';
 import 'package:organic_market_app/presentation/common_widgets/product_widget.dart';
-import 'package:organic_market_app/data/repository/temp_repository.dart';
+import 'package:organic_market_app/data/repository/mock_repository.dart';
 import 'package:organic_market_app/presentation/pages/catalog/cubit/shop_cubit.dart';
 
 class Recommendations extends StatelessWidget {
