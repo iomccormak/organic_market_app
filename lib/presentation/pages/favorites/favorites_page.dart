@@ -49,9 +49,7 @@ class FavoritesPage extends StatelessWidget {
                                         .toString()
                                         .changeCase(),
                                     style: AppTextStyles.bottomBarTextStyle
-                                        .copyWith(
-                                      fontSize: 14.sp,
-                                    ),
+                                        .copyWith(fontSize: 14.sp),
                                   ),
                                 ],
                               ),

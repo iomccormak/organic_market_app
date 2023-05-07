@@ -130,7 +130,7 @@ class ProfilePage extends StatelessWidget {
               ],
             );
           }
-          return const Text('Error!');
+          return const SizedBox.shrink();
         },
       ),
     );
