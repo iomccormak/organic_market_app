@@ -5,7 +5,10 @@ import 'package:organic_market_app/presentation/common_widgets/loading_animation
 import 'package:organic_market_app/presentation/pages/catalog/cubit/catalog_cubit.dart';
 
 class BestOffers extends StatelessWidget {
-  const BestOffers({super.key, required this.state});
+  const BestOffers({
+    super.key,
+    required this.state,
+  });
 
   final CatalogState state;
 

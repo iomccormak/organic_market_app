@@ -9,9 +9,9 @@ import 'package:organic_market_app/presentation/pages/item/widgets/product_brand
 import 'package:organic_market_app/presentation/pages/item/widgets/recommendations.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/tags.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/custom_toggle_switch.dart';
-import 'package:organic_market_app/utils/app_colors.dart';
-import 'package:organic_market_app/utils/app_strings.dart';
-import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/app_constants/app_colors.dart';
+import 'package:organic_market_app/utils/app_constants/app_strings.dart';
+import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 
 class ItemPage extends StatelessWidget {
   const ItemPage({
@@ -152,7 +152,9 @@ class ItemPage extends StatelessWidget {
               ],
             ),
           ),
-          BottomNavBarWithPrice(product: product),
+          BottomNavBarWithPrice(
+            product: product,
+          ),
         ],
       ),
     );

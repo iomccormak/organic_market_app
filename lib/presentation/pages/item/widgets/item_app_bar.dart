@@ -6,10 +6,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:organic_market_app/domain/models/product/product.dart';
 import 'package:organic_market_app/presentation/common_widgets/loading_animation.dart';
 import 'package:organic_market_app/presentation/pages/favorites/bloc/favorites_bloc.dart';
-import 'package:organic_market_app/utils/app_colors.dart';
-import 'package:organic_market_app/utils/app_icons.dart';
-import 'package:organic_market_app/utils/app_strings.dart';
-import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/app_constants/app_colors.dart';
+import 'package:organic_market_app/utils/app_constants/app_icons.dart';
+import 'package:organic_market_app/utils/app_constants/app_strings.dart';
+import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 
 class ItemBar extends StatelessWidget {
   const ItemBar({super.key, required this.product});
@@ -21,10 +21,10 @@ class ItemBar extends StatelessWidget {
     return AppBar(
       shadowColor: AppColors.shadowColor,
       elevation: 15,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(12),
-          bottomRight: Radius.circular(12),
+          bottomLeft: Radius.circular(12.r),
+          bottomRight: Radius.circular(12.r),
         ),
       ),
       backgroundColor: AppColors.white,

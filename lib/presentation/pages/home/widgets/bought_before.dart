@@ -5,7 +5,10 @@ import 'package:organic_market_app/presentation/common_widgets/loading_animation
 import 'package:organic_market_app/presentation/pages/catalog/cubit/catalog_cubit.dart';
 
 class BoughtBefore extends StatelessWidget {
-  const BoughtBefore({super.key, required this.state});
+  const BoughtBefore({
+    super.key,
+    required this.state,
+  });
 
   final CatalogState state;
 

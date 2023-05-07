@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:organic_market_app/domain/models/order/order.dart';
-import 'package:organic_market_app/domain/models/order/orders.dart';
+import 'package:organic_market_app/domain/models/order/my_orders.dart';
 
 part 'my_orders_event.dart';
 part 'my_orders_state.dart';
@@ -12,14 +12,14 @@ class MyOrdersBloc extends Bloc<MyOrdersEvent, MyOrdersState> {
     on<MyOrdersAdded>(_onAdded);
   }
 
-  final orders = <Order>[];
+  final myOrders = <Order>[];
 
   Future<void> _onInitialized(
       MyOrdersInitialized event, Emitter<MyOrdersState> emit) async {
     emit(MyOrdersInitial());
     try {
-      final items = orders;
-      emit(MyOrdersLoad(orders: Orders(orders: [...items])));
+      final items = myOrders;
+      emit(MyOrdersLoad(myOrders: MyOrders(orders: [...items])));
     } catch (_) {
       emit(MyOrdersError());
     }
@@ -33,15 +33,15 @@ class MyOrdersBloc extends Bloc<MyOrdersEvent, MyOrdersState> {
         addItemToFavorites(event.order);
         emit(
           MyOrdersLoad(
-            orders: Orders(
-              orders: [...orders],
+            myOrders: MyOrders(
+              orders: [...myOrders],
             ),
           ),
         );
         emit(
           MyOrdersLoad(
-            orders: Orders(
-              orders: [...orders],
+            myOrders: MyOrders(
+              orders: [...myOrders],
             ),
           ),
         );
@@ -52,6 +52,6 @@ class MyOrdersBloc extends Bloc<MyOrdersEvent, MyOrdersState> {
   }
 
   void addItemToFavorites(Order order) {
-    orders.add(order);
+    myOrders.add(order);
   }
 }
