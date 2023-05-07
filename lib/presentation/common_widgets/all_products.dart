@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get_it/get_it.dart';
-import 'package:organic_market_app/domain/api.dart';
-import 'package:organic_market_app/domain/models/product.dart';
-import 'package:organic_market_app/presentation/common_widgets/product_widget.dart';
+import 'package:organic_market_app/domain/models/product/product.dart';
+import 'package:organic_market_app/presentation/common_widgets/cards/product_card.dart';
 
 class AllProducts extends StatelessWidget {
   const AllProducts({
@@ -28,7 +26,7 @@ class AllProducts extends StatelessWidget {
           itemCount: products.length,
           itemBuilder: (context, index) => Row(
             children: [
-              ProductWidget(
+              ProductCard(
                 product: products[index],
               ),
               SizedBox(

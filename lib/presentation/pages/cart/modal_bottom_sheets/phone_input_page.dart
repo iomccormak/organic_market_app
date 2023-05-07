@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/presentation/common_widgets/modal_bottom_sheet.dart';
-import 'package:organic_market_app/presentation/pages/cart/modal_bottom_sheets/name_input_page.dart';
 import 'package:organic_market_app/presentation/pages/cart/modal_bottom_sheets/phone_confirmation_page.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
@@ -14,7 +13,7 @@ class PhoneInputPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
 
     return SizedBox(
       height: 375.h,
@@ -49,7 +48,7 @@ class PhoneInputPage extends StatelessWidget {
               color: AppColors.toggleBackground,
               alignment: Alignment.center,
               child: Form(
-                key: _formKey,
+                key: formKey,
                 child: TextFormField(
                   style: AppTextStyles.bottomSheetTitleTextStyle.copyWith(
                     fontSize: 16.sp,
@@ -111,9 +110,9 @@ class PhoneInputPage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () async {
-                if (_formKey.currentState!.validate()) {
+                if (formKey.currentState!.validate()) {
                   await context.router.pop();
-                  modalBottomSheet(context, PhoneConfirmationPage());
+                  modalBottomSheet(context, const PhoneConfirmationPage());
                 }
               },
               child: Container(

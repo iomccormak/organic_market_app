@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/presentation/common_widgets/app_bar_widget.dart';
+import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
-import 'package:organic_market_app/presentation/common_widgets/product_widget.dart';
+import 'package:organic_market_app/presentation/common_widgets/cards/product_card.dart';
 import 'package:organic_market_app/presentation/pages/cart/widgets/empty_screen.dart';
 import 'package:organic_market_app/presentation/pages/favorites/bloc/favorites_bloc.dart';
-import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/text_formatter.dart';
 
 class FavoritesPage extends StatelessWidget {
   const FavoritesPage({super.key});
@@ -17,11 +17,11 @@ class FavoritesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        child: AppBarWidget(
-          label: 'Избранное',
+        preferredSize: Size.fromHeight(44.h),
+        child: const CustomAppBar(
+          label: AppStrings.favorites,
           back: true,
         ),
-        preferredSize: Size.fromHeight(44.h),
       ),
       body: BlocBuilder<FavoritesBloc, FavoritesState>(
         builder: (context, state) {
@@ -45,7 +45,9 @@ class FavoritesPage extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    '${state.favoritesModel.products.length} товаров',
+                                    state.favoritesModel.products.length
+                                        .toString()
+                                        .changeCase(),
                                     style: AppTextStyles.bottomBarTextStyle
                                         .copyWith(
                                       fontSize: 14.sp,
@@ -73,7 +75,7 @@ class FavoritesPage extends StatelessWidget {
                                   itemCount:
                                       state.favoritesModel.products.length,
                                   itemBuilder: (context, index) {
-                                    return ProductWidget(
+                                    return ProductCard(
                                       product:
                                           state.favoritesModel.products[index],
                                     );
@@ -84,11 +86,11 @@ class FavoritesPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      NavBarShadow(),
+                      const NavBarShadow(),
                     ],
                   )
-                : EmptyScreen(
-                    label: 'В избранном пока пусто',
+                : const EmptyScreen(
+                    label: AppStrings.favoritesIsEmpty,
                   );
           }
           return const Text('Error!');

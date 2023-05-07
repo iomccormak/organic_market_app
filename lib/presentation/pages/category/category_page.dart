@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get_it/get_it.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:organic_market_app/domain/api.dart';
-import 'package:organic_market_app/presentation/common_widgets/app_bar_widget.dart';
+import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
-import 'package:organic_market_app/presentation/common_widgets/loading_animation.dart';
-import 'package:organic_market_app/presentation/common_widgets/product_widget.dart';
-import 'package:organic_market_app/presentation/pages/catalog/cubit/shop_cubit.dart';
-import 'package:organic_market_app/utils/app_colors.dart';
+import 'package:organic_market_app/presentation/common_widgets/cards/product_card.dart';
+import 'package:organic_market_app/presentation/pages/catalog/cubit/catalog_cubit.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/text_formatter.dart';
 
 class CategoryPage extends StatelessWidget {
   const CategoryPage({super.key});
@@ -20,13 +16,13 @@ class CategoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        child: AppBarWidget(
+        preferredSize: Size.fromHeight(44.h),
+        child: const CustomAppBar(
           label: AppStrings.categories,
           back: true,
         ),
-        preferredSize: Size.fromHeight(44.h),
       ),
-      body: BlocBuilder<ShopCubit, ShopState>(
+      body: BlocBuilder<CatalogCubit, CatalogState>(
         builder: (context, state) {
           return Stack(
             children: [
@@ -43,7 +39,7 @@ class CategoryPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            '${state.products!.length} товаров',
+                            state.products!.length.toString().changeCase(),
                             style: AppTextStyles.bottomBarTextStyle.copyWith(
                               fontSize: 14.sp,
                             ),
@@ -69,7 +65,7 @@ class CategoryPage extends StatelessWidget {
                           ),
                           itemCount: state.products!.length,
                           itemBuilder: (context, index) {
-                            return ProductWidget(
+                            return ProductCard(
                               product: state.products![index],
                             );
                           },
@@ -79,7 +75,7 @@ class CategoryPage extends StatelessWidget {
                   ),
                 ),
               ),
-              NavBarShadow(),
+              const NavBarShadow(),
             ],
           );
         },

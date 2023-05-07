@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 abstract class AppIcons {
   static const splashLogo = "assets/icons/splashLogo.svg";
   static const mainLogo = "assets/icons/logo.svg";
@@ -42,7 +40,6 @@ abstract class AppIcons {
   static const figAlco = 'assets/icons/Ellipse 3.svg';
   static const figBio = 'assets/icons/Rectangle 24.svg';
   static const figSuper = 'assets/icons/Vector-5.svg';
-  static const iconStore = Icon(Icons.store);
 
   /// Profile
   static const question = 'assets/icons/question.svg';

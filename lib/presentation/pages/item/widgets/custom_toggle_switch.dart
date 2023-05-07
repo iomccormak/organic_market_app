@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:organic_market_app/domain/models/product.dart';
+import 'package:organic_market_app/domain/models/product/product.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 

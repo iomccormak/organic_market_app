@@ -14,8 +14,7 @@ class PhoneConfirmationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
-    String currentValue = '';
+    final formKey = GlobalKey<FormState>();
 
     return SizedBox(
       height: 339.h,
@@ -50,7 +49,7 @@ class PhoneConfirmationPage extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 10.w),
               alignment: Alignment.center,
               child: Form(
-                key: _formKey,
+                key: formKey,
                 child: PinCodeTextField(
                   appContext: context,
                   length: 4,
@@ -87,9 +86,9 @@ class PhoneConfirmationPage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () async {
-                if (_formKey.currentState!.validate()) {
+                if (formKey.currentState!.validate()) {
                   await context.router.pop();
-                  modalBottomSheet(context, NameInputPage());
+                  modalBottomSheet(context, const NameInputPage());
                 }
               },
               child: Container(

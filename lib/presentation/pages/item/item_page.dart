@@ -1,9 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/domain/models/product.dart';
-import 'package:organic_market_app/presentation/pages/item/widgets/bottom_bar_with_price.dart';
+import 'package:organic_market_app/domain/models/product/product.dart';
+import 'package:organic_market_app/presentation/pages/item/widgets/bottom_nav_bar_with_price.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/express_delivery.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/item_app_bar.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/product_images.dart';
@@ -154,7 +152,7 @@ class ItemPage extends StatelessWidget {
               ],
             ),
           ),
-          BottomBarWithPrice(product: product),
+          BottomNavBarWithPrice(product: product),
         ],
       ),
     );

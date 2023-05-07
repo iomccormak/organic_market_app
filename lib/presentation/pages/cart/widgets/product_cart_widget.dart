@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:organic_market_app/domain/models/product.dart';
+import 'package:organic_market_app/domain/models/product/product.dart';
 import 'package:organic_market_app/presentation/common_widgets/loading_animation.dart';
 import 'package:organic_market_app/presentation/pages/cart/bloc/cart_bloc.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
@@ -23,7 +23,7 @@ class ProductCartWidget extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Row(
           children: [
-            Container(
+            SizedBox(
               width: 70.w,
               height: 70.h,
               /*decoration: BoxDecoration(
@@ -34,7 +34,7 @@ class ProductCartWidget extends StatelessWidget {
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
               ),
               child: Image.asset(product.image!),*/
-              child: LoadingAnimation(),
+              child: const LoadingAnimation(),
             ),
             SizedBox(
               width: 16.w,
@@ -108,28 +108,6 @@ class ProductCartWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              /*child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    product.title,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppTextStyles.productWidgetTextStyle.copyWith(
-                      fontSize: 14.sp,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 4.h,
-                  ),
-                  Text(
-                    '${product.price} ${AppStrings.ruble}',
-                    style: AppTextStyles.priceTextStyle.copyWith(
-                      fontSize: 16.sp,
-                    ),
-                  ),
-                ],
-              ),*/
             )
           ],
         ),

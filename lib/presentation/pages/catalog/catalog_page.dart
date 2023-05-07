@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/data/repository/mock_repository.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
-import 'package:organic_market_app/presentation/common_widgets/app_bar_widget.dart';
+import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/common_widgets/title_text.dart';
-import 'package:organic_market_app/presentation/pages/catalog/widgets/catalog_app_bar.dart';
 import 'package:organic_market_app/presentation/pages/catalog/widgets/catalog_button.dart';
-import 'package:organic_market_app/presentation/pages/catalog/widgets/category_big_widget.dart';
+import 'package:organic_market_app/presentation/common_widgets/cards/category_big_card.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 
@@ -20,7 +19,7 @@ class CatalogPage extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(44.h),
-        child: AppBarWidget(
+        child: const CustomAppBar(
           label: AppStrings.catalog,
         ),
       ),
@@ -48,7 +47,8 @@ class CatalogPage extends StatelessWidget {
                         width: 8.w,
                       ),
                       GestureDetector(
-                        onTap: () => context.router.navigate(FavoritesRoute()),
+                        onTap: () =>
+                            context.router.navigate(const FavoritesRoute()),
                         child: const CatalogButton(
                           icon: AppIcons.redLike,
                           title: AppStrings.likes,
@@ -89,7 +89,7 @@ class CatalogPage extends StatelessWidget {
                       ),
                       itemCount: MockRepository.categories.length,
                       itemBuilder: (context, index) {
-                        return CategoryBigWidget(
+                        return CategoryBigCard(
                           category: MockRepository.categories[index],
                         );
                       },

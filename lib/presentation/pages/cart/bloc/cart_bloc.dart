@@ -1,8 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
-import 'package:organic_market_app/domain/models/cart.dart';
-import 'package:organic_market_app/domain/models/product.dart';
+import 'package:organic_market_app/domain/models/cart/cart.dart';
+import 'package:organic_market_app/domain/models/product/product.dart';
 
 part 'cart_event.dart';
 part 'cart_state.dart';
@@ -17,7 +16,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     on<CartCheckOut>(_onCartCheckout);
   }
 
-  final _items = <Product>[];
+  List<Product> _items = <Product>[];
 
   Future<void> _onCartCheckout(
       CartCheckOut event, Emitter<CartState> emit) async {
@@ -26,8 +25,9 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       for (Product p in _items) {
         p.count = 0;
       }
+      _items = [];
       final items = [];
-      emit(CartLoad(bag: Cart(products: [...items])));
+      emit(CartLoad(cart: Cart(products: [...items])));
     } catch (_) {
       emit(CartError());
     }
@@ -52,7 +52,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     emit(CartInitial());
     try {
       final items = _items;
-      emit(CartLoad(bag: Cart(products: [...items])));
+      emit(CartLoad(cart: Cart(products: [...items])));
     } catch (_) {
       emit(CartError());
     }
@@ -77,7 +77,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       try {
         emit(
           CartLoad(
-            bag: Cart(
+            cart: Cart(
               products: [..._items],
             ),
             isProductUpdated: false,
@@ -86,7 +86,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
         incrementProduct(event.product);
         emit(
           CartLoad(
-            bag: Cart(
+            cart: Cart(
               products: [..._items],
             ),
             isProductUpdated: true,
@@ -106,7 +106,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       try {
         emit(
           CartLoad(
-            bag: Cart(
+            cart: Cart(
               products: [..._items],
             ),
             isProductUpdated: false,
@@ -115,7 +115,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
         decrementProduct(event.product);
         emit(
           CartLoad(
-            bag: Cart(
+            cart: Cart(
               products: [..._items],
             ),
             isProductUpdated: true,
@@ -135,7 +135,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       try {
         emit(
           CartLoad(
-            bag: Cart(
+            cart: Cart(
               products: [..._items],
             ),
             isProductUpdated: false,
@@ -144,7 +144,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
         addItemToCart(event.product);
         emit(
           CartLoad(
-            bag: Cart(
+            cart: Cart(
               products: [..._items],
             ),
             isProductUpdated: true,
@@ -171,8 +171,8 @@ class CartBloc extends Bloc<CartEvent, CartState> {
         }
         emit(
           CartLoad(
-            bag: Cart(
-              products: [...state.bag.products]..remove(event.product),
+            cart: Cart(
+              products: [...state.cart.products]..remove(event.product),
             ),
             totalPrice: state.totalPrice -
                 (event.product.count * event.product.price!.toDouble()),
