@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
+import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class AboutCompany extends StatelessWidget {
@@ -16,7 +17,7 @@ class AboutCompany extends StatelessWidget {
         backgroundColor: AppColors.white,
         titleSpacing: -35.w,
         title: Text(
-          'О компании',
+          AppStrings.aboutCompany,
           style: TextStyle(
             color: AppColors.black,
             fontSize: 18.sp,
@@ -40,7 +41,7 @@ class AboutCompany extends StatelessWidget {
           horizontal: 16.w,
         ),
         child: Text(
-          'Что-то про компанию',
+          '',
           style: AppTextStyles.categoryTextStyle.copyWith(
             fontSize: 14.sp,
           ),

@@ -12,9 +12,9 @@ class GreenButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        left: 9.5,
-        right: 9.5,
+      padding: EdgeInsets.only(
+        left: 9.5.w,
+        right: 9.5.w,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

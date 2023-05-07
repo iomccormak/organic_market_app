@@ -1,9 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:organic_market_app/domain/models/product/product.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
+import 'package:organic_market_app/presentation/pages/cart/bloc/cart_bloc.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
@@ -91,24 +93,28 @@ class ProductCard extends StatelessWidget {
                 style: AppTextStyles.priceTextStyle,
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                left: 104.w,
-                right: 12.w,
-                top: 201.h,
-              ),
-              child: Container(
-                width: 52.w,
-                height: 31.h,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(68),
-                  ),
-                  color: AppColors.mainGreen,
+            GestureDetector(
+              onTap: () =>
+                  context.read<CartBloc>().add(CartProductAdded(product)),
+              child: Padding(
+                padding: EdgeInsets.only(
+                  left: 104.w,
+                  right: 12.w,
+                  top: 201.h,
                 ),
-                child: Transform.scale(
-                  scale: 0.5,
-                  child: SvgPicture.asset(AppIcons.cart),
+                child: Container(
+                  width: 52.w,
+                  height: 31.h,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(68),
+                    ),
+                    color: AppColors.mainGreen,
+                  ),
+                  child: Transform.scale(
+                    scale: 0.5,
+                    child: SvgPicture.asset(AppIcons.cart),
+                  ),
                 ),
               ),
             ),

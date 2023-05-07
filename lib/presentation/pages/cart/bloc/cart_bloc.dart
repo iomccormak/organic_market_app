@@ -18,37 +18,8 @@ class CartBloc extends Bloc<CartEvent, CartState> {
 
   List<Product> _items = <Product>[];
 
-  Future<void> _onCartCheckout(
-      CartCheckOut event, Emitter<CartState> emit) async {
-    emit(CartInitial());
-    try {
-      for (Product p in _items) {
-        p.count = 0;
-      }
-      _items = [];
-      final items = [];
-      emit(CartLoad(cart: Cart(products: [...items])));
-    } catch (_) {
-      emit(CartError());
-    }
-  }
-
-  void addItemToCart(Product product) {
-    if (isProductInCart(product)) {
-      incrementProduct(product);
-    } else {
-      _items.add(product);
-    }
-  }
-
-  bool isProductInCart(Product product) {
-    return _items
-        .any((checkedProduct) => checkedProduct.title == product.title);
-  }
-
-  void removeItemFromBag(Product product) => _items.remove(product);
-
-  void _onInitialized(CartInitialized event, Emitter<CartState> emit) {
+  Future<void> _onInitialized(
+      CartInitialized event, Emitter<CartState> emit) async {
     emit(CartInitial());
     try {
       final items = _items;
@@ -58,15 +29,18 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     }
   }
 
-  void incrementProduct(Product product) {
-    product.count++;
-  }
-
-  void decrementProduct(Product product) {
-    if (product.count > 1) {
-      product.count--;
-    } else {
-      _items.remove(product);
+  Future<void> _onCartCheckout(
+      CartCheckOut event, Emitter<CartState> emit) async {
+    emit(CartInitial());
+    try {
+      for (Product p in _items) {
+        p.count = 1;
+      }
+      _items = [];
+      final items = [];
+      emit(CartLoad(cart: Cart(products: [...items])));
+    } catch (_) {
+      emit(CartError());
     }
   }
 
@@ -157,11 +131,26 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     }
   }
 
+  bool isProductInCart(Product product) {
+    return _items
+        .any((checkedProduct) => checkedProduct.title == product.title);
+  }
+
+  void addItemToCart(Product product) {
+    if (isProductInCart(product)) {
+      incrementProduct(product);
+    } else {
+      _items.add(product);
+    }
+  }
+
+  void removeItemFromCart(Product product) => _items.remove(product);
+
   void _onProductRemoved(CartProductRemoved event, Emitter<CartState> emit) {
     final state = this.state;
     if (state is CartLoad) {
       try {
-        removeItemFromBag(event.product);
+        removeItemFromCart(event.product);
         if (_items.isEmpty) {
           emit(
             const CartLoad(
@@ -181,6 +170,18 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       } catch (_) {
         emit(CartError());
       }
+    }
+  }
+
+  void incrementProduct(Product product) {
+    product.count++;
+  }
+
+  void decrementProduct(Product product) {
+    if (product.count > 1) {
+      product.count--;
+    } else {
+      _items.remove(product);
     }
   }
 }

@@ -11,127 +11,145 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i14;
+import 'package:auto_route/auto_route.dart' as _i15;
 import 'package:auto_route/empty_router_widgets.dart' as _i2;
-import 'package:flutter/cupertino.dart' as _i16;
-import 'package:flutter/material.dart' as _i15;
+import 'package:flutter/cupertino.dart' as _i17;
+import 'package:flutter/material.dart' as _i16;
 
-import '../domain/models/order/order.dart' as _i18;
-import '../domain/models/product/product.dart' as _i17;
-import '../presentation/pages/cart/cart_page.dart' as _i4;
-import '../presentation/pages/catalog/catalog_page.dart' as _i7;
-import '../presentation/pages/category/category_page.dart' as _i8;
-import '../presentation/pages/favorites/favorites_page.dart' as _i9;
-import '../presentation/pages/home/home_page.dart' as _i5;
-import '../presentation/pages/item/item_page.dart' as _i6;
+import '../domain/models/order/order.dart' as _i19;
+import '../domain/models/product/product.dart' as _i18;
+import '../presentation/pages/ordering/ordering_page.dart' as _i10;
+import '../presentation/pages/cart/cart_page.dart' as _i9;
+import '../presentation/pages/catalog/catalog_page.dart' as _i6;
+import '../presentation/pages/category/category_page.dart' as _i7;
+import '../presentation/pages/favorites/favorites_page.dart' as _i8;
+import '../presentation/pages/home/home_page.dart' as _i4;
+import '../presentation/pages/item/item_page.dart' as _i5;
 import '../presentation/pages/main/main_page.dart' as _i1;
-import '../presentation/pages/my_orders/my_orders_page.dart' as _i12;
-import '../presentation/pages/order/order_page.dart' as _i13;
-import '../presentation/pages/personal_info/personal_info_page.dart' as _i11;
-import '../presentation/pages/profile/profile_page.dart' as _i10;
+import '../presentation/pages/my_orders/my_orders_page.dart' as _i13;
+import '../presentation/pages/order/order_page.dart' as _i14;
+import '../presentation/pages/personal_info/personal_info_page.dart' as _i12;
+import '../presentation/pages/profile/profile_page.dart' as _i11;
 import '../presentation/pages/search/search_page.dart' as _i3;
 
-class AppRouter extends _i14.RootStackRouter {
-  AppRouter([_i15.GlobalKey<_i15.NavigatorState>? navigatorKey])
+class AppRouter extends _i15.RootStackRouter {
+  AppRouter([_i16.GlobalKey<_i16.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i14.PageFactory> pagesMap = {
+  final Map<String, _i15.PageFactory> pagesMap = {
     MainRoute.name: (routeData) {
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i1.MainPage(),
       );
     },
     HomeRouter.name: (routeData) {
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i2.EmptyRouterPage(),
       );
     },
     CatalogRouter.name: (routeData) {
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i2.EmptyRouterPage(),
       );
     },
     SearchRouter.name: (routeData) {
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i3.SearchPage(),
       );
     },
     CartRouter.name: (routeData) {
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i4.CartPage(),
+        child: const _i2.EmptyRouterPage(),
       );
     },
     ProfileRouter.name: (routeData) {
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i2.EmptyRouterPage(),
       );
     },
     HomeRoute.name: (routeData) {
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i5.HomePage(),
+        child: const _i4.HomePage(),
       );
     },
     ItemRoute.name: (routeData) {
       final args = routeData.argsAs<ItemRouteArgs>();
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: _i6.ItemPage(
+        child: _i5.ItemPage(
           key: args.key,
           product: args.product,
         ),
       );
     },
     CatalogRoute.name: (routeData) {
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i7.CatalogPage(),
+        child: const _i6.CatalogPage(),
       );
     },
     CategoryRoute.name: (routeData) {
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i8.CategoryPage(),
+        child: const _i7.CategoryPage(),
       );
     },
     FavoritesRoute.name: (routeData) {
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i9.FavoritesPage(),
+        child: const _i8.FavoritesPage(),
+      );
+    },
+    CartRoute.name: (routeData) {
+      return _i15.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i9.CartPage(),
+      );
+    },
+    OrderingRoute.name: (routeData) {
+      final args = routeData.argsAs<OrderingRouteArgs>();
+      return _i15.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: _i10.OrderingPage(
+          key: args.key,
+          products: args.products,
+          totalPrice: args.totalPrice,
+        ),
       );
     },
     ProfileRoute.name: (routeData) {
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i10.ProfilePage(),
+        child: const _i11.ProfilePage(),
       );
     },
     PersonalInfoRoute.name: (routeData) {
       final args = routeData.argsAs<PersonalInfoRouteArgs>(
           orElse: () => const PersonalInfoRouteArgs());
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: _i11.PersonalInfoPage(key: args.key),
+        child: _i12.PersonalInfoPage(key: args.key),
       );
     },
     MyOrdersRoute.name: (routeData) {
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i12.MyOrdersPage(),
+        child: const _i13.MyOrdersPage(),
       );
     },
     OrderRoute.name: (routeData) {
       final args = routeData.argsAs<OrderRouteArgs>();
-      return _i14.MaterialPageX<dynamic>(
+      return _i15.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: _i13.OrderPage(
+        child: _i14.OrderPage(
           key: args.key,
           order: args.order,
         ),
@@ -140,86 +158,98 @@ class AppRouter extends _i14.RootStackRouter {
   };
 
   @override
-  List<_i14.RouteConfig> get routes => [
-        _i14.RouteConfig(
+  List<_i15.RouteConfig> get routes => [
+        _i15.RouteConfig(
           MainRoute.name,
           path: '/',
           children: [
-            _i14.RouteConfig(
+            _i15.RouteConfig(
               HomeRouter.name,
               path: 'home',
               parent: MainRoute.name,
               children: [
-                _i14.RouteConfig(
+                _i15.RouteConfig(
                   HomeRoute.name,
                   path: '',
                   parent: HomeRouter.name,
                 ),
-                _i14.RouteConfig(
+                _i15.RouteConfig(
                   ItemRoute.name,
                   path: ':product',
                   parent: HomeRouter.name,
                 ),
               ],
             ),
-            _i14.RouteConfig(
+            _i15.RouteConfig(
               CatalogRouter.name,
               path: 'catalog',
               parent: MainRoute.name,
               children: [
-                _i14.RouteConfig(
+                _i15.RouteConfig(
                   CatalogRoute.name,
                   path: '',
                   parent: CatalogRouter.name,
                 ),
-                _i14.RouteConfig(
+                _i15.RouteConfig(
                   CategoryRoute.name,
                   path: 'category',
                   parent: CatalogRouter.name,
                 ),
-                _i14.RouteConfig(
+                _i15.RouteConfig(
                   ItemRoute.name,
                   path: ':product',
                   parent: CatalogRouter.name,
                 ),
-                _i14.RouteConfig(
+                _i15.RouteConfig(
                   FavoritesRoute.name,
                   path: 'favorites',
                   parent: CatalogRouter.name,
                 ),
               ],
             ),
-            _i14.RouteConfig(
+            _i15.RouteConfig(
               SearchRouter.name,
               path: 'search',
               parent: MainRoute.name,
             ),
-            _i14.RouteConfig(
+            _i15.RouteConfig(
               CartRouter.name,
               path: 'cart',
               parent: MainRoute.name,
+              children: [
+                _i15.RouteConfig(
+                  CartRoute.name,
+                  path: '',
+                  parent: CartRouter.name,
+                ),
+                _i15.RouteConfig(
+                  OrderingRoute.name,
+                  path: ':ordering',
+                  parent: CartRouter.name,
+                ),
+              ],
             ),
-            _i14.RouteConfig(
+            _i15.RouteConfig(
               ProfileRouter.name,
               path: 'profile',
               parent: MainRoute.name,
               children: [
-                _i14.RouteConfig(
+                _i15.RouteConfig(
                   ProfileRoute.name,
                   path: '',
                   parent: ProfileRouter.name,
                 ),
-                _i14.RouteConfig(
+                _i15.RouteConfig(
                   PersonalInfoRoute.name,
                   path: ':personalInfo',
                   parent: ProfileRouter.name,
                 ),
-                _i14.RouteConfig(
+                _i15.RouteConfig(
                   MyOrdersRoute.name,
                   path: ':myOrders',
                   parent: ProfileRouter.name,
                 ),
-                _i14.RouteConfig(
+                _i15.RouteConfig(
                   OrderRoute.name,
                   path: ':order',
                   parent: ProfileRouter.name,
@@ -233,8 +263,8 @@ class AppRouter extends _i14.RootStackRouter {
 
 /// generated route for
 /// [_i1.MainPage]
-class MainRoute extends _i14.PageRouteInfo<void> {
-  const MainRoute({List<_i14.PageRouteInfo>? children})
+class MainRoute extends _i15.PageRouteInfo<void> {
+  const MainRoute({List<_i15.PageRouteInfo>? children})
       : super(
           MainRoute.name,
           path: '/',
@@ -246,8 +276,8 @@ class MainRoute extends _i14.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.EmptyRouterPage]
-class HomeRouter extends _i14.PageRouteInfo<void> {
-  const HomeRouter({List<_i14.PageRouteInfo>? children})
+class HomeRouter extends _i15.PageRouteInfo<void> {
+  const HomeRouter({List<_i15.PageRouteInfo>? children})
       : super(
           HomeRouter.name,
           path: 'home',
@@ -259,8 +289,8 @@ class HomeRouter extends _i14.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.EmptyRouterPage]
-class CatalogRouter extends _i14.PageRouteInfo<void> {
-  const CatalogRouter({List<_i14.PageRouteInfo>? children})
+class CatalogRouter extends _i15.PageRouteInfo<void> {
+  const CatalogRouter({List<_i15.PageRouteInfo>? children})
       : super(
           CatalogRouter.name,
           path: 'catalog',
@@ -272,7 +302,7 @@ class CatalogRouter extends _i14.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.SearchPage]
-class SearchRouter extends _i14.PageRouteInfo<void> {
+class SearchRouter extends _i15.PageRouteInfo<void> {
   const SearchRouter()
       : super(
           SearchRouter.name,
@@ -283,12 +313,13 @@ class SearchRouter extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.CartPage]
-class CartRouter extends _i14.PageRouteInfo<void> {
-  const CartRouter()
+/// [_i2.EmptyRouterPage]
+class CartRouter extends _i15.PageRouteInfo<void> {
+  const CartRouter({List<_i15.PageRouteInfo>? children})
       : super(
           CartRouter.name,
           path: 'cart',
+          initialChildren: children,
         );
 
   static const String name = 'CartRouter';
@@ -296,8 +327,8 @@ class CartRouter extends _i14.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.EmptyRouterPage]
-class ProfileRouter extends _i14.PageRouteInfo<void> {
-  const ProfileRouter({List<_i14.PageRouteInfo>? children})
+class ProfileRouter extends _i15.PageRouteInfo<void> {
+  const ProfileRouter({List<_i15.PageRouteInfo>? children})
       : super(
           ProfileRouter.name,
           path: 'profile',
@@ -308,8 +339,8 @@ class ProfileRouter extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i5.HomePage]
-class HomeRoute extends _i14.PageRouteInfo<void> {
+/// [_i4.HomePage]
+class HomeRoute extends _i15.PageRouteInfo<void> {
   const HomeRoute()
       : super(
           HomeRoute.name,
@@ -320,11 +351,11 @@ class HomeRoute extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.ItemPage]
-class ItemRoute extends _i14.PageRouteInfo<ItemRouteArgs> {
+/// [_i5.ItemPage]
+class ItemRoute extends _i15.PageRouteInfo<ItemRouteArgs> {
   ItemRoute({
-    _i16.Key? key,
-    required _i17.Product product,
+    _i17.Key? key,
+    required _i18.Product product,
   }) : super(
           ItemRoute.name,
           path: ':product',
@@ -343,9 +374,9 @@ class ItemRouteArgs {
     required this.product,
   });
 
-  final _i16.Key? key;
+  final _i17.Key? key;
 
-  final _i17.Product product;
+  final _i18.Product product;
 
   @override
   String toString() {
@@ -354,8 +385,8 @@ class ItemRouteArgs {
 }
 
 /// generated route for
-/// [_i7.CatalogPage]
-class CatalogRoute extends _i14.PageRouteInfo<void> {
+/// [_i6.CatalogPage]
+class CatalogRoute extends _i15.PageRouteInfo<void> {
   const CatalogRoute()
       : super(
           CatalogRoute.name,
@@ -366,8 +397,8 @@ class CatalogRoute extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i8.CategoryPage]
-class CategoryRoute extends _i14.PageRouteInfo<void> {
+/// [_i7.CategoryPage]
+class CategoryRoute extends _i15.PageRouteInfo<void> {
   const CategoryRoute()
       : super(
           CategoryRoute.name,
@@ -378,8 +409,8 @@ class CategoryRoute extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i9.FavoritesPage]
-class FavoritesRoute extends _i14.PageRouteInfo<void> {
+/// [_i8.FavoritesPage]
+class FavoritesRoute extends _i15.PageRouteInfo<void> {
   const FavoritesRoute()
       : super(
           FavoritesRoute.name,
@@ -390,8 +421,59 @@ class FavoritesRoute extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i10.ProfilePage]
-class ProfileRoute extends _i14.PageRouteInfo<void> {
+/// [_i9.CartPage]
+class CartRoute extends _i15.PageRouteInfo<void> {
+  const CartRoute()
+      : super(
+          CartRoute.name,
+          path: '',
+        );
+
+  static const String name = 'CartRoute';
+}
+
+/// generated route for
+/// [_i10.OrderingPage]
+class OrderingRoute extends _i15.PageRouteInfo<OrderingRouteArgs> {
+  OrderingRoute({
+    _i17.Key? key,
+    required List<_i18.Product> products,
+    required double totalPrice,
+  }) : super(
+          OrderingRoute.name,
+          path: ':ordering',
+          args: OrderingRouteArgs(
+            key: key,
+            products: products,
+            totalPrice: totalPrice,
+          ),
+        );
+
+  static const String name = 'OrderingRoute';
+}
+
+class OrderingRouteArgs {
+  const OrderingRouteArgs({
+    this.key,
+    required this.products,
+    required this.totalPrice,
+  });
+
+  final _i17.Key? key;
+
+  final List<_i18.Product> products;
+
+  final double totalPrice;
+
+  @override
+  String toString() {
+    return 'OrderingRouteArgs{key: $key, products: $products, totalPrice: $totalPrice}';
+  }
+}
+
+/// generated route for
+/// [_i11.ProfilePage]
+class ProfileRoute extends _i15.PageRouteInfo<void> {
   const ProfileRoute()
       : super(
           ProfileRoute.name,
@@ -402,9 +484,9 @@ class ProfileRoute extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i11.PersonalInfoPage]
-class PersonalInfoRoute extends _i14.PageRouteInfo<PersonalInfoRouteArgs> {
-  PersonalInfoRoute({_i16.Key? key})
+/// [_i12.PersonalInfoPage]
+class PersonalInfoRoute extends _i15.PageRouteInfo<PersonalInfoRouteArgs> {
+  PersonalInfoRoute({_i17.Key? key})
       : super(
           PersonalInfoRoute.name,
           path: ':personalInfo',
@@ -417,7 +499,7 @@ class PersonalInfoRoute extends _i14.PageRouteInfo<PersonalInfoRouteArgs> {
 class PersonalInfoRouteArgs {
   const PersonalInfoRouteArgs({this.key});
 
-  final _i16.Key? key;
+  final _i17.Key? key;
 
   @override
   String toString() {
@@ -426,8 +508,8 @@ class PersonalInfoRouteArgs {
 }
 
 /// generated route for
-/// [_i12.MyOrdersPage]
-class MyOrdersRoute extends _i14.PageRouteInfo<void> {
+/// [_i13.MyOrdersPage]
+class MyOrdersRoute extends _i15.PageRouteInfo<void> {
   const MyOrdersRoute()
       : super(
           MyOrdersRoute.name,
@@ -438,11 +520,11 @@ class MyOrdersRoute extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i13.OrderPage]
-class OrderRoute extends _i14.PageRouteInfo<OrderRouteArgs> {
+/// [_i14.OrderPage]
+class OrderRoute extends _i15.PageRouteInfo<OrderRouteArgs> {
   OrderRoute({
-    _i16.Key? key,
-    required _i18.Order order,
+    _i17.Key? key,
+    required _i19.Order order,
   }) : super(
           OrderRoute.name,
           path: ':order',
@@ -461,9 +543,9 @@ class OrderRouteArgs {
     required this.order,
   });
 
-  final _i16.Key? key;
+  final _i17.Key? key;
 
-  final _i18.Order order;
+  final _i19.Order order;
 
   @override
   String toString() {

@@ -4,7 +4,7 @@ abstract class AppStrings {
   static const plusSeven = "+7";
 
   /// Home
-  static const adress = "ул. Пушкина 15, д. Колотушкина, кв. 113";
+  static const adress = "ул. Маршала Бирюзова, д. 19, кв. 189";
   static const popCategories = "Популярные категории";
   static const bestOffers = "Лучшие предложения";
   static const boughtBefore = "Уже покупали";
@@ -35,6 +35,9 @@ abstract class AppStrings {
   static const expressDelivery = "Экспресс-доставка";
   static const amount = '/ 1 шт.';
   static const expressAtMorning = 'Экспресс-доставка завтра утром';
+  static const wordDiscount = 'Скидка 10%';
+  static const discount = '-10%';
+  static const sum = 'Итого';
 
   /// Cart
   static const cartIsEmpty = "В корзине пока пусто";
@@ -90,6 +93,15 @@ abstract class AppStrings {
   static const onTheWay = 'В пути';
   static const delievered = 'Доставлено';
   static const deal = 'Оформить';
+  static const order = 'Заказ';
+  static const formOrder = 'Оформить заказ';
+  static const commentary = 'Комментарий';
+  static const addressDel = 'Адрес доставки';
+  static const dateAndTimeDel = 'Дата и время доставки';
+  static const wayOfPayment = 'Способ оплаты';
+  static const bankCard = 'Банковской картой';
+  static const getPoints = 'Списать баллы';
+  static const formingOrder = 'Оформление заказа';
 
   /// Favorites
   static const favorites = 'Избранное';

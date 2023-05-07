@@ -46,8 +46,8 @@ class NameInputPage extends StatelessWidget {
             height: 24.h,
           ),
           GestureDetector(
-            onTap: () async {
-              await context.router.pop();
+            onTap: () {
+              context.router.pop();
             },
             child: Container(
               width: 343.w,

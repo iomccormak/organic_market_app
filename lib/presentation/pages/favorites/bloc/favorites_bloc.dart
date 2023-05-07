@@ -12,10 +12,11 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
     on<FavoritesProductAdded>(_onProductAdded);
     on<FavoritesProductRemoved>(_onProductRemoved);
   }
+
   final _favProducts = <Product>[];
 
-  void _onInitialized(
-      FavoritesInitialized event, Emitter<FavoritesState> emit) {
+  Future<void> _onInitialized(
+      FavoritesInitialized event, Emitter<FavoritesState> emit) async {
     emit(FavoritesInitial());
     try {
       final items = _favProducts;
@@ -53,18 +54,6 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
     }
   }
 
-  void addItemToFavorites(Product product) {
-    product.isFavorite = true;
-    if (!isProductInFavorites(product)) {
-      _favProducts.add(product);
-    }
-  }
-
-  bool isProductInFavorites(Product product) {
-    return _favProducts
-        .any((checkedProduct) => checkedProduct.title == product.title);
-  }
-
   Future<void> _onProductRemoved(
       FavoritesProductRemoved event, Emitter<FavoritesState> emit) async {
     final state = this.state;
@@ -90,6 +79,18 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
       } catch (_) {
         emit(FavoritesError());
       }
+    }
+  }
+
+  bool isProductInFavorites(Product product) {
+    return _favProducts
+        .any((checkedProduct) => checkedProduct.title == product.title);
+  }
+
+  void addItemToFavorites(Product product) {
+    product.isFavorite = true;
+    if (!isProductInFavorites(product)) {
+      _favProducts.add(product);
     }
   }
 

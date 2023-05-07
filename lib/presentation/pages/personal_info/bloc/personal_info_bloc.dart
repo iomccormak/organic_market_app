@@ -11,8 +11,8 @@ class PersonalInfoBloc extends Bloc<PersonalInfoEvent, PersonalInfoState> {
     on<PersonalInfoSaved>(_onSaved);
   }
 
-  void _onInitialized(
-      PersonalInfoInitialized event, Emitter<PersonalInfoState> emit) {
+  Future<void> _onInitialized(
+      PersonalInfoInitialized event, Emitter<PersonalInfoState> emit) async {
     emit(PersonalInfoInitial());
     try {
       emit(
@@ -31,7 +31,8 @@ class PersonalInfoBloc extends Bloc<PersonalInfoEvent, PersonalInfoState> {
     }
   }
 
-  void _onSaved(PersonalInfoSaved event, Emitter<PersonalInfoState> emit) {
+  Future<void> _onSaved(
+      PersonalInfoSaved event, Emitter<PersonalInfoState> emit) async {
     emit(PersonalInfoInitial());
     try {
       emit(

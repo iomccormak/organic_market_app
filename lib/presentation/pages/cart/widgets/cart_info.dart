@@ -46,14 +46,14 @@ class CartInfo extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Скидка 10%',
+                      AppStrings.wordDiscount,
                       style: AppTextStyles.priceTextStyle.copyWith(
                         fontWeight: FontWeight.w400,
                         color: AppColors.red,
                       ),
                     ),
                     Text(
-                      '-150 ${AppStrings.ruble}',
+                      '-${(state.totalPrice * 0.1).toStringAsFixed(2)} ${AppStrings.ruble}',
                       style: AppTextStyles.priceTextStyle.copyWith(
                         fontWeight: FontWeight.w400,
                         color: AppColors.red,
@@ -65,7 +65,7 @@ class CartInfo extends StatelessWidget {
             ),
           );
         }
-        return const Text('Error!');
+        return const SizedBox.shrink();
       },
     );
   }

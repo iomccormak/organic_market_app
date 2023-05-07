@@ -111,8 +111,9 @@ class PhoneInputPage extends StatelessWidget {
             GestureDetector(
               onTap: () async {
                 if (formKey.currentState!.validate()) {
-                  await context.router.pop();
-                  modalBottomSheet(context, const PhoneConfirmationPage());
+                  await modalBottomSheet(
+                      context, const PhoneConfirmationPage());
+                  context.router.pop();
                 }
               },
               child: Container(

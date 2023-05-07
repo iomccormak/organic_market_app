@@ -24,7 +24,7 @@ class Tags extends StatelessWidget {
           ),
           alignment: Alignment.center,
           child: Text(
-            '-25%',
+            AppStrings.wordDiscount,
             style: AppTextStyles.lowWidgetTextStyle.copyWith(
               fontWeight: FontWeight.w700,
               color: AppColors.white,

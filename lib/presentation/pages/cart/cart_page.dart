@@ -2,15 +2,20 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market_app/domain/models/order/order.dart';
+import 'package:organic_market_app/navigation/auto_router.gr.dart';
 import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/button_under_nav_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/main_green_button.dart';
 import 'package:organic_market_app/presentation/common_widgets/modal_bottom_sheet.dart';
+import 'package:organic_market_app/presentation/common_widgets/title_text.dart';
 import 'package:organic_market_app/presentation/pages/cart/bloc/cart_bloc.dart';
 import 'package:organic_market_app/presentation/pages/cart/modal_bottom_sheets/phone_input_page.dart';
 import 'package:organic_market_app/presentation/pages/cart/widgets/cart_info.dart';
 import 'package:organic_market_app/presentation/pages/cart/widgets/empty_screen.dart';
 import 'package:organic_market_app/presentation/pages/cart/widgets/product_cart_widget.dart';
+import 'package:organic_market_app/presentation/pages/home/widgets/bought_before.dart';
+import 'package:organic_market_app/presentation/pages/my_orders/bloc/my_orders_bloc.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 
 class CartPage extends StatelessWidget {
@@ -71,9 +76,14 @@ class CartPage extends StatelessWidget {
                       ButtonUnderNavBar(
                         button: GestureDetector(
                           onTap: () async {
-                            await context.router.pop();
-                            modalBottomSheet(context, const PhoneInputPage());
-                            context.read<CartBloc>().add(const CartCheckOut());
+                            await modalBottomSheet(
+                                context, const PhoneInputPage());
+                            context.router.navigate(
+                              OrderingRoute(
+                                products: state.cart.products,
+                                totalPrice: state.totalPrice,
+                              ),
+                            );
                           },
                           child: const MainGreenButton(
                             label: AppStrings.deal,
@@ -86,7 +96,7 @@ class CartPage extends StatelessWidget {
                     label: AppStrings.cartIsEmpty,
                   );
           }
-          return const Text('Error!');
+          return const SizedBox.shrink();
         },
       ),
     );

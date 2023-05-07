@@ -11,7 +11,10 @@ import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class ProductCartWidget extends StatelessWidget {
-  const ProductCartWidget({super.key, required this.product});
+  const ProductCartWidget({
+    super.key,
+    required this.product,
+  });
 
   final Product product;
 
@@ -23,18 +26,19 @@ class ProductCartWidget extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Row(
           children: [
-            SizedBox(
+            Container(
               width: 70.w,
               height: 70.h,
-              /*decoration: BoxDecoration(
+              decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(product.image!),
+                  image: NetworkImage(
+                    product.image!,
+                    scale: 0.5,
+                  ),
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
               ),
-              child: Image.asset(product.image!),*/
-              child: const LoadingAnimation(),
             ),
             SizedBox(
               width: 16.w,

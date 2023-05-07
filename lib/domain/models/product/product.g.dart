@@ -14,13 +14,5 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
       description: json['description'] as String?,
       category: json['category'] as String?,
       image: json['image'] as String?,
-      rating: json['rating'] == null
-          ? null
-          : Rating.fromJson(json['rating'] as Map<String, dynamic>),
       count: json['count'] as int? ?? 1,
-    );
-
-Rating _$RatingFromJson(Map<String, dynamic> json) => Rating(
-      rate: (json['rate'] as num?)?.toDouble(),
-      count: json['count'] as int?,
     );

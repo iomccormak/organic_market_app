@@ -64,10 +64,9 @@ class ItemBar extends StatelessWidget {
                         ),
                 ),
               );
-            } else if (state is FavoritesError) {
-              return const Text('Error');
+            } else {
+              return const LoadingAnimation();
             }
-            return const LoadingAnimation();
           },
         ),
       ],

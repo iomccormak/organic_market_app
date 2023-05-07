@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
+import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class AboutOrganic extends StatelessWidget {
@@ -16,7 +17,7 @@ class AboutOrganic extends StatelessWidget {
         backgroundColor: AppColors.white,
         titleSpacing: -35.w,
         title: Text(
-          'Об органике',
+          AppStrings.aboutOrganic,
           style: TextStyle(
             color: AppColors.black,
             fontSize: 18.sp,
@@ -40,7 +41,7 @@ class AboutOrganic extends StatelessWidget {
           horizontal: 16.w,
         ),
         child: Text(
-          'Главный принцип органического сельского хозяйства — это забота об окружающей среде и здоровье человека',
+          '',
           style: AppTextStyles.categoryTextStyle.copyWith(
             fontSize: 14.sp,
           ),

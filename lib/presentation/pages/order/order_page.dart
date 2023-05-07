@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:organic_market_app/domain/models/order/order.dart';
+import 'package:organic_market_app/domain/models/order/order_status.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
+import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.dart';
 import 'package:organic_market_app/presentation/pages/order/widgets/order_product_widget.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
@@ -22,11 +24,6 @@ class OrderPage extends StatelessWidget {
   final Order order;
 
   @override
-  Widget build(BuildContext context) {
-    return const Center();
-  }
-
-  /*@override
   Widget build(BuildContext context) {
     final Color iconBackground;
     final String icon;
@@ -49,6 +46,13 @@ class OrderPage extends StatelessWidget {
     }
 
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(44.h),
+        child: const CustomAppBar(
+          label: AppStrings.order,
+          back: true,
+        ),
+      ),
       body: Stack(
         children: [
           Center(
@@ -56,7 +60,7 @@ class OrderPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 100.h,
+                  height: 35.h,
                 ),
                 Text(
                   order.date.toRusFormat(),
@@ -68,7 +72,7 @@ class OrderPage extends StatelessWidget {
                   height: 4.h,
                 ),
                 Text(
-                  '${order.products.length.toString().changeCase()} на сумму ${order.getPrice()} ${AppStrings.ruble}',
+                  '${order.products.length.toString().changeCase()} на сумму ${order.getPrice().toStringAsFixed(2)} ${AppStrings.ruble}',
                   style: AppTextStyles.orderTextStyle,
                 ),
                 SizedBox(
@@ -130,5 +134,5 @@ class OrderPage extends StatelessWidget {
         ],
       ),
     );
-  }*/
+  }
 }

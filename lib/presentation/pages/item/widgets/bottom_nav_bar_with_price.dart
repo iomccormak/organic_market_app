@@ -17,15 +17,15 @@ class BottomNavBarWithPrice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 610.h),
+      padding: EdgeInsets.only(top: 600.h),
       child: Container(
         height: 132.h,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(12),
-            topRight: Radius.circular(12),
+            topLeft: Radius.circular(12.r),
+            topRight: Radius.circular(12.r),
           ),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: AppColors.shadowColor,
               blurRadius: 15,
@@ -39,25 +39,68 @@ class BottomNavBarWithPrice extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "${product.price} ${AppStrings.ruble}",
-                    style: AppTextStyles.priceTextStyle.copyWith(
-                      fontSize: 28.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
+                  Stack(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 10.h),
+                        child: RotationTransition(
+                          turns: AlwaysStoppedAnimation(-9 / 360),
+                          child: Container(
+                            width: 100.w,
+                            height: 2.h,
+                            color: AppColors.red,
+                          ),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "${product.price} ${AppStrings.ruble}",
+                            style: AppTextStyles.priceTextStyle.copyWith(
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.mainGrey,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 4.w,
+                          ),
+                          Text(
+                            AppStrings.amount,
+                            style: AppTextStyles.bottomBarTextStyle.copyWith(
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    width: 4.w,
+                  Row(
+                    children: [
+                      Text(
+                        "${((product.price!) * 0.9).toStringAsFixed(2)} ${AppStrings.ruble}",
+                        style: AppTextStyles.priceTextStyle.copyWith(
+                            fontSize: 28.sp,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.red),
+                      ),
+                      SizedBox(
+                        width: 4.w,
+                      ),
+                      Text(
+                        AppStrings.amount,
+                        style: AppTextStyles.bottomBarTextStyle.copyWith(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      )
+                    ],
                   ),
-                  Text(
-                    AppStrings.amount,
-                    style: AppTextStyles.bottomBarTextStyle.copyWith(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  )
                 ],
               ),
               GestureDetector(

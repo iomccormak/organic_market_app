@@ -93,7 +93,7 @@ class FavoritesPage extends StatelessWidget {
                     label: AppStrings.favoritesIsEmpty,
                   );
           }
-          return const Text('Error!');
+          return const SizedBox.shrink();
         },
       ),
     );

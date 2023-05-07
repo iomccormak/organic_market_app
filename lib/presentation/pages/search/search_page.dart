@@ -14,8 +14,6 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //return MyOrdersPage();
-    //return PersonalInfoPage();
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(44.h),
@@ -27,7 +25,7 @@ class SearchPage extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              'Поиск',
+              AppStrings.search,
               style: AppTextStyles.titleTextStyle,
             ),
           ),

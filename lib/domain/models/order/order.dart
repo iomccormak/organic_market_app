@@ -7,11 +7,23 @@ class Order extends Equatable {
     required this.products,
     required this.date,
     this.status = OrderStatus.delievered,
+    this.discount = 0.1,
+    this.deliveryPrice = 99,
   });
 
   final List<Product> products;
   final DateTime date;
   final OrderStatus status;
+  final double discount;
+  final double deliveryPrice;
+
+  double getPrice() {
+    double price = 0;
+    for (Product p in products) {
+      price += p.price! * discount;
+    }
+    return price + deliveryPrice;
+  }
 
   @override
   List<Object> get props => [products, date, status];

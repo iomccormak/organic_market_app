@@ -11,7 +11,6 @@ class Product extends BaseModel {
   final String? description;
   final String? category;
   final String? image;
-  final Rating? rating;
   bool isFavorite;
   int count;
 
@@ -23,7 +22,6 @@ class Product extends BaseModel {
     this.description,
     this.category,
     this.image,
-    this.rating,
     this.count = 1,
   });
 
@@ -35,17 +33,5 @@ class Product extends BaseModel {
   @override
   Map<String, dynamic> toJson() {
     throw UnimplementedError();
-  }
-}
-
-@JsonSerializable(createToJson: false)
-class Rating {
-  double? rate;
-  int? count;
-
-  Rating({this.rate, this.count});
-
-  factory Rating.fromJson(Map<String, dynamic> json) {
-    return _$RatingFromJson(json);
   }
 }

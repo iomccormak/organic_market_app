@@ -7,17 +7,20 @@ abstract class MyOrdersState extends Equatable {
   List<Object> get props => [];
 }
 
-class MyOrdersInitial extends MyOrdersState {}
+class MyOrdersInitial extends MyOrdersState {
+  @override
+  List<Object> get props => [];
+}
 
 class MyOrdersLoad extends MyOrdersState {
   const MyOrdersLoad({
-    required this.order,
+    required this.orders,
   });
 
-  final Order order;
+  final Orders orders;
 
   @override
-  List<Object> get props => [order];
+  List<Object> get props => [orders];
 }
 
 class MyOrdersError extends MyOrdersState {
