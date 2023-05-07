@@ -6,8 +6,8 @@ import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.da
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/pages/my_orders/my_orders_page.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/personal_info_page.dart';
-import 'package:organic_market_app/utils/app_strings.dart';
-import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/app_constants/app_strings.dart';
+import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});

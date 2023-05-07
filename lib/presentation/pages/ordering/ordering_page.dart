@@ -13,11 +13,11 @@ import 'package:organic_market_app/presentation/pages/my_orders/bloc/my_orders_b
 import 'package:organic_market_app/presentation/pages/ordering/widgets/input_field.dart';
 import 'package:organic_market_app/presentation/pages/ordering/widgets/order_info.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/widgets/date_input.dart';
-import 'package:organic_market_app/utils/app_colors.dart';
-import 'package:organic_market_app/utils/app_icons.dart';
-import 'package:organic_market_app/utils/app_strings.dart';
-import 'package:organic_market_app/utils/app_text_styles.dart';
-import 'package:organic_market_app/utils/text_formatter.dart';
+import 'package:organic_market_app/utils/app_constants/app_colors.dart';
+import 'package:organic_market_app/utils/app_constants/app_icons.dart';
+import 'package:organic_market_app/utils/app_constants/app_strings.dart';
+import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
+import 'package:organic_market_app/utils/formatters/text_formatter.dart';
 
 class OrderingPage extends StatelessWidget {
   const OrderingPage({

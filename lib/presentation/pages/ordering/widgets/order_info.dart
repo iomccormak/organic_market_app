@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/domain/models/product/product.dart';
-import 'package:organic_market_app/utils/app_colors.dart';
-import 'package:organic_market_app/utils/app_strings.dart';
-import 'package:organic_market_app/utils/app_text_styles.dart';
-import 'package:organic_market_app/utils/text_formatter.dart';
+import 'package:organic_market_app/utils/app_constants/app_colors.dart';
+import 'package:organic_market_app/utils/app_constants/app_strings.dart';
+import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
+import 'package:organic_market_app/utils/formatters/text_formatter.dart';
 
 class OrderInfo extends StatelessWidget {
   const OrderInfo({

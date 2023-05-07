@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/domain/models/product/product.dart';
-import 'package:organic_market_app/utils/app_colors.dart';
-import 'package:organic_market_app/utils/app_images.dart';
-import 'package:organic_market_app/utils/app_strings.dart';
-import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/app_constants/app_colors.dart';
+import 'package:organic_market_app/utils/app_constants/app_images.dart';
+import 'package:organic_market_app/utils/app_constants/app_strings.dart';
+import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 
 class Tags extends StatelessWidget {
   const Tags({super.key, required this.product});
@@ -24,7 +24,7 @@ class Tags extends StatelessWidget {
           ),
           alignment: Alignment.center,
           child: Text(
-            AppStrings.wordDiscount,
+            AppStrings.discount,
             style: AppTextStyles.lowWidgetTextStyle.copyWith(
               fontWeight: FontWeight.w700,
               color: AppColors.white,

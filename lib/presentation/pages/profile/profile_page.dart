@@ -10,9 +10,9 @@ import 'package:organic_market_app/presentation/pages/personal_info/bloc/persona
 import 'package:organic_market_app/presentation/pages/profile/widgets/profile_main_info.dart';
 import 'package:organic_market_app/presentation/pages/profile/widgets/profile_points_info.dart';
 import 'package:organic_market_app/presentation/pages/profile/widgets/profile_text_button.dart';
-import 'package:organic_market_app/utils/app_icons.dart';
-import 'package:organic_market_app/utils/app_strings.dart';
-import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/app_constants/app_icons.dart';
+import 'package:organic_market_app/utils/app_constants/app_strings.dart';
+import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});

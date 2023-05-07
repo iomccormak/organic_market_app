@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 
 class TitleText extends StatelessWidget {
   const TitleText({super.key, required this.title, required this.leftPadding});

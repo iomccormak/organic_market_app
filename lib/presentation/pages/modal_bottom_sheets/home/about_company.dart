@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:organic_market_app/utils/app_colors.dart';
-import 'package:organic_market_app/utils/app_icons.dart';
-import 'package:organic_market_app/utils/app_strings.dart';
-import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/app_constants/app_colors.dart';
+import 'package:organic_market_app/utils/app_constants/app_icons.dart';
+import 'package:organic_market_app/utils/app_constants/app_strings.dart';
+import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 
 class AboutCompany extends StatelessWidget {
   const AboutCompany({super.key});

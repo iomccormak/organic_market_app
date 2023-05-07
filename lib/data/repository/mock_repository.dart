@@ -15,7 +15,7 @@ import 'package:organic_market_app/domain/models/categories/meat.dart';
 import 'package:organic_market_app/domain/models/categories/milk_products.dart';
 import 'package:organic_market_app/domain/models/categories/superfood.dart';
 import 'package:organic_market_app/domain/models/categories/vegetables.dart';
-import 'package:organic_market_app/utils/app_images.dart';
+import 'package:organic_market_app/utils/app_constants/app_images.dart';
 
 abstract class MockRepository {
   static final categories = [

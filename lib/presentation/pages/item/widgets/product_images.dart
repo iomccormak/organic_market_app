@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/domain/models/product/product.dart';
-import 'package:organic_market_app/utils/app_colors.dart';
+import 'package:organic_market_app/utils/app_constants/app_colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProductImages extends StatefulWidget {

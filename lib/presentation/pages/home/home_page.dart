@@ -13,7 +13,7 @@ import 'package:organic_market_app/presentation/pages/home/widgets/bought_before
 import 'package:organic_market_app/presentation/pages/home/widgets/brands.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/green_buttons.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/low_text.dart';
-import 'package:organic_market_app/utils/app_strings.dart';
+import 'package:organic_market_app/utils/app_constants/app_strings.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

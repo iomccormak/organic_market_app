@@ -6,7 +6,7 @@ import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.da
 import 'package:organic_market_app/presentation/common_widgets/loading_animation.dart';
 import 'package:organic_market_app/presentation/pages/my_orders/bloc/my_orders_bloc.dart';
 import 'package:organic_market_app/presentation/pages/my_orders/widgets/order_small_widget.dart';
-import 'package:organic_market_app/utils/app_strings.dart';
+import 'package:organic_market_app/utils/app_constants/app_strings.dart';
 
 class MyOrdersPage extends StatelessWidget {
   const MyOrdersPage({super.key});
@@ -41,11 +41,11 @@ class MyOrdersPage extends StatelessWidget {
                           physics: const BouncingScrollPhysics(),
                           scrollDirection: Axis.vertical,
                           shrinkWrap: true,
-                          itemCount: state.orders.orders.length,
+                          itemCount: state.myOrders.orders.length,
                           itemBuilder: (context, index) => Column(
                             children: [
                               OrderSmallWidget(
-                                order: state.orders.orders[index],
+                                order: state.myOrders.orders[index],
                               ),
                               SizedBox(
                                 height: 26.h,

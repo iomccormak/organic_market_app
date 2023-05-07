@@ -14,13 +14,13 @@ class MyOrdersInitial extends MyOrdersState {
 
 class MyOrdersLoad extends MyOrdersState {
   const MyOrdersLoad({
-    required this.orders,
+    required this.myOrders,
   });
 
-  final Orders orders;
+  final MyOrders myOrders;
 
   @override
-  List<Object> get props => [orders];
+  List<Object> get props => [myOrders];
 }
 
 class MyOrdersError extends MyOrdersState {

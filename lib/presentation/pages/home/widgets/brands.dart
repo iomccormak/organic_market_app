@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/utils/app_images.dart';
+import 'package:organic_market_app/utils/app_constants/app_images.dart';
 
 class Brands extends StatelessWidget {
   const Brands({super.key});

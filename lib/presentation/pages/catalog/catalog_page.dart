@@ -8,8 +8,8 @@ import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/na
 import 'package:organic_market_app/presentation/common_widgets/title_text.dart';
 import 'package:organic_market_app/presentation/pages/catalog/widgets/catalog_button.dart';
 import 'package:organic_market_app/presentation/common_widgets/cards/category_big_card.dart';
-import 'package:organic_market_app/utils/app_icons.dart';
-import 'package:organic_market_app/utils/app_strings.dart';
+import 'package:organic_market_app/utils/app_constants/app_icons.dart';
+import 'package:organic_market_app/utils/app_constants/app_strings.dart';
 
 class CatalogPage extends StatelessWidget {
   const CatalogPage({super.key});

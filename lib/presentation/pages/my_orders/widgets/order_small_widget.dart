@@ -5,12 +5,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:organic_market_app/domain/models/order/order.dart';
 import 'package:organic_market_app/domain/models/order/order_status.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
-import 'package:organic_market_app/utils/app_colors.dart';
-import 'package:organic_market_app/utils/app_icons.dart';
-import 'package:organic_market_app/utils/app_strings.dart';
-import 'package:organic_market_app/utils/app_text_styles.dart';
-import 'package:organic_market_app/utils/date_formatter.dart';
-import 'package:organic_market_app/utils/text_formatter.dart';
+import 'package:organic_market_app/utils/app_constants/app_colors.dart';
+import 'package:organic_market_app/utils/app_constants/app_icons.dart';
+import 'package:organic_market_app/utils/app_constants/app_strings.dart';
+import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
+import 'package:organic_market_app/utils/formatters/date_formatter.dart';
+import 'package:organic_market_app/utils/formatters/text_formatter.dart';
 
 class OrderSmallWidget extends StatelessWidget {
   const OrderSmallWidget({super.key, required this.order});

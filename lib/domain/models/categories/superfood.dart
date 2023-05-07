@@ -1,6 +1,6 @@
 import 'package:organic_market_app/domain/models/categories/main_category.dart';
-import 'package:organic_market_app/utils/app_icons.dart';
-import 'package:organic_market_app/utils/app_images.dart';
+import 'package:organic_market_app/utils/app_constants/app_icons.dart';
+import 'package:organic_market_app/utils/app_constants/app_images.dart';
 
 class Superfood extends MainCategory {
   final String title = 'Суперфуды';

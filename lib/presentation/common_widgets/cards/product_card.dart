@@ -6,10 +6,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:organic_market_app/domain/models/product/product.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
 import 'package:organic_market_app/presentation/pages/cart/bloc/cart_bloc.dart';
-import 'package:organic_market_app/utils/app_colors.dart';
-import 'package:organic_market_app/utils/app_icons.dart';
-import 'package:organic_market_app/utils/app_strings.dart';
-import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/app_constants/app_colors.dart';
+import 'package:organic_market_app/utils/app_constants/app_icons.dart';
+import 'package:organic_market_app/utils/app_constants/app_strings.dart';
+import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.product});
