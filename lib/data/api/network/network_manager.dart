@@ -10,12 +10,15 @@ class NetworkManager {
   NetworkManager() {
     NetworkManager.init();
   }
+
   late final Dio dio;
 
   NetworkManager.init() {
-    dio = Dio(BaseOptions(
-      baseUrl: ApiConstants.baseUrl,
-    ));
+    dio = Dio(
+      BaseOptions(
+        baseUrl: ApiConstants.baseUrl,
+      ),
+    );
   }
   Future request<T extends BaseModel>({
     required ReqTypes method,
@@ -30,13 +33,15 @@ class NetworkManager {
     try {
       var body = data is Map || data is FormData ? data : data.toJson();
 
-      var response = await dio.request(path,
-          data: body,
-          queryParameters: queryParameters,
-          options: Options(
-            contentType: 'application/x-www-form-urlencoded',
-            method: method.name,
-          ));
+      var response = await dio.request(
+        path,
+        data: body,
+        queryParameters: queryParameters,
+        options: Options(
+          contentType: 'application/x-www-form-urlencoded',
+          method: method.name,
+        ),
+      );
 
       if (response.statusCode == 200) {
         if (response.data is List) {

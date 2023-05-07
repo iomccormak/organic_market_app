@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/empty_router_widgets.dart';
-import 'package:organic_market_app/navigation/route_builder.dart';
+import 'package:organic_market_app/presentation/pages/ordering/ordering_page.dart';
 import 'package:organic_market_app/presentation/pages/cart/cart_page.dart';
 import 'package:organic_market_app/presentation/pages/cart/modal_bottom_sheets/phone_input_page.dart';
 import 'package:organic_market_app/presentation/pages/catalog/catalog_page.dart';
@@ -68,7 +68,17 @@ import 'package:organic_market_app/presentation/pages/search/search_page.dart';
         AutoRoute(
           path: 'cart',
           name: 'CartRouter',
-          page: CartPage,
+          page: EmptyRouterPage,
+          children: [
+            AutoRoute(
+              path: '',
+              page: CartPage,
+            ),
+            AutoRoute(
+              path: ':ordering',
+              page: OrderingPage,
+            ),
+          ],
         ),
         AutoRoute(
           path: 'profile',
