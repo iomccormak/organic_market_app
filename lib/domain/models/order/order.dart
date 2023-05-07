@@ -20,7 +20,7 @@ class Order extends Equatable {
   double getPrice() {
     double price = 0;
     for (Product p in products) {
-      price += p.price! * discount;
+      price += p.price! * (1 - discount);
     }
     return price + deliveryPrice;
   }
