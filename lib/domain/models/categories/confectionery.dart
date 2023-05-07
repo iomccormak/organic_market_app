@@ -1,4 +1,4 @@
-import 'package:organic_market_app/domain/models/main_category.dart';
+import 'package:organic_market_app/domain/models/categories/main_category.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_images.dart';
 

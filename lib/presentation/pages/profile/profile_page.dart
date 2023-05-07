@@ -4,10 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
-import 'package:organic_market_app/presentation/common_widgets/app_bar_widget.dart';
+import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/bloc/personal_info_bloc.dart';
-import 'package:organic_market_app/presentation/pages/profile/widgets/profile_app_bar.dart';
 import 'package:organic_market_app/presentation/pages/profile/widgets/profile_main_info.dart';
 import 'package:organic_market_app/presentation/pages/profile/widgets/profile_points_info.dart';
 import 'package:organic_market_app/presentation/pages/profile/widgets/profile_text_button.dart';
@@ -22,10 +21,10 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        child: AppBarWidget(
+        preferredSize: Size.fromHeight(44.h),
+        child: const CustomAppBar(
           label: AppStrings.profile,
         ),
-        preferredSize: Size.fromHeight(44.h),
       ),
       body: BlocBuilder<PersonalInfoBloc, PersonalInfoState>(
         builder: (context, state) {

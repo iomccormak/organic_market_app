@@ -30,8 +30,11 @@ abstract class AppStrings {
   static const description = "Описание";
   static const features = "Характеристики";
   static const reviews = "Отзывы";
+  static const thisBrand = 'Данный бренд';
   static const organic = "Органик";
   static const expressDelivery = "Экспресс-доставка";
+  static const amount = '/ 1 шт.';
+  static const expressAtMorning = 'Экспресс-доставка завтра утром';
 
   /// Cart
   static const cartIsEmpty = "В корзине пока пусто";
@@ -70,6 +73,9 @@ abstract class AppStrings {
   static const paymentWays = 'Способы оплаты';
   static const writeUs = 'Связаться с нами';
   static const quit = 'Выйти';
+  static const bonus = 'Бонусные баллы';
+  static const points = '250 баллов';
+  static const level = '2 уровень';
 
   /// Personal Info
   static const name = 'Имя';
@@ -78,9 +84,14 @@ abstract class AppStrings {
   static const phone = 'Телефон';
   static const email = 'E-mail';
   static const save = 'Сохранить';
+  static const fillTheForm = 'Заполните личные данные';
 
   /// Orders
   static const onTheWay = 'В пути';
   static const delievered = 'Доставлено';
   static const deal = 'Оформить';
+
+  /// Favorites
+  static const favorites = 'Избранное';
+  static const favoritesIsEmpty = 'В избранном пока пусто';
 }

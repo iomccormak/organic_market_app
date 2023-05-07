@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:organic_market_app/domain/models/product.dart';
+import 'package:organic_market_app/domain/models/product/product.dart';
 
 class Cart extends Equatable {
   const Cart({this.products = const <Product>[]});

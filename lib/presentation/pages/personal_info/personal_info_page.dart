@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/presentation/common_widgets/app_bar_widget.dart';
-import 'package:organic_market_app/presentation/common_widgets/button_under_nav_bar.dart';
+import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.dart';
+import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/button_under_nav_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/main_green_button.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/bloc/personal_info_bloc.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/widgets/date_input.dart';
@@ -27,14 +27,14 @@ class PersonalInfoPage extends StatelessWidget {
 
     return Scaffold(
       appBar: PreferredSize(
-        child: AppBarWidget(
+        preferredSize: Size.fromHeight(44.h),
+        child: const CustomAppBar(
           label: AppStrings.personalInfo,
           back: true,
         ),
-        preferredSize: Size.fromHeight(44.h),
       ),
       body: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         child: Form(
           key: _formKey,
           child: Stack(

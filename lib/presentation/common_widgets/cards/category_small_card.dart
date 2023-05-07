@@ -2,12 +2,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:organic_market_app/domain/models/main_category.dart';
+import 'package:organic_market_app/domain/models/categories/main_category.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
-class CategorySmallWidget extends StatelessWidget {
-  const CategorySmallWidget({super.key, required this.category});
+class CategorySmallCard extends StatelessWidget {
+  const CategorySmallCard({super.key, required this.category});
 
   final MainCategory category;
 

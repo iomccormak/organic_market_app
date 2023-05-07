@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:organic_market_app/domain/models/product.dart';
+import 'package:organic_market_app/domain/models/product/product.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
+import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class ExpressDelivery extends StatelessWidget {
@@ -20,7 +21,7 @@ class ExpressDelivery extends StatelessWidget {
           width: 9.w,
         ),
         Text(
-          'Экспресс-доставка завтра утром',
+          AppStrings.expressAtMorning,
           style: AppTextStyles.priceTextStyle.copyWith(
             fontSize: 16.sp,
             color: AppColors.red,

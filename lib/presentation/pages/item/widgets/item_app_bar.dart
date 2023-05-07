@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:oktoast/oktoast.dart';
-import 'package:organic_market_app/domain/models/product.dart';
+import 'package:organic_market_app/domain/models/product/product.dart';
+import 'package:organic_market_app/presentation/common_widgets/loading_animation.dart';
 import 'package:organic_market_app/presentation/pages/favorites/bloc/favorites_bloc.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
+import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 class ItemBar extends StatelessWidget {
   const ItemBar({super.key, required this.product});
@@ -59,7 +58,7 @@ class ItemBar extends StatelessWidget {
                       : SvgPicture.asset(
                           AppIcons.like,
                           colorFilter: const ColorFilter.mode(
-                            Color.fromARGB(255, 255, 0, 0),
+                            AppColors.red,
                             BlendMode.srcIn,
                           ),
                         ),
@@ -68,12 +67,12 @@ class ItemBar extends StatelessWidget {
             } else if (state is FavoritesError) {
               return const Text('Error');
             }
-            return const CircularProgressIndicator();
+            return const LoadingAnimation();
           },
         ),
       ],
       title: Text(
-        'Продукт',
+        AppStrings.item,
         style: AppTextStyles.appBarTextStyle,
       ),
       leading: GestureDetector(

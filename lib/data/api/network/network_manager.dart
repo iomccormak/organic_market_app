@@ -1,8 +1,8 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:organic_market_app/data/api/request/request_types.dart';
 import 'package:organic_market_app/domain/models/base_model.dart';
-import 'package:organic_market_app/domain/models/request_types.dart';
 import 'package:organic_market_app/utils/api_constants.dart';
 
 class NetworkManager {
@@ -15,7 +15,6 @@ class NetworkManager {
   NetworkManager.init() {
     dio = Dio(BaseOptions(
       baseUrl: ApiConstants.baseUrl,
-      // contentType: ApiConstants.json,
     ));
   }
   Future request<T extends BaseModel>({

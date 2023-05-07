@@ -30,8 +30,3 @@ class PersonalInfoSaved extends PersonalInfoEvent {
   @override
   List<Object> get props => [name, surname, phone, date, email];
 }
-
-class PersonalInfoQuit extends PersonalInfoEvent {
-  @override
-  List<Object> get props => [];
-}

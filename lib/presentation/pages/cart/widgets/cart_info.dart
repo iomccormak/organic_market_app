@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/domain/models/product.dart';
 import 'package:organic_market_app/presentation/pages/cart/bloc/cart_bloc.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
+import 'package:organic_market_app/utils/text_formatter.dart';
 
 class CartInfo extends StatelessWidget {
   const CartInfo({super.key});
@@ -25,7 +25,7 @@ class CartInfo extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      '${state.bag.products.length} товара',
+                      state.cart.products.length.toString().changeCase(),
                       style: AppTextStyles.priceTextStyle.copyWith(
                         fontWeight: FontWeight.w400,
                         color: AppColors.mainGrey,

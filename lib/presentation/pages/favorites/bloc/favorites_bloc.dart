@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:organic_market_app/domain/models/favorites.dart';
-import 'package:organic_market_app/domain/models/product.dart';
+import 'package:organic_market_app/domain/models/favorites/favorites.dart';
+import 'package:organic_market_app/domain/models/product/product.dart';
 
 part 'favorites_event.dart';
 part 'favorites_state.dart';

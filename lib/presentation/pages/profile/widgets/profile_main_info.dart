@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class ProfileMainInfo extends StatelessWidget {
@@ -13,13 +14,13 @@ class ProfileMainInfo extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          name.isNotEmpty ? name : 'Заполните личные данные',
+          name.isNotEmpty ? name : AppStrings.fillTheForm,
           style: AppTextStyles.titleTextStyle.copyWith(
             fontWeight: FontWeight.w500,
           ),
         ),
         Text(
-          phone.isNotEmpty ? '+7' + phone : '',
+          phone.isNotEmpty ? AppStrings.plusSeven + phone : '',
           style: AppTextStyles.phoneTextStyle,
         ),
       ],

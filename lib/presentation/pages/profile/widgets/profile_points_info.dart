@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
+import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class ProfilePointsInfo extends StatelessWidget {
@@ -31,7 +32,7 @@ class ProfilePointsInfo extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: Text(
-                'Бонусные баллы',
+                AppStrings.bonus,
                 style: AppTextStyles.appBarTextStyle.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
@@ -44,7 +45,7 @@ class ProfilePointsInfo extends StatelessWidget {
             Align(
               alignment: Alignment.bottomLeft,
               child: Text(
-                '250 баллов',
+                AppStrings.points,
                 style: AppTextStyles.phoneTextStyle.copyWith(
                   color: AppColors.mainGreen,
                 ),
@@ -53,7 +54,7 @@ class ProfilePointsInfo extends StatelessWidget {
             Align(
               alignment: Alignment.bottomRight,
               child: Text(
-                'Уровень 2',
+                AppStrings.level,
                 style: AppTextStyles.bottomSheetTextStyle,
               ),
             ),

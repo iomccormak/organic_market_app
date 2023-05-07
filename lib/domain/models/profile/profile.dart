@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:organic_market_app/domain/models/product.dart';
 
 class Profile extends Equatable {
   const Profile({

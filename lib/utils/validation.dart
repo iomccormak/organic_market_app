@@ -3,8 +3,8 @@ abstract class Validation {
     if (value == null || value.isEmpty) {
       return 'Введите имя';
     }
-    if (!RegExp(r'^[а-яА-ЯёЁa-zA-Z]{4,}$').hasMatch(value)) {
-      return "Имя может содержать только буквы. Минимум 4 символа";
+    if (!RegExp(r'^[а-яА-ЯёЁa-zA-Z]{3,}$').hasMatch(value)) {
+      return "Имя может содержать только буквы. Минимум 3 символа";
     }
     return null;
   }

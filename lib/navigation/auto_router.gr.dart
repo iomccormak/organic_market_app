@@ -16,8 +16,8 @@ import 'package:auto_route/empty_router_widgets.dart' as _i2;
 import 'package:flutter/cupertino.dart' as _i16;
 import 'package:flutter/material.dart' as _i15;
 
-import '../domain/models/order.dart' as _i18;
-import '../domain/models/product.dart' as _i17;
+import '../domain/models/order/order.dart' as _i18;
+import '../domain/models/product/product.dart' as _i17;
 import '../presentation/pages/cart/cart_page.dart' as _i4;
 import '../presentation/pages/catalog/catalog_page.dart' as _i7;
 import '../presentation/pages/category/category_page.dart' as _i8;

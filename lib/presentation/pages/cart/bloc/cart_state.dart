@@ -14,15 +14,15 @@ class CartInitial extends CartState {
 
 class CartLoad extends CartState {
   const CartLoad(
-      {this.bag = const Cart(),
+      {this.cart = const Cart(),
       this.isProductUpdated = false,
       this.totalPrice = 0});
   final bool isProductUpdated;
-  final Cart bag;
+  final Cart cart;
   final double totalPrice;
 
   @override
-  List<Object> get props => [bag, isProductUpdated];
+  List<Object> get props => [cart, isProductUpdated];
 }
 
 class CartError extends CartState {

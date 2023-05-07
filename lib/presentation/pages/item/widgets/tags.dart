@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/domain/models/product.dart';
+import 'package:organic_market_app/domain/models/product/product.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_images.dart';
+import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
 class Tags extends StatelessWidget {
@@ -46,7 +47,7 @@ class Tags extends StatelessWidget {
             children: [
               Image.asset(AppImages.organic),
               Text(
-                'Органик',
+                AppStrings.organic,
                 style: AppTextStyles.lowWidgetTextStyle.copyWith(
                   fontWeight: FontWeight.w700,
                   color: AppColors.white,
@@ -71,7 +72,7 @@ class Tags extends StatelessWidget {
             children: [
               Image.asset(AppImages.truck),
               Text(
-                'Экспресс-доставка',
+                AppStrings.expressDelivery,
                 style: AppTextStyles.lowWidgetTextStyle.copyWith(
                   fontWeight: FontWeight.w700,
                 ),

@@ -1,6 +1,6 @@
-import 'package:organic_market_app/domain/api.dart';
-import 'package:organic_market_app/domain/models/product.dart';
-import 'package:organic_market_app/domain/models/request_types.dart';
+import 'package:organic_market_app/data/api/network/network_manager.dart';
+import 'package:organic_market_app/domain/models/product/product.dart';
+import 'package:organic_market_app/data/api/request/request_types.dart';
 import 'package:organic_market_app/utils/api_constants.dart';
 
 class ShopService {

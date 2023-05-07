@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get_it/get_it.dart';
-import 'package:organic_market_app/domain/api.dart';
-import 'package:organic_market_app/domain/models/product.dart';
+import 'package:organic_market_app/domain/models/product/product.dart';
 import 'package:organic_market_app/presentation/pages/cart/bloc/cart_bloc.dart';
 import 'package:organic_market_app/utils/app_colors.dart';
 import 'package:organic_market_app/utils/app_icons.dart';
 import 'package:organic_market_app/utils/app_strings.dart';
 import 'package:organic_market_app/utils/app_text_styles.dart';
 
-class BottomBarWithPrice extends StatelessWidget {
-  const BottomBarWithPrice({super.key, required this.product});
+class BottomNavBarWithPrice extends StatelessWidget {
+  const BottomNavBarWithPrice({super.key, required this.product});
 
   final Product product;
 
@@ -54,7 +52,7 @@ class BottomBarWithPrice extends StatelessWidget {
                     width: 4.w,
                   ),
                   Text(
-                    '/ 1 шт.',
+                    AppStrings.amount,
                     style: AppTextStyles.bottomBarTextStyle.copyWith(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w500,
@@ -63,10 +61,8 @@ class BottomBarWithPrice extends StatelessWidget {
                 ],
               ),
               GestureDetector(
-                onTap: () {
-                  context.read<CartBloc>().add(CartProductAdded(product));
-                  print('added to cart');
-                },
+                onTap: () =>
+                    context.read<CartBloc>().add(CartProductAdded(product)),
                 child: Container(
                   width: 150.w,
                   height: 48.h,
