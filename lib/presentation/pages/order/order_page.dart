@@ -1,8 +1,6 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:intl/intl.dart';
 import 'package:organic_market_app/domain/models/order/order.dart';
 import 'package:organic_market_app/domain/models/order/order_status.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
@@ -56,7 +54,7 @@ class OrderPage extends StatelessWidget {
       body: Stack(
         children: [
           SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,

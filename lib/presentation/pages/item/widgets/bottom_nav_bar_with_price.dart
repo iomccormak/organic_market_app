@@ -48,7 +48,7 @@ class BottomNavBarWithPrice extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(top: 10.h),
                         child: RotationTransition(
-                          turns: AlwaysStoppedAnimation(-9 / 360),
+                          turns: const AlwaysStoppedAnimation(-9 / 360),
                           child: Container(
                             width: 100.w,
                             height: 2.h,

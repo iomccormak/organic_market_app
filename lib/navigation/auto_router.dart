@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/empty_router_widgets.dart';
 import 'package:organic_market_app/presentation/pages/ordering/ordering_page.dart';
 import 'package:organic_market_app/presentation/pages/cart/cart_page.dart';
-import 'package:organic_market_app/presentation/pages/modal_bottom_sheets/order/phone_input_page.dart';
 import 'package:organic_market_app/presentation/pages/catalog/catalog_page.dart';
 import 'package:organic_market_app/presentation/pages/category/category_page.dart';
 import 'package:organic_market_app/presentation/pages/favorites/favorites_page.dart';

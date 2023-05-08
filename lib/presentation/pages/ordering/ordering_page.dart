@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:intl/intl.dart';
 import 'package:organic_market_app/domain/models/order/order.dart';
 import 'package:organic_market_app/domain/models/product/product.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
@@ -19,7 +18,6 @@ import 'package:organic_market_app/utils/app_constants/app_colors.dart';
 import 'package:organic_market_app/utils/app_constants/app_icons.dart';
 import 'package:organic_market_app/utils/app_constants/app_strings.dart';
 import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
-import 'package:organic_market_app/utils/formatters/text_formatter.dart';
 
 class OrderingPage extends StatelessWidget {
   OrderingPage({

@@ -84,7 +84,7 @@ class SuccesfullOrderPage extends StatelessWidget {
                       color: AppColors.mainGreen,
                     ),
                     child: Text(
-                      AppStrings.continueOrder,
+                      AppStrings.continueBuy,
                       style: AppTextStyles.greenButtonTextStyle.copyWith(
                         fontSize: 16.sp,
                       ),

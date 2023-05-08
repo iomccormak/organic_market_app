@@ -108,6 +108,7 @@ abstract class AppStrings {
   static const success = 'Заказ успешно оформлен';
   static const id = 'Номер заказа: 923474';
   static const open = 'Открыть детали заказа';
+  static const continueBuy = 'Продолжить покупки';
 
   /// Favorites
   static const favorites = 'Избранное';
