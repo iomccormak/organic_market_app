@@ -6,9 +6,14 @@ import 'package:organic_market_app/utils/app_constants/app_strings.dart';
 import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 
 class OrderProductWidget extends StatelessWidget {
-  const OrderProductWidget({super.key, required this.product});
+  const OrderProductWidget({
+    super.key,
+    required this.product,
+    required this.amount,
+  });
 
   final Product product;
+  final int amount;
 
   @override
   Widget build(BuildContext context) {
@@ -48,11 +53,22 @@ class OrderProductWidget extends StatelessWidget {
                   SizedBox(
                     height: 4.h,
                   ),
-                  Text(
-                    '${product.price} ${AppStrings.ruble}',
-                    style: AppTextStyles.priceTextStyle.copyWith(
-                      fontSize: 16.sp,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '${product.price} ${AppStrings.ruble}',
+                        style: AppTextStyles.priceTextStyle.copyWith(
+                          fontSize: 16.sp,
+                        ),
+                      ),
+                      Text(
+                        '$amount ${AppStrings.count}',
+                        style: AppTextStyles.productWidgetTextStyle.copyWith(
+                          fontSize: 14.sp,
+                        ),
+                      )
+                    ],
                   ),
                 ],
               ),

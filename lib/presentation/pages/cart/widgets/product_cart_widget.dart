@@ -84,14 +84,15 @@ class ProductCartWidget extends StatelessWidget {
                                   .read<CartBloc>()
                                   .add(CartProductDecremented(product)),
                               child: Container(
-                                width: 10.w,
-                                height: 10.h,
+                                width: 12.w,
+                                height: 12.h,
+                                color: Colors.transparent,
                                 alignment: Alignment.center,
                                 child: SvgPicture.asset(AppIcons.minus),
                               ),
                             ),
                             Text(
-                              '${product.count} шт.',
+                              '${product.count} ${AppStrings.count}',
                               style: AppTextStyles.productWidgetTextStyle,
                             ),
                             GestureDetector(
@@ -99,8 +100,9 @@ class ProductCartWidget extends StatelessWidget {
                                   .read<CartBloc>()
                                   .add(CartProductIncremented(product)),
                               child: Container(
-                                width: 10.w,
-                                height: 10.h,
+                                width: 12.w,
+                                height: 12.h,
+                                color: Colors.transparent,
                                 alignment: Alignment.center,
                                 child: SvgPicture.asset(AppIcons.plus),
                               ),

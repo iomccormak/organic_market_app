@@ -41,7 +41,9 @@ class CatalogButton extends StatelessWidget {
           ),
           Text(
             title,
-            style: AppTextStyles.size16weight400,
+            style: AppTextStyles.bottomSheetTextStyle.copyWith(
+              color: AppColors.black,
+            ),
           )
         ],
       ),

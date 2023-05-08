@@ -72,7 +72,7 @@ class OrderSmallWidget extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '${order.products.length.toString().changeCase()} на сумму ${order.getPrice().toStringAsFixed(2)} ${AppStrings.ruble}',
+                          '${order.getAmount().toString().changeCase()} ${AppStrings.onSum} ${order.getPrice().toStringAsFixed(2)} ${AppStrings.ruble}',
                           style: AppTextStyles.orderTextStyle,
                         ),
                       ],

@@ -25,7 +25,7 @@ class CartInfo extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      state.cart.products.length.toString().changeCase(),
+                      state.cart.getAmount().toString().changeCase(),
                       style: AppTextStyles.priceTextStyle.copyWith(
                         fontWeight: FontWeight.w400,
                         color: AppColors.mainGrey,

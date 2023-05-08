@@ -57,6 +57,7 @@ dependencies:
   oktoast: ^3.3.1
   flutter_multi_formatter: ^2.10.4
   flutter_native_splash: ^2.2.19
+  uuid: ^3.0.7
 
 flutter_native_splash:
   color: "#CFD400"

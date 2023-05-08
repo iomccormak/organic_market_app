@@ -11,6 +11,7 @@ import 'package:organic_market_app/presentation/pages/item/item_page.dart';
 import 'package:organic_market_app/presentation/pages/main/main_page.dart';
 import 'package:organic_market_app/presentation/pages/my_orders/my_orders_page.dart';
 import 'package:organic_market_app/presentation/pages/order/order_page.dart';
+import 'package:organic_market_app/presentation/pages/succesfull_order/succesfull_order_page.dart';
 import 'package:organic_market_app/presentation/pages/personal_info/personal_info_page.dart';
 import 'package:organic_market_app/presentation/pages/profile/profile_page.dart';
 import 'package:organic_market_app/presentation/pages/search/search_page.dart';
@@ -78,6 +79,10 @@ import 'package:organic_market_app/presentation/pages/search/search_page.dart';
               path: ':ordering',
               page: OrderingPage,
             ),
+            AutoRoute(
+              path: 'succesfullOrder',
+              page: SuccesfullOrderPage,
+            )
           ],
         ),
         AutoRoute(

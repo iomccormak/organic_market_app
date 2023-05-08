@@ -82,6 +82,7 @@ class CartPage extends StatelessWidget {
                               OrderingRoute(
                                 products: state.cart.products,
                                 totalPrice: state.totalPrice,
+                                amount: state.cart.getAmountOfEach(),
                               ),
                             );
                           },

@@ -56,12 +56,6 @@ abstract class AppTextStyles {
     color: AppColors.black,
   );
 
-  static final size16weight400 = TextStyle(
-    fontSize: 16.sp,
-    fontWeight: FontWeight.w400,
-    color: AppColors.black,
-  );
-
   /// for Bottom sheets
 
   static final bottomSheetTitleTextStyle = TextStyle(

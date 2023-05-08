@@ -55,79 +55,127 @@ class OrderPage extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 35.h,
-                ),
-                Text(
-                  order.date.toRusFormat(),
-                  style: AppTextStyles.orderTextStyle.copyWith(
-                    color: AppColors.mainGrey,
+          SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 35.h,
                   ),
-                ),
-                SizedBox(
-                  height: 4.h,
-                ),
-                Text(
-                  '${order.products.length.toString().changeCase()} на сумму ${order.getPrice().toStringAsFixed(2)} ${AppStrings.ruble}',
-                  style: AppTextStyles.orderTextStyle,
-                ),
-                SizedBox(
-                  height: 24.h,
-                ),
-                Container(
-                  width: 115.w,
-                  height: 40.h,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(93),
+                  Text(
+                    order.date.toRusFormat(),
+                    style: AppTextStyles.orderTextStyle.copyWith(
+                      color: AppColors.mainGrey,
                     ),
-                    color: iconBackground,
                   ),
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(icon),
-                      SizedBox(
-                        width: 7.w,
-                      ),
-                      Text(
-                        iconLabel,
-                        style: AppTextStyles.orderTextStyle.copyWith(
-                          color: iconLabelColor,
-                        ),
-                      ),
-                    ],
+                  SizedBox(
+                    height: 4.h,
                   ),
-                ),
-                SizedBox(
-                  height: 35.h,
-                ),
-                SizedBox(
-                  height: 505.h,
-                  child: ListView.builder(
-                    padding: EdgeInsets.only(top: 1.h),
-                    physics: const BouncingScrollPhysics(),
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    itemCount: order.products.length,
-                    itemBuilder: (context, index) => Column(
+                  Text(
+                    '${order.getAmount().toString().changeCase()} ${AppStrings.onSum} ${order.getPrice().toStringAsFixed(2)} ${AppStrings.ruble}',
+                    style: AppTextStyles.orderTextStyle,
+                  ),
+                  SizedBox(
+                    height: 24.h,
+                  ),
+                  Container(
+                    width: 115.w,
+                    height: 40.h,
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(93),
+                      ),
+                      color: iconBackground,
+                    ),
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        OrderProductWidget(
-                          product: order.products[index],
-                        ),
+                        SvgPicture.asset(icon),
                         SizedBox(
-                          height: 26.h,
+                          width: 7.w,
+                        ),
+                        Text(
+                          iconLabel,
+                          style: AppTextStyles.orderTextStyle.copyWith(
+                            color: iconLabelColor,
+                          ),
                         ),
                       ],
                     ),
                   ),
-                )
-              ],
+                  SizedBox(
+                    height: 35.h,
+                  ),
+                  Column(
+                    children: [
+                      ListView.builder(
+                        padding: EdgeInsets.only(top: 1.h),
+                        physics: const BouncingScrollPhysics(),
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        itemCount: order.products.length,
+                        itemBuilder: (context, index) => Column(
+                          children: [
+                            OrderProductWidget(
+                              product: order.products[index],
+                              amount: order.amount[index],
+                            ),
+                            SizedBox(
+                              height: 26.h,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 70.w,
+                              height: 70.h,
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(12.r)),
+                                color: AppColors.greenBackground,
+                              ),
+                              alignment: Alignment.center,
+                              child: SvgPicture.asset(AppIcons.truck),
+                            ),
+                            SizedBox(
+                              width: 16.w,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Доставка',
+                                  style: AppTextStyles.productWidgetTextStyle
+                                      .copyWith(
+                                    fontSize: 14.sp,
+                                  ),
+                                ),
+                                Text(
+                                  '99 ${AppStrings.ruble}',
+                                  style: AppTextStyles.priceTextStyle.copyWith(
+                                    fontSize: 16.sp,
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 26.h,
+                  ),
+                ],
+              ),
             ),
           ),
           const NavBarShadow(),

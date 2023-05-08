@@ -44,7 +44,7 @@ class CustomBottomNavBar extends StatelessWidget {
                           height: 13.h,
                           alignment: Alignment.center,
                           child: Text(
-                            state.cart.products.length.toString(),
+                            state.cart.getAmount().toString(),
                             style: TextStyle(
                               color: AppColors.white,
                               fontSize: 10.sp,
