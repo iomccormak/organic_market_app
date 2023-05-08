@@ -14,9 +14,9 @@ class ProfilePointsInfo extends StatelessWidget {
     return Container(
       width: 343.w,
       height: 85.h,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(8)),
-        boxShadow: [
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(8.r)),
+        boxShadow: const [
           BoxShadow(
             color: AppColors.shadowColor,
             blurRadius: 8,

@@ -25,9 +25,9 @@ class ProductCard extends StatelessWidget {
       child: Container(
         width: 168.w,
         height: 240.h,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(12)),
-          boxShadow: [
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(12.r)),
+          boxShadow: const [
             BoxShadow(
               color: AppColors.shadowColor,
               blurRadius: 8,
@@ -50,8 +50,8 @@ class ProductCard extends StatelessWidget {
                     scale: 0.5,
                   ),
                 ),
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(12),
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(12.r),
                 ),
               ),
             ),
@@ -105,9 +105,9 @@ class ProductCard extends StatelessWidget {
                 child: Container(
                   width: 52.w,
                   height: 31.h,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(
-                      Radius.circular(68),
+                      Radius.circular(68.r),
                     ),
                     color: AppColors.mainGreen,
                   ),

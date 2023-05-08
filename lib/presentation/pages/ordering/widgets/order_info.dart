@@ -5,16 +5,19 @@ import 'package:organic_market_app/utils/app_constants/app_colors.dart';
 import 'package:organic_market_app/utils/app_constants/app_strings.dart';
 import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 import 'package:organic_market_app/utils/formatters/text_formatter.dart';
+import 'package:organic_market_app/utils/order_constants/delivery.dart';
 
 class OrderInfo extends StatelessWidget {
   const OrderInfo({
     super.key,
     required this.products,
     required this.totalPrice,
+    required this.discount,
   });
 
   final List<Product> products;
   final double totalPrice;
+  final double discount;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class OrderInfo extends StatelessWidget {
         ),
         _drawRow(
           AppStrings.wordDiscount,
-          '${(totalPrice * 0.1).toStringAsFixed(2)} ${AppStrings.ruble}',
+          '${(totalPrice * discount).toStringAsFixed(2)} ${AppStrings.ruble}',
           AppColors.red,
         ),
         SizedBox(
@@ -38,7 +41,7 @@ class OrderInfo extends StatelessWidget {
         ),
         _drawRow(
           AppStrings.delivery,
-          '99 ${AppStrings.ruble}',
+          '${Delivery.classicDelivery} ${AppStrings.ruble}',
           AppColors.mainGrey,
         ),
         SizedBox(
@@ -53,7 +56,7 @@ class OrderInfo extends StatelessWidget {
                   .copyWith(fontWeight: FontWeight.w500),
             ),
             Text(
-              '${(totalPrice * 0.9 + 99).toStringAsFixed(2)} ${AppStrings.ruble}',
+              '${(totalPrice * (1 - discount) + Delivery.classicDelivery).toStringAsFixed(2)} ${AppStrings.ruble}',
               style: AppTextStyles.titleTextStyle
                   .copyWith(fontWeight: FontWeight.w500),
             )

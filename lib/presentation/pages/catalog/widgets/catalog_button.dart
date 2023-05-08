@@ -21,9 +21,9 @@ class CatalogButton extends StatelessWidget {
     return Container(
       width: width.w,
       height: 54.h,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(12)),
-        boxShadow: [
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(12.r)),
+        boxShadow: const [
           BoxShadow(
             color: AppColors.shadowColor,
             blurRadius: 8,

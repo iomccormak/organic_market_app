@@ -28,9 +28,9 @@ class CategorySmallCard extends StatelessWidget {
           Container(
             width: 104.w,
             height: 104.h,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(12)),
-              boxShadow: [
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(12.r)),
+              boxShadow: const [
                 BoxShadow(
                   color: AppColors.shadowColor,
                   blurRadius: 8,

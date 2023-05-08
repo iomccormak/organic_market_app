@@ -16,9 +16,9 @@ class MainGreenButton extends StatelessWidget {
     return Container(
       width: 343.w,
       height: 58.h,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(43)),
-        boxShadow: [
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(43.r)),
+        boxShadow: const [
           BoxShadow(
             color: AppColors.shadowColor,
             blurRadius: 8,

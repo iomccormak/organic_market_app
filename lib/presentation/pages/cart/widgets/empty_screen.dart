@@ -46,9 +46,9 @@ class EmptyScreen extends StatelessWidget {
                     width: 247.w,
                     height: 47.h,
                     alignment: Alignment.center,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(
-                        Radius.circular(43),
+                        Radius.circular(43.r),
                       ),
                       color: AppColors.mainGreen,
                     ),

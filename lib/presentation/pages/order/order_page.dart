@@ -12,6 +12,7 @@ import 'package:organic_market_app/utils/app_constants/app_strings.dart';
 import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 import 'package:organic_market_app/utils/formatters/date_formatter.dart';
 import 'package:organic_market_app/utils/formatters/text_formatter.dart';
+import 'package:organic_market_app/utils/order_constants/delivery.dart';
 
 class OrderPage extends StatelessWidget {
   const OrderPage({
@@ -82,8 +83,8 @@ class OrderPage extends StatelessWidget {
                     width: 115.w,
                     height: 40.h,
                     decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(93),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(93.r),
                       ),
                       color: iconBackground,
                     ),
@@ -135,8 +136,9 @@ class OrderPage extends StatelessWidget {
                               width: 70.w,
                               height: 70.h,
                               decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(12.r)),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(12.r),
+                                ),
                                 color: AppColors.greenBackground,
                               ),
                               alignment: Alignment.center,
@@ -157,7 +159,7 @@ class OrderPage extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  '99 ${AppStrings.ruble}',
+                                  '${Delivery.classicDelivery} ${AppStrings.ruble}',
                                   style: AppTextStyles.priceTextStyle.copyWith(
                                     fontSize: 16.sp,
                                   ),

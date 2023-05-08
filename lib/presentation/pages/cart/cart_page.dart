@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market_app/utils/order_constants/discount.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
 import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/button_under_nav_bar.dart';
@@ -62,7 +63,9 @@ class CartPage extends StatelessWidget {
                             SizedBox(
                               height: 40.h,
                             ),
-                            const CartInfo(),
+                            const CartInfo(
+                              discount: Discount.discount10,
+                            ),
                             SizedBox(
                               height: 120.h,
                             ),
@@ -79,6 +82,7 @@ class CartPage extends StatelessWidget {
                                 products: state.cart.products,
                                 totalPrice: state.totalPrice,
                                 amount: state.cart.getAmountOfEach(),
+                                discount: Discount.discount10,
                               ),
                             );
                           },

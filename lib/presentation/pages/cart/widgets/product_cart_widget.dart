@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:organic_market_app/utils/order_constants/discount.dart';
 import 'package:organic_market_app/domain/models/product/product.dart';
 import 'package:organic_market_app/presentation/pages/cart/bloc/cart_bloc.dart';
 import 'package:organic_market_app/utils/app_constants/app_colors.dart';
@@ -36,7 +37,7 @@ class ProductCartWidget extends StatelessWidget {
                     scale: 0.5,
                   ),
                 ),
-                borderRadius: const BorderRadius.all(Radius.circular(12)),
+                borderRadius: BorderRadius.all(Radius.circular(12.r)),
               ),
             ),
             SizedBox(
@@ -60,11 +61,40 @@ class ProductCartWidget extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.bottomLeft,
-                      child: Text(
-                        '${product.price} ${AppStrings.ruble}',
-                        style: AppTextStyles.priceTextStyle.copyWith(
-                          fontSize: 16.sp,
-                        ),
+                      child: Row(
+                        children: [
+                          Text(
+                            '${(product.price! * (1 - Discount.discount10)).toStringAsFixed(2)} ${AppStrings.ruble}',
+                            style: AppTextStyles.priceTextStyle.copyWith(
+                                fontSize: 16.sp, color: AppColors.red),
+                          ),
+                          SizedBox(
+                            width: 8.w,
+                          ),
+                          Stack(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(top: 11.h),
+                                child: RotationTransition(
+                                  turns:
+                                      const AlwaysStoppedAnimation(-11 / 360),
+                                  child: Container(
+                                    width: 50.w,
+                                    height: 2.h,
+                                    color: AppColors.red,
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                '${product.price} ${AppStrings.ruble}',
+                                style: AppTextStyles.priceTextStyle.copyWith(
+                                  fontSize: 16.sp,
+                                  color: AppColors.mainGrey,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                     Align(
@@ -72,9 +102,10 @@ class ProductCartWidget extends StatelessWidget {
                       child: Container(
                         width: 104.w,
                         height: 32.h,
-                        decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(50)),
-                            color: AppColors.toggleBackground),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(50.r)),
+                          color: AppColors.toggleBackground,
+                        ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [

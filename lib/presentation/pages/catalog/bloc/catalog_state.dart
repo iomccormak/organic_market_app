@@ -1,4 +1,4 @@
-part of 'catalog_cubit.dart';
+part of 'catalog_bloc.dart';
 
 class CatalogState extends Equatable {
   const CatalogState({

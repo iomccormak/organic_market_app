@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:organic_market_app/domain/models/order/order_status.dart';
 import 'package:organic_market_app/domain/models/product/product.dart';
+import 'package:organic_market_app/utils/order_constants/delivery.dart';
 
 class Order extends Equatable {
   const Order({
@@ -9,7 +10,7 @@ class Order extends Equatable {
     required this.date,
     this.status = OrderStatus.delievered,
     this.discount = 0.1,
-    this.deliveryPrice = 99,
+    this.deliveryPrice = Delivery.classicDelivery,
   });
 
   final List<Product> products;

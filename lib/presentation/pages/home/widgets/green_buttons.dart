@@ -44,9 +44,9 @@ class GreenButtons extends StatelessWidget {
       useRootNavigator: true,
       isScrollControlled: true,
       context: context,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
-          top: Radius.circular(10),
+          top: Radius.circular(10.r),
         ),
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -64,9 +64,9 @@ class GreenButtons extends StatelessWidget {
       width: 167.w,
       height: 58.h,
       alignment: Alignment.center,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
-          Radius.circular(43),
+          Radius.circular(43.r),
         ),
         color: AppColors.mainGreen,
       ),

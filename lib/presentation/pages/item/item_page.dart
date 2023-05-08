@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market_app/utils/order_constants/discount.dart';
 import 'package:organic_market_app/domain/models/product/product.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/bottom_nav_bar_with_price.dart';
 import 'package:organic_market_app/presentation/pages/item/widgets/express_delivery.dart';
@@ -154,6 +155,7 @@ class ItemPage extends StatelessWidget {
           ),
           BottomNavBarWithPrice(
             product: product,
+            discount: Discount.discount10,
           ),
         ],
       ),

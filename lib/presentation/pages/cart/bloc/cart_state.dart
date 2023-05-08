@@ -13,10 +13,11 @@ class CartInitial extends CartState {
 }
 
 class CartLoad extends CartState {
-  const CartLoad(
-      {this.cart = const Cart(),
-      this.isProductUpdated = false,
-      this.totalPrice = 0});
+  const CartLoad({
+    this.cart = const Cart(),
+    this.isProductUpdated = false,
+    this.totalPrice = 0,
+  });
   final bool isProductUpdated;
   final Cart cart;
   final double totalPrice;

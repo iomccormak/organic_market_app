@@ -27,11 +27,11 @@ import '../presentation/pages/main/main_page.dart' as _i1;
 import '../presentation/pages/my_orders/my_orders_page.dart' as _i14;
 import '../presentation/pages/order/order_page.dart' as _i15;
 import '../presentation/pages/ordering/ordering_page.dart' as _i10;
-import '../presentation/pages/succesfull_order/succesfull_order_page.dart'
-    as _i11;
 import '../presentation/pages/personal_info/personal_info_page.dart' as _i13;
 import '../presentation/pages/profile/profile_page.dart' as _i12;
 import '../presentation/pages/search/search_page.dart' as _i3;
+import '../presentation/pages/succesfull_order/succesfull_order_page.dart'
+    as _i11;
 
 class AppRouter extends _i16.RootStackRouter {
   AppRouter([_i17.GlobalKey<_i17.NavigatorState>? navigatorKey])
@@ -124,6 +124,7 @@ class AppRouter extends _i16.RootStackRouter {
           products: args.products,
           amount: args.amount,
           totalPrice: args.totalPrice,
+          discount: args.discount,
         ),
       );
     },
@@ -458,6 +459,7 @@ class OrderingRoute extends _i16.PageRouteInfo<OrderingRouteArgs> {
     required List<_i18.Product> products,
     required List<int> amount,
     required double totalPrice,
+    required double discount,
   }) : super(
           OrderingRoute.name,
           path: ':ordering',
@@ -466,6 +468,7 @@ class OrderingRoute extends _i16.PageRouteInfo<OrderingRouteArgs> {
             products: products,
             amount: amount,
             totalPrice: totalPrice,
+            discount: discount,
           ),
         );
 
@@ -478,6 +481,7 @@ class OrderingRouteArgs {
     required this.products,
     required this.amount,
     required this.totalPrice,
+    required this.discount,
   });
 
   final _i17.Key? key;
@@ -488,9 +492,11 @@ class OrderingRouteArgs {
 
   final double totalPrice;
 
+  final double discount;
+
   @override
   String toString() {
-    return 'OrderingRouteArgs{key: $key, products: $products, amount: $amount, totalPrice: $totalPrice}';
+    return 'OrderingRouteArgs{key: $key, products: $products, amount: $amount, totalPrice: $totalPrice, discount: $discount}';
   }
 }
 

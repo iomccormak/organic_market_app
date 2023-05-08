@@ -53,9 +53,9 @@ class NameInputPage extends StatelessWidget {
               width: 343.w,
               height: 58.h,
               alignment: Alignment.center,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(
-                  Radius.circular(43),
+                  Radius.circular(43.r),
                 ),
                 color: AppColors.mainGreen,
               ),

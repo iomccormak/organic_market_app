@@ -8,7 +8,12 @@ import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 import 'package:organic_market_app/utils/formatters/text_formatter.dart';
 
 class CartInfo extends StatelessWidget {
-  const CartInfo({super.key});
+  const CartInfo({
+    super.key,
+    required this.discount,
+  });
+
+  final double discount;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +58,7 @@ class CartInfo extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      '-${(state.totalPrice * 0.1).toStringAsFixed(2)} ${AppStrings.ruble}',
+                      '-${(state.totalPrice * discount).toStringAsFixed(2)} ${AppStrings.ruble}',
                       style: AppTextStyles.priceTextStyle.copyWith(
                         fontWeight: FontWeight.w400,
                         color: AppColors.red,

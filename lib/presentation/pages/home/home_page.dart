@@ -5,7 +5,8 @@ import 'package:organic_market_app/data/repository/mock_repository.dart';
 import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/common_widgets/title_text.dart';
-import 'package:organic_market_app/presentation/pages/catalog/cubit/catalog_cubit.dart';
+import 'package:organic_market_app/presentation/pages/catalog/bloc/catalog_bloc.dart';
+
 import 'package:organic_market_app/presentation/pages/home/widgets/advertisment.dart';
 import 'package:organic_market_app/presentation/common_widgets/cards/category_small_card.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/best_offers.dart';
@@ -20,7 +21,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CatalogCubit, CatalogState>(
+    return BlocBuilder<CatalogBloc, CatalogState>(
       builder: (context, state) {
         return Scaffold(
           appBar: PreferredSize(

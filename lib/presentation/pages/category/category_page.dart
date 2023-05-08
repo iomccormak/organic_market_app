@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/common_widgets/cards/product_card.dart';
-import 'package:organic_market_app/presentation/pages/catalog/cubit/catalog_cubit.dart';
+import 'package:organic_market_app/presentation/pages/catalog/bloc/catalog_bloc.dart';
 import 'package:organic_market_app/utils/app_constants/app_strings.dart';
 import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 import 'package:organic_market_app/utils/formatters/text_formatter.dart';
@@ -22,7 +22,7 @@ class CategoryPage extends StatelessWidget {
           back: true,
         ),
       ),
-      body: BlocBuilder<CatalogCubit, CatalogState>(
+      body: BlocBuilder<CatalogBloc, CatalogState>(
         builder: (context, state) {
           return Stack(
             children: [

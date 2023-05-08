@@ -16,9 +16,9 @@ class ButtonUnderNavBar extends StatelessWidget {
       padding: EdgeInsets.only(top: 600.h),
       child: Container(
         height: 93.h,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(12)),
-          boxShadow: [
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(12.r)),
+          boxShadow: const [
             BoxShadow(
               color: AppColors.shadowColor,
               blurRadius: 8,

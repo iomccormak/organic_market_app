@@ -26,9 +26,9 @@ class CategoryBigCard extends StatelessWidget {
         child: Container(
           width: 163.w,
           height: 117.h,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(12)),
-            boxShadow: [
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(12.r)),
+            boxShadow: const [
               BoxShadow(
                 color: AppColors.shadowColor,
                 blurRadius: 8,
@@ -62,7 +62,7 @@ class CategoryBigCard extends StatelessWidget {
                     color: AppColors.black,
                     fontWeight: FontWeight.w500,
                     fontSize: 12.sp,
-                    height: 1,
+                    height: 1.h,
                   ),
                 ),
               )

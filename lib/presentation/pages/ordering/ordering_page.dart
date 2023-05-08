@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:organic_market_app/utils/order_constants/discount.dart';
+import 'package:organic_market_app/utils/order_constants/delivery.dart';
 import 'package:organic_market_app/domain/models/order/order.dart';
 import 'package:organic_market_app/domain/models/product/product.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
@@ -25,10 +27,12 @@ class OrderingPage extends StatelessWidget {
     required this.products,
     required this.amount,
     required this.totalPrice,
+    required this.discount,
   });
 
   final List<Product> products;
   final List<int> amount;
+  final double discount;
   final double totalPrice;
   final TextEditingController dateController = TextEditingController();
 
@@ -105,6 +109,7 @@ class OrderingPage extends StatelessWidget {
                   OrderInfo(
                     products: products,
                     totalPrice: totalPrice,
+                    discount: Discount.discount10,
                   )
                 ],
               ),
@@ -125,7 +130,8 @@ class OrderingPage extends StatelessWidget {
                   context.router.navigate(
                     SuccesfullOrderRoute(
                       amount: amount.reduce((a, b) => a + b),
-                      totalPrice: totalPrice * 0.9 + 99,
+                      totalPrice: totalPrice * (1 - discount) +
+                          Delivery.classicDelivery,
                     ),
                   );
                 },

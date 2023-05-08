@@ -18,8 +18,8 @@ class Tags extends StatelessWidget {
         Container(
           width: 55.w,
           height: 24.h,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(4)),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(4.r)),
             color: AppColors.red,
           ),
           alignment: Alignment.center,
@@ -37,8 +37,8 @@ class Tags extends StatelessWidget {
         Container(
           width: 98.w,
           height: 24.h,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(4)),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(4.r)),
             color: AppColors.mainGreen,
           ),
           alignment: Alignment.center,
@@ -62,8 +62,8 @@ class Tags extends StatelessWidget {
         Container(
           width: 155.w,
           height: 24.h,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(4)),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(4.r)),
             color: AppColors.yellow,
           ),
           alignment: Alignment.center,

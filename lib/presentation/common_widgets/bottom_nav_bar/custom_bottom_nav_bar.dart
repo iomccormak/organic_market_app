@@ -20,10 +20,10 @@ class CustomBottomNavBar extends StatelessWidget {
       builder: (context, state) {
         if (state is CartLoad) {
           return Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(12),
-                topRight: Radius.circular(12),
+                topLeft: Radius.circular(12.r),
+                topRight: Radius.circular(12.r),
               ),
               color: AppColors.white,
             ),
@@ -38,7 +38,7 @@ class CustomBottomNavBar extends StatelessWidget {
                       ? Container(
                           decoration: BoxDecoration(
                             color: AppColors.red,
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(12.r),
                           ),
                           width: 13.w,
                           height: 13.h,

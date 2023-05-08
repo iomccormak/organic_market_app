@@ -24,7 +24,9 @@ class SuccesfullOrderPage extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(44.h),
-        child: const CustomAppBar(label: AppStrings.cart),
+        child: const CustomAppBar(
+          label: AppStrings.cart,
+        ),
       ),
       body: Stack(
         children: [

@@ -10,9 +10,14 @@ import 'package:organic_market_app/utils/app_constants/app_strings.dart';
 import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 
 class BottomNavBarWithPrice extends StatelessWidget {
-  const BottomNavBarWithPrice({super.key, required this.product});
+  const BottomNavBarWithPrice({
+    super.key,
+    required this.product,
+    required this.discount,
+  });
 
   final Product product;
+  final double discount;
 
   @override
   Widget build(BuildContext context) {
@@ -83,11 +88,12 @@ class BottomNavBarWithPrice extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "${((product.price!) * 0.9).toStringAsFixed(2)} ${AppStrings.ruble}",
+                        "${((product.price!) * (1 - discount)).toStringAsFixed(2)} ${AppStrings.ruble}",
                         style: AppTextStyles.priceTextStyle.copyWith(
-                            fontSize: 28.sp,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.red),
+                          fontSize: 28.sp,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.red,
+                        ),
                       ),
                       SizedBox(
                         width: 4.w,
@@ -110,9 +116,9 @@ class BottomNavBarWithPrice extends StatelessWidget {
                   width: 150.w,
                   height: 48.h,
                   alignment: Alignment.center,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(
-                      Radius.circular(43),
+                      Radius.circular(43.r),
                     ),
                     color: AppColors.mainGreen,
                   ),
