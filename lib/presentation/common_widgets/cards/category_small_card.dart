@@ -73,6 +73,5 @@ class CategorySmallCard extends StatelessWidget {
         ],
       ),
     );
-    /**/
   }
 }

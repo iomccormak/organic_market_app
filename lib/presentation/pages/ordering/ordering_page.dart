@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 import 'package:organic_market_app/domain/models/order/order.dart';
 import 'package:organic_market_app/domain/models/product/product.dart';
+import 'package:organic_market_app/navigation/auto_router.gr.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/button_under_nav_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/main_green_button.dart';
@@ -20,14 +22,17 @@ import 'package:organic_market_app/utils/app_constants/app_text_styles.dart';
 import 'package:organic_market_app/utils/formatters/text_formatter.dart';
 
 class OrderingPage extends StatelessWidget {
-  const OrderingPage({
+  OrderingPage({
     super.key,
     required this.products,
+    required this.amount,
     required this.totalPrice,
   });
 
   final List<Product> products;
+  final List<int> amount;
   final double totalPrice;
+  final TextEditingController dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +41,6 @@ class OrderingPage extends StatelessWidget {
         preferredSize: Size.fromHeight(44.h),
         child: const CustomAppBar(
           label: AppStrings.formingOrder,
-          back: true,
         ),
       ),
       body: SingleChildScrollView(
@@ -58,7 +62,7 @@ class OrderingPage extends StatelessWidget {
                   ),
                   DateInput(
                     fieldName: AppStrings.dateAndTimeDel,
-                    controller: TextEditingController(),
+                    controller: dateController,
                   ),
                   const InputField(
                     title: AppStrings.wayOfPayment,
@@ -114,12 +118,18 @@ class OrderingPage extends StatelessWidget {
                         MyOrdersAdded(
                           order: Order(
                             products: products,
+                            amount: amount,
                             date: DateTime.now(),
                           ),
                         ),
                       );
                   context.read<CartBloc>().add(const CartCheckOut());
-                  context.router.pop();
+                  context.router.navigate(
+                    SuccesfullOrderRoute(
+                      amount: amount.reduce((a, b) => a + b),
+                      totalPrice: totalPrice * 0.9 + 99,
+                    ),
+                  );
                 },
                 child: const MainGreenButton(
                   label: AppStrings.formOrder,

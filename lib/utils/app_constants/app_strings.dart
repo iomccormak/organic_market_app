@@ -33,11 +33,14 @@ abstract class AppStrings {
   static const thisBrand = 'Данный бренд';
   static const organic = "Органик";
   static const expressDelivery = "Экспресс-доставка";
+  static const forOne = 'за 1 шт.';
   static const amount = '/ 1 шт.';
   static const expressAtMorning = 'Экспресс-доставка завтра утром';
   static const wordDiscount = 'Скидка 10%';
   static const discount = '-10%';
   static const sum = 'Итого';
+  static const onSum = 'на сумму';
+  static const count = 'шт.';
 
   /// Cart
   static const cartIsEmpty = "В корзине пока пусто";
@@ -102,6 +105,9 @@ abstract class AppStrings {
   static const bankCard = 'Банковской картой';
   static const getPoints = 'Списать баллы';
   static const formingOrder = 'Оформление заказа';
+  static const success = 'Заказ успешно оформлен';
+  static const id = 'Номер заказа: 923474';
+  static const open = 'Открыть детали заказа';
 
   /// Favorites
   static const favorites = 'Избранное';

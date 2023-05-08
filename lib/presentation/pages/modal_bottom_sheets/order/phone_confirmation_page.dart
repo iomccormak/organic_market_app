@@ -52,7 +52,7 @@ class PhoneConfirmationPage extends StatelessWidget {
                 child: PinCodeTextField(
                   appContext: context,
                   length: 4,
-                  onChanged: (value) => null,
+                  onChanged: (value) {},
                   keyboardType: TextInputType.number,
                   pinTheme: PinTheme(
                     shape: PinCodeFieldShape.box,

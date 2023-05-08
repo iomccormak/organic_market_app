@@ -75,7 +75,7 @@ class ProductCard extends StatelessWidget {
                 top: 177.h,
               ),
               child: Text(
-                'за 1 шт.',
+                AppStrings.forOne,
                 style: AppTextStyles.productWidgetTextStyle.copyWith(
                   color: AppColors.mainGrey,
                 ),

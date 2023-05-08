@@ -5,15 +5,6 @@ part 'product.g.dart';
 
 @JsonSerializable(createToJson: false)
 class Product extends BaseModel {
-  final int? id;
-  final String? title;
-  final double? price;
-  final String? description;
-  final String? category;
-  final String? image;
-  bool isFavorite;
-  int count;
-
   Product({
     this.isFavorite = false,
     this.id,
@@ -24,6 +15,15 @@ class Product extends BaseModel {
     this.image,
     this.count = 1,
   });
+
+  final int? id;
+  final String? title;
+  final double? price;
+  final String? description;
+  final String? category;
+  final String? image;
+  bool isFavorite;
+  int count;
 
   @override
   fromJson(Map<String, dynamic> json) {
