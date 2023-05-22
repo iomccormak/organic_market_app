@@ -1,15 +1,11 @@
-abstract class MainCategory {
+class MainCategory {
+  const MainCategory({
+    required this.title,
+    required this.icon,
+    required this.background,
+  });
+
   final String title;
   final String icon;
   final String background;
-  final int leftPadding;
-  final int topPadding;
-
-  MainCategory({
-    this.title = '',
-    this.icon = '',
-    this.background = '',
-    this.leftPadding = 0,
-    this.topPadding = 0,
-  });
 }

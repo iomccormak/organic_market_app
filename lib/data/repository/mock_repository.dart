@@ -1,41 +1,89 @@
-import 'package:organic_market_app/domain/models/categories/alcohol.dart';
-import 'package:organic_market_app/domain/models/categories/beverages.dart';
-import 'package:organic_market_app/domain/models/categories/bio.dart';
-import 'package:organic_market_app/domain/models/categories/bread.dart';
-import 'package:organic_market_app/domain/models/categories/children_products.dart';
-import 'package:organic_market_app/domain/models/categories/confectionery.dart';
-import 'package:organic_market_app/domain/models/categories/fake_store.dart';
-import 'package:organic_market_app/domain/models/categories/fish.dart';
-import 'package:organic_market_app/domain/models/categories/freezed_products.dart';
-import 'package:organic_market_app/domain/models/categories/grocery.dart';
-import 'package:organic_market_app/domain/models/categories/home_products.dart';
-import 'package:organic_market_app/domain/models/categories/meat.dart';
-import 'package:organic_market_app/domain/models/categories/milk_products.dart';
-import 'package:organic_market_app/domain/models/categories/superfood.dart';
-import 'package:organic_market_app/domain/models/categories/vegetables.dart';
+import 'package:organic_market_app/domain/models/categories/main_category.dart';
+import 'package:organic_market_app/domain/models/repository/repository.dart';
+import 'package:organic_market_app/utils/app_constants/app_icons.dart';
+import 'package:organic_market_app/utils/app_constants/app_images.dart';
 
-abstract class MockRepository {
-  static final categories = [
-    FakeStore(),
-    Alcohol(),
-    Beverages(),
-    Bio(),
-    Bread(),
-    ChildrenProducts(),
-    Confectionery(),
-    Fish(),
-    FreezedProducts(),
-    Grocery(),
-    HomeProducts(),
-    Meat(),
-    MilkProducts(),
-    Superfood(),
-    Vegetables(),
+class MockRepository implements Repository {
+  final List<MainCategory> categories = [
+    const MainCategory(
+      title: 'Fake Store Procucts',
+      icon: AppImages.catCon,
+      background: AppIcons.figMilk,
+    ),
+    const MainCategory(
+      title: 'Алкоголь',
+      icon: AppImages.catAlco,
+      background: AppIcons.figAlco,
+    ),
+    const MainCategory(
+      title: 'Напитки',
+      icon: AppImages.catBev,
+      background: AppIcons.figBev,
+    ),
+    const MainCategory(
+      title: 'Биологически активные добавки',
+      icon: AppImages.catBio,
+      background: AppIcons.figBio,
+    ),
+    const MainCategory(
+      title: 'Хлеб, выпечка',
+      icon: AppImages.catBread,
+      background: AppIcons.figBread,
+    ),
+    const MainCategory(
+      title: 'Детям',
+      icon: AppImages.catChild,
+      background: AppIcons.figChild,
+    ),
+    const MainCategory(
+      title: 'Кондитерские изделия',
+      icon: AppImages.catCon,
+      background: AppIcons.figCon,
+    ),
+    const MainCategory(
+      title: 'Рыба, икра, краб',
+      icon: AppImages.catFish,
+      background: AppIcons.figFish,
+    ),
+    const MainCategory(
+      title: 'Замороженные продукты',
+      icon: AppImages.catFreezed,
+      background: AppIcons.figFreezed,
+    ),
+    const MainCategory(
+      title: 'Бакалея',
+      icon: AppImages.catGroc,
+      background: AppIcons.figGroc,
+    ),
+    const MainCategory(
+      title: 'Товары для дома',
+      icon: AppImages.catHome,
+      background: AppIcons.figHome,
+    ),
+    const MainCategory(
+      title: 'Мясо, птица',
+      icon: AppImages.catMeat,
+      background: AppIcons.figMeat,
+    ),
+    const MainCategory(
+      title: 'Молочные продукты, яйцо',
+      icon: AppImages.catMilk,
+      background: AppIcons.figMilk,
+    ),
+    const MainCategory(
+      title: 'Суперфуды',
+      icon: AppImages.catSuper,
+      background: AppIcons.figSuper,
+    ),
+    const MainCategory(
+      title: 'Овощи, фрукты',
+      icon: AppImages.catVeg,
+      background: AppIcons.figVeg,
+    ),
   ];
 
-  static const mainAdvertisments = [
-    "assets/images/mainAdv1.png",
-    "assets/images/mainAdv2.png",
-    "assets/images/mainAdv3.png",
-  ];
+  @override
+  Future<List<MainCategory>> getCategories() async {
+    return categories;
+  }
 }

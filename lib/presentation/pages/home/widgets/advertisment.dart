@@ -13,6 +13,12 @@ class Advertisment extends StatefulWidget {
 class _AdvertismentState extends State<Advertisment> {
   int currentIndex = 0;
 
+  final List<String> mainAdvertisments = [
+    "assets/images/mainAdv1.png",
+    "assets/images/mainAdv2.png",
+    "assets/images/mainAdv3.png",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -24,9 +30,9 @@ class _AdvertismentState extends State<Advertisment> {
             () => currentIndex = index,
           ),
         ),
-        itemCount: MockRepository.mainAdvertisments.length,
+        itemCount: mainAdvertisments.length,
         itemBuilder: (context, index, realIndex) => Image.asset(
-          MockRepository.mainAdvertisments[index],
+          mainAdvertisments[index],
           fit: BoxFit.cover,
         ),
       ),

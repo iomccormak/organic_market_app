@@ -43,8 +43,8 @@ class CategorySmallCard extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                    left: category.leftPadding.w,
-                    top: category.topPadding.h,
+                    left: 22.w,
+                    top: 16.h,
                   ),
                   child: SvgPicture.asset(
                     category.background,
