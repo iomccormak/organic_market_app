@@ -1,10 +1,6 @@
-import 'package:json_annotation/json_annotation.dart';
-import 'package:organic_market_app/domain/models/base_model.dart';
+import 'dart:convert';
 
-part 'product.g.dart';
-
-@JsonSerializable(createToJson: false)
-class Product extends BaseModel {
+class Product {
   Product({
     this.isFavorite = false,
     this.id,
@@ -25,13 +21,19 @@ class Product extends BaseModel {
   bool isFavorite;
   int count;
 
-  @override
-  fromJson(Map<String, dynamic> json) {
-    return _$ProductFromJson(json);
+  factory Product.fromJson(Map<String, dynamic> json) {
+    return Product(
+      id: json["id"],
+      title: json["title"],
+      price: (json['price'] as num?)?.toDouble(),
+      description: json["description"],
+      category: json["category"],
+      image: json["image"],
+    );
   }
+}
 
-  @override
-  Map<String, dynamic> toJson() {
-    throw UnimplementedError();
-  }
+List<Product> productResponseFromJson(String str) {
+  List<dynamic> temp = json.decode(str);
+  return List<Product>.from(temp.map((x) => Product.fromJson(x)));
 }

@@ -2,8 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/data/repository/mock_repository.dart';
-import 'package:organic_market_app/domain/models/categories/main_category.dart';
 import 'package:organic_market_app/navigation/auto_router.gr.dart';
 import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
@@ -12,7 +10,6 @@ import 'package:organic_market_app/presentation/pages/catalog/bloc/catalog_bloc.
 import 'package:organic_market_app/presentation/pages/catalog/widgets/catalog_button.dart';
 import 'package:organic_market_app/presentation/common_widgets/cards/category_big_card.dart';
 import 'package:organic_market_app/utils/app_constants/app_icons.dart';
-import 'package:organic_market_app/utils/app_constants/app_images.dart';
 import 'package:organic_market_app/utils/app_constants/app_strings.dart';
 
 class CatalogPage extends StatelessWidget {

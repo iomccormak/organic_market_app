@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organic_market_app/data/repository/mock_repository.dart';
-import 'package:organic_market_app/domain/models/categories/main_category.dart';
 import 'package:organic_market_app/presentation/common_widgets/custom_app_bar.dart';
 import 'package:organic_market_app/presentation/common_widgets/bottom_nav_bar/nav_bar_shadow.dart';
 import 'package:organic_market_app/presentation/common_widgets/loading_animation.dart';
@@ -16,8 +14,6 @@ import 'package:organic_market_app/presentation/pages/home/widgets/bought_before
 import 'package:organic_market_app/presentation/pages/home/widgets/brands.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/green_buttons.dart';
 import 'package:organic_market_app/presentation/pages/home/widgets/low_text.dart';
-import 'package:organic_market_app/utils/app_constants/app_icons.dart';
-import 'package:organic_market_app/utils/app_constants/app_images.dart';
 import 'package:organic_market_app/utils/app_constants/app_strings.dart';
 
 class HomePage extends StatelessWidget {
