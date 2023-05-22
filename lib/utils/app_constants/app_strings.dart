@@ -113,4 +113,17 @@ abstract class AppStrings {
   /// Favorites
   static const favorites = 'Избранное';
   static const favoritesIsEmpty = 'В избранном пока пусто';
+
+  /// Validation
+  static const validNameEnter = 'Введите имя';
+  static const validNameError =
+      "Имя может содержать только буквы. Минимум 3 символа";
+  static const validSurnameEnter = 'Введите фамилию';
+  static const validSurnameError =
+      "Фамилия может содержать только буквы. Минимум 4 символа";
+  static const validPhoneEnter = 'Введите номер телефона';
+  static const validPhoneError = "Некорректный номер телефона";
+  static const validEmailEnter = 'Введите почту';
+  static const validEmailError = "Некорректный адрес e-mail почты";
+  static const validCodeEnter = 'Введите код';
 }
