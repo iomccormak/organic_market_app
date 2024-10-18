@@ -1,4 +1,4 @@
-# Third task: complete app. 
+# Organic market app
 
 Приложение для интернет-магазина с использованием FakeStoreApi.
 
